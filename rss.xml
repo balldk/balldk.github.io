@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>K&#39;s corner blog</title>
+    <link>https://justkhoa.me</link>
+    <description>K&#39;s corner blog, mostly about maths and programming</description>
+    <managingEditor> (ND Dang Khoa)</managingEditor>
+    <pubDate>Fri, 15 Oct 2021 06:15:59 +0000</pubDate>
+    <image>
+      <url>https://justkhoa.me/logo.svg</url>
+      <title>logo</title>
+      <link></link>
+    </image>
+    <item>
+      <title>Góc nhìn khác về tail call elimination</title>
+      <link>https://justkhoa.me/posts/interesting-tail-call-elimination-problem</link>
+      <description>&lt;p&gt;Một bài toán thú vị về tối ưu đệ quy giúp tui có góc nhìn khác về tail call elimination như thế nào.&lt;/p&gt;&#xA;</description>
+      <content:encoded><![CDATA[<p>Tui thì đó giờ hay cày rank trên <a href="https://www.codewars.com">Codewars</a>, chủ yếu là vì giao diện của nó ngầu lòi hơn ba mấy web thuật toán chán ngắt khác 😄Chơi một thời gian thì tui cũng lên được 4 kyu và gặp phải bài toán này <a href="https://www.codewars.com/kata/57040e445a726387a1001cf7">The fusc function - Part 2</a>. Bài này thú vị ở chỗ, thay vì như thông thường họ chỉ đưa mình đề bài, thì bài này họ còn đưa cho mình một bài khác ví dụ mẫu cho phương pháp mà họ muốn mình dùng. Nói chung là giải xong sẽ học được phương pháp gì đó mới, chỉ tiếc là tui lúc đó đã quyết định gập máy đi ngủ 🙂Mới đầu năm nay thì tui thử mở ra làm lại, và congrats, não tui đã được thông, giờ tui đi thông ngược lại cho mấy bạn đây.</p>
+<p>Trong bài viết này, tui sẽ đi giải quyết bài toán trên trước, mục tiêu bài toán là đưa từ một hàm đệ quy thành một hàm đệ quy đuôi (tail call elimination), đừng lo, tui sẽ giải thích kĩ hơn những thuật ngữ này ở phía dưới. Sau đó tui sẽ chia sẻ một chút về góc nhìn của tui tại sao phương pháp của bài toán này khá độc đáo so với thực tế. Okay triển thôi nào!</p>
+<h2>Nội dung bài toán</h2>
+<p>Dành cho những con người chây lười không chịu bấm vào link đọc trước (ừa tui đang nói bạn đó) thì tui sẽ trình bày lại bài toán ở đây luôn, <del>chứ không phải vì tui muốn bài mình dài ra đâu nha</del>. Với lại tui cũng sẽ làm rõ một số chỗ mà bài viết gốc không đề cập tới.</p>
+<p>Cho hàm <span class="math inline">\(\operatorname{fusc}(n)\)</span> được định nghĩa như sau:</p>
+<p><span class="math display">\[\begin{cases}
+\operatorname{fusc}(0) = 0\\
+\operatorname{fusc}(1) = 1\\
+\operatorname{fusc}(2n) = \operatorname{fusc}(n)\\
+\operatorname{fusc}(2n + 1) = \operatorname{fusc}(n) + \operatorname{fusc}(n + 1)\\
+\end{cases}
+\]</span></p>
+<p>Việc của bạn là hãy viết lại và tối ưu hàm <span class="math inline">\(\operatorname{fusc}(n)\)</span> trên. Nhớ rằng <span class="math inline">\(n\)</span> sẽ có giá trị rất lớn, cụ thể thì <span class="math inline">\(n\)</span> sẽ lớn hơn 1000 bit (đối với Javascript) và 52 bit (đối với PHP), nên là cần lưu ý tới vấn đề stack overflow và timeouts.</p>
+<h2>Gợi ý phương pháp</h2>
+<blockquote>
+Phần này trong lúc đọc mấy bạn không cần quá hoang mang những thứ như là tại sao phải đưa hai vế về cùng dạng, rồi tại sao phải đặt thêm biến a, b các thứ đâu, cứ đọc đến cuối là mọi thứ sẽ trở nên make sense thôi.
+</blockquote>
+<p>Tưởng tượng thay vì đề bài là hàm <span class="math inline">\(\operatorname{fusc}(n)\)</span> mà là hàm <span class="math inline">\(\operatorname{fib}(n)\)</span> (trả về <a href="https://en.wikipedia.org/wiki/Fibonacci_number">số Fibonacci</a> thứ <span class="math inline">\(n\)</span>), thì lúc này hàm được định nghĩa như sau:</p>
+<p><span class="math display">\[\begin{cases}
+\operatorname{fib}(0) = 1 & (1)\\
+\operatorname{fib}(1) = 1 & (2)\\
+\operatorname{fib}(n + 2) = \operatorname{fib}(n) + \operatorname{fib}(n + 1)\quad (n \geq 0) & (3)
+\end{cases}
+\]</span></p>
+<p>Nếu dùng trực tiếp định nghĩa trên thì không được tối ưu cho lắm. Dĩ nhiên bạn hoàn toàn có thể dùng quy hoạch động, nhưng làm vậy thì lại tốn thêm bộ nhớ không cần thiết, nên là chúng ta sẽ cố thử tìm đệ quy đuôi (<a href="https://www.geeksforgeeks.org/tail-recursion">tail recursion</a>) cho bài toán này.</p>
+<blockquote>Lại là góc nhỏ cho những con lười không chịu bấm vào đọc trước định nghĩa của tail recursion đây, thì tail recursion là loại hàm đệ quy mà việc gọi đệ quy là điều cuối cùng hàm đó thực hiện. Lấy ví dụ:</blockquote>
+<pre><code class="language-js">// Đây không là tail recursion vì sau khi gọi đệ quy
+// fact(n-1) thì hàm phải thực hiện thêm phép nhân
+// với n nữa mới kết thúc
+function fact(n) {
+	if (n === 1)
+		return 1
+	else
+		return n * fact(n-1)
+}
+
+// Đây là tail recursion vì chỉ cần gọi fact(n-1, acc*n)
+// xong thì hàm sẽ kết thúc
+function fact(n, acc) {
+	if (n === 1)
+		return acc
+	else
+		return fact(n-1, acc*n)
+}
+</code></pre>
+<p>Bạn có thể tự tìm hiểu kĩ hơn tại sao khi đưa về tail recursion thì sẽ tối ưu hơn, nhưng để nói sơ qua thì bình thường khi bạn gọi đệ quy, những giá trị, ô nhớ các thứ ở hiện tại sẽ được đẩy lên call stack, cứ mỗi lần gọi đệ quy lồng nhau thì call stack sẽ càng ngày càng cao lên, bộ nhớ phình to ra, cho đến khi vượt quá call stack size thì chương trình trả về lỗi stack overflow. Tail recursion thì lại khác, vì đệ quy là câu lệnh được thực hiện cuối cùng nên compiler sẽ thoải mái giải phóng stack hiện tại vì nó chắc chắn stack hiện tại không cần dùng nữa, nên dù có gọi đệ quy vô hạn lần thì cũng không lo bị stack overflow.</p>
+<p>Tiếp tục nhé, bây giờ để biến <span class="math inline">\(\operatorname{fib}(n)\)</span> thành tail recursion, ta lấy phương trình <span class="math inline">\((3)\)</span> đem biến đổi thử, và chúng ta muốn sau khi biến đổi xong thì vế phải phải có dạng giống na ná vế trái, từ đó ta có thể định nghĩa một hàm phụ <span class="math inline">\(F\)</span> nào đó sao cho vế trái và vế phải phụ thuộc vào nhau thông qua <span class="math inline">\(F\)</span>, kiểu như <span class="math inline">\(F(2n) = F(3n-1)\)</span> chẳng hạn. Rồi vậy ta thử cộng <span class="math inline">\(\operatorname{fib}(n+1)\)</span> vào hai vế xem sao:</p>
+<p><span class="math display">\[\operatorname{fib}(n+1) + \operatorname{fib}(n+2) = \operatorname{fib}(n) + 2\cdot \operatorname{fib}(n+1)
+\]</span></p>
+<p>Hai vế khá giống nhau rồi đó, <span class="math inline">\(\operatorname{fib}(n+1)\)</span> (vế trái) tương ứng với <span class="math inline">\(\operatorname{fib}(n)\)</span> (vế phải) là ổn rồi nè, còn <span class="math inline">\(\operatorname{fib}(n+2)\)</span> (vế trái) tương ứng với <span class="math inline">\(\operatorname{fib}(n+1)\)</span> (vế phải) thì vẫn chưa ổn vì bị khác hệ số, để khắc phục chuyện này thì ta sẽ đưa ra một biến khác, gọi là biến <span class="math inline">\(b\)</span> đi. Giờ ta thử cộng <span class="math inline">\((b-1)\operatorname{fib}(n+2)\)</span> vào hai vế xem sao (mục đích cộng như vậy là để <span class="math inline">\(\operatorname{fib}(n+2)\)</span> có hệ số là <span class="math inline">\(b\)</span>):</p>
+<p><span class="math display">\[\operatorname{fib}(n+1) + b\cdot \operatorname{fib}(n+2) = b\cdot \operatorname{fib}(n) + (b+1)\cdot \operatorname{fib}(n+1)
+\]</span></p>
+<p>Ta nhận thấy hệ số của <span class="math inline">\(\operatorname{fib}(n+1)\)</span> và <span class="math inline">\(\operatorname{fib}(n)\)</span> chưa giống nhau (bên là <span class="math inline">\(1\)</span>, bên là <span class="math inline">\(b\)</span>), nên là ta đưa thêm biến <span class="math inline">\(a\)</span> vào và làm tương tự, ta được:</p>
+<p><span class="math display">\[a\cdot \operatorname{fib}(n+1) + b\cdot \operatorname{fib}(n+2) = b\cdot \operatorname{fib}(n) + (a+b)\cdot \operatorname{fib}(n + 1)\tag{4}
+\]</span></p>
+<p>Tuyệt vời ông mặt trời, hai bên có cùng một dạng rồi đó, bây giờ ta định nghĩa hàm phụ <span class="math inline">\(F\)</span> như sau:</p>
+<p><span class="math display">\[F(a, b, n) = a\cdot \operatorname{fib}(n) + b\cdot \operatorname{fib}(n+1)
+\]</span></p>
+<p>Từ đó ta có thể biểu diễn hai vế của <span class="math inline">\((4)\)</span> dưới dạng:</p>
+<p><span class="math display">\[F(a, b, n+1) = F(b, a+b, n) \tag{*}
+\]</span></p>
+<p>Ngoài ra dựa vào định nghĩa của <span class="math inline">\(F\)</span>, ta được:</p>
+<p><span class="math display">\[F(a, b, 0) = a\cdot \operatorname{fib}(0) + b\cdot \operatorname{fib}(1) = a + b \tag{5}
+\]</span></p>
+<p>Hơn nữa:</p>
+<p><span class="math display">\[\operatorname{fib}(n) = 1\cdot \operatorname{fib}(n) + 0\cdot \operatorname{fib}(n+1) = F(1, 0, n) \tag{6}
+\]</span></p>
+<p>Ta đã hoàn toàn có đủ nguyên liệu để triển khai thuật toán rồi đó, để ý:</p>
+<ul>
+<li><span class="math inline">\((6)\)</span> cho ta được định nghĩa tổng quát của <span class="math inline">\(\operatorname{fib}(n)\)</span> dựa trên hàm phụ <span class="math inline">\(F\)</span>.</li>
+<li><span class="math inline">\((*)\)</span> cho ta công thức đệ quy của <span class="math inline">\(F\)</span>.</li>
+<li><span class="math inline">\((5)\)</span> cho ta base case đệ quy của <span class="math inline">\(F\)</span>.</li>
+</ul>
+<p>Hy vọng tới đây mọi thứ make sense được với bạn, nếu lú thì cũng không sao cứ đọc lại nhé, mấy lần đầu mình đọc cũng lú 🙂Giờ thì code thôi (2 code dưới này đều là của tác giả bài toán hết nha, không phải của tui):</p>
+<pre><code class="language-python">def fib(n):
+
+    def F(a, b, n):
+        if n == 0: return a + b    # see (5) above
+        return F(b, a + b, n - 1)  # see (*) above
+
+    return F(1, 0, n)              # see (6) above
+</code></pre>
+<p>Tới đây là <span class="math inline">\(QED\)</span> rồi, nhưng nếu ngôn ngữ bạn dùng không hỗ trợ tối ưu đệ quy đuôi (<a href="https://stackoverflow.com/questions/310974/what-is-tail-call-optimization">tail call optimization</a>) thì bạn có thể implement theo dạng khử đệ quy như sau:</p>
+<pre><code class="language-python">def fib(n):
+    a, b = 1, 0                    # see (6) above
+    while n &gt; 0:
+        a, b, n = b, a + b, n - 1  # see (*) above
+    return a + b .                 # see (5) above
+</code></pre>
+<blockquote>
+Đây là một sức mạnh khác của tail recursion, một khi bạn đã đưa hàm về tail recursion rồi thì việc khử đệ quy là vô cùng đơn giản.
+</blockquote>
+<p>Tuyệt dời, làm &ldquo;tương tự&rdquo; với hàm <span class="math inline">\(\operatorname{fusc}(n)\)</span> thôi nào 😉. Nếu đọc tới đây mà bạn đã có ý tưởng, hoặc muốn thử sức bản thân thì có thể pause lại. Thật ra theo tui thì một khi đã nắm được ý tưởng của phương pháp này rồi thì cũng không quá khó đâu.</p>
+<h2>Giải quyết bài toán</h2>
+<p>Nhắc lại định nghĩa của hàm <span class="math inline">\(\operatorname{fusc}(n)\)</span>. Để cho <del>gõ đỡ mỏi tay</del> đơn giản thì tui đặt hàm <span class="math inline">\(\operatorname{fusc}(n)\)</span> là hàm <span class="math inline">\(f(n)\)</span> luôn nhé:</p>
+<p><span class="math display">\[\begin{cases}
+f(0) = 0 & (1)\\
+f(1) = 1 & (2)\\
+f(2n) = f(n) & (3)\\
+f(2n + 1) = f(n) + f(n + 1) & (4)\\
+\end{cases}
+\]</span></p>
+<p>Tương tự như ví dụ trên, từ định nghĩa ta sẽ cố gắng tìm phương trình nào đó sao cho hai vế có cùng dạng, rồi từ đó đặt hàm phụ. Lấy <span class="math inline">\((3)\)</span> và <span class="math inline">\((4)\)</span> cộng lại với nhau thử coi sao:</p>
+<p><span class="math display">\[f(2n)+f(2n+1)=2f(n) + f(n+1)
+\]</span></p>
+<p>Thấy hai vế cũng na ná giống rồi nè, <span class="math inline">\(f(2n)\)</span> tương ứng với <span class="math inline">\(f(n)\)</span> và <span class="math inline">\(f(2n+1)\)</span> tương ứng với <span class="math inline">\(f(n+1)\)</span>. Bây giờ tìm cách cân bằng hệ số thôi. Cụ thể, ta sẽ đưa biến <span class="math inline">\(b\)</span> vào phương trình bằng cách cộng <span class="math inline">\((b-1)f(2n+1)\)</span> hai vế, ta được:</p>
+<p><span class="math display">\[f(2n)+bf(2n+1)=(b+1)f(n) + bf(n+1)
+\]</span></p>
+<p>Tương tự, đưa biến <span class="math inline">\(a\)</span> vào phương trình:</p>
+<p><span class="math display">\[af(2n)+bf(2n+1)=(a+b)f(n) + bf(n+1) \tag{5}
+\]</span></p>
+<p>Hai vế đã cùng dạng như mình ao ước rồi đó, giờ định nghĩa hàm phụ <span class="math inline">\(F\)</span> thôi:</p>
+<p><span class="math display">\[F(a, b, n) = af(n) + bf(n+1)
+\]</span></p>
+<p>Từ đó ta biểu diễn <span class="math inline">\((5)\)</span> theo <span class="math inline">\(F\)</span> như sau:</p>
+<p><span class="math display">\[F(a,b,2n) = F(a+b,b,n) \tag{*}
+\]</span></p>
+<p>Ngoài ra từ định nghĩa của <span class="math inline">\(F\)</span> suy ra được:</p>
+<p><span class="math display">\[F(a,b,0) = af(0) + bf(1) = b \tag{6.1}
+\]</span></p>
+<p>Và:</p>
+<p><span class="math display">\[F(a,b,1) = af(1) + bf(2) = a + b \tag{6.2}
+\]</span></p>
+<p>Hơn nữa:</p>
+<p><span class="math display">\[f(n) = 1f(n) + 0f(n+1) = F(1,0,n) \tag{7}
+\]</span></p>
+<p>Ngừng lại một chút, tới đây ta vẫn chưa thể triển khai thành thuật toán hoàn chỉnh được, tại sao ư? Để ý <span class="math inline">\((*)\)</span> chỉ được định nghĩa với <span class="math inline">\(2n\)</span>, tức khi input là số chẵn, vậy còn lẻ thì sao? Đơn giản thôi, thế trường hợp input lẻ vào <span class="math inline">\(F\)</span> rồi biến đổi, tức là:</p>
+<p><span class="math display">\[\begin{align*}
+F(a,b,2n+1)
+&= af(2n+1) + bf(n+1)\\
+&= a[f(n) + f(n+1)] + bf(n+1)\\
+&= af(n) + (a+b)f(n+1)\\
+&= F(a,a+b,n) \tag{**}
+\end{align*}
+\]</span></p>
+<p>Ta tổng hợp lại được như sau:</p>
+<ul>
+<li><span class="math inline">\((7)\)</span> cho ta định nghĩa tổng quát của <span class="math inline">\(f(n)\)</span> dựa trên <span class="math inline">\(F\)</span>.</li>
+<li><span class="math inline">\((*)\)</span> cho ta công thức đệ quy của <span class="math inline">\(F\)</span> đối với trường hợp input chẵn, tương tự với <span class="math inline">\((**)\)</span> ở trường hợp input lẻ.</li>
+<li><span class="math inline">\((6.1)\)</span> và <span class="math inline">\((6.2)\)</span> cho ta base case đệ quy của <span class="math inline">\(F\)</span>.</li>
+</ul>
+<p>Code thoai:</p>
+<pre><code class="language-js">function fusc(n) {
+  
+  function F(a, b, k) {    
+      if (k === 0)  // See (6.1)
+	  	return b
+      else if (k === 1)  // See (6.2)
+	  	return a + b
+      else if (k % 2 === 0)  // See (*)
+	  	return F(a+b, b, Math.round(k / 2))
+      else  // See (**)
+	  	return F(a, a+b, Math.round((k-1) / 2))
+  }
+  
+  return F(1, 0, n)  // See (7)
+}
+</code></pre>
+<p>Submit thử:<br>
+<img src="https://i.imgur.com/yoKDKTn.png" alt="submit-code-img"><br>
+Ngon lành chứ hả, bonus cho mấy bạn thêm code Haskell nè:</p>
+<pre><code class="language-haskell">fusc :: Integer -&gt; Integer
+fusc n = aux 1 0 n
+  where
+    aux _ b 0 = b
+    aux a b 1 = a+b
+    aux a b n
+      | even n = aux (a+b) b (n `div` 2)
+      | otherwise = aux a (a+b) ((n-1) `div` 2)
+</code></pre>
+<p>Tui biết có một số bạn đọc tới đây rồi thì ngứa lắm, có thể bạn sẽ thắc mắc tại sao không dùng quy hoạch động? Thì đầu tiên là tui đang muốn nhấn mạnh về phương pháp này, nên quy hoạch động không nằm trong khuôn khổ của bài viết. Thứ 2 là quy hoạch động thật ra cũng không hiệu quả bằng đâu, tui cũng có thử implement quy hoạch động xong submit thử rồi nhưng nó tốn quá nhiều bộ nhớ, codewars không accept (người ta tính hết rồi ^^).</p>
+<h2>Góc nhìn của tui về phương pháp này</h2>
+<p>Trong pure functional programming language (FP) như Haskell thì không có vòng lặp cho bạn dùng, thay vào đó nếu bạn muốn lặp thì bạn phải xây dựng đệ quy. Mà thực tế có những tính năng bạn cần lặp vô hạn hoặc lặp rất nhiều lần, để không bị stack overflow trên những tính năng đó thì họ phải hướng tới tail recursion. Vậy làm sao để xây dựng tail recursion? ừa thì linh cảm, tâm linh là chính thôi, lấy ví dụ cho hàm tính giai thừa:</p>
+<pre><code class="language-js">// Đệ quy thông thường
+function fact(n) {
+	if (n === 1)
+		return 1
+	else
+		return n * fact(n-1)
+}
+
+// Tail recursion
+function fact(n, acc) {
+	if (n === 1)
+		return acc
+	else
+		return fact(n-1, acc*n)
+}
+fact(10, 1) // tính 10!
+</code></pre>
+<p>Hàm đệ quy thông thường thì đơn giản rồi mình sẽ không nhắc tới nhé. Còn phần tail recursion ở dưới mình có thể hiểu là ta cần 1 biến nhân dồn kết quả lại, gọi là <code>acc</code> (accumulator). <code>acc</code> có giá trị ban đầu là 1, mỗi lần gọi đệ quy thì ta nhân <code>n</code> vô <code>acc</code>, đồng thời giảm <code>n</code> xuống một đơn vị, rồi truyền vào đệ quy kế tiếp. Cứ truyền xuống như vậy, lúc này bạn sẽ thấy <code>acc</code> mang giá trị của tích <code>n(n-1)(n-2)...</code> và cũng là kết quả mình cần tìm khi <code>n</code> giảm xuống 1.</p>
+<p>Đây cũng là pattern chung trong phương pháp tìm tail recursion, ta sẽ có biến tích luỹ <code>acc</code> là tham số được truyền dần xuống, và nó sẽ đem theo kết quả cho đến khi chạm base case. Nhưng ta có thể thấy pattern trên chỉ do mình cảm giác và tưởng tượng (aka tâm linh) chứ không được chứng minh rõ ràng, và ban đầu mình cũng nghĩ mấy thứ này không thể chứng minh được cho đến khi gặp bài toán xịn xò mà mình đã giải quyết bên trên.</p>
+<blockquote>
+Góc bài tập về nhà: Bạn có thể thử suy nghĩ cách chứng minh định nghĩa hàm fact(n, acc) bên trên là đúng dựa trên phương pháp chặt chẽ của bài viết. Và xây dựng lại tail recursion cho fib(n) dựa trên phương pháp tâm linh này, bạn sẽ bất ngờ vì nó cho cùng một kết quả đó.
+</blockquote>
+<p>Cảm ơn mấy bạn đã đọc hết đến đây (hoặc là do bạn lướt xuống và gặp được dòng này). Đây là bài viết đầu tiên trên blog của tui, tui xin nhận mọi ý kiến đóng góp, nhưng nếu bạn có ý định ném đá thì nên cân nhắc lời lẽ phù hợp với trái tim mỏng manh của tác giả 😢.</p>
+]]></content:encoded>
+      <author>ND Dang Khoa</author>
+      <guid>https://justkhoa.me/posts/interesting-tail-call-elimination-problem</guid>
+      <pubDate>Tue, 31 Aug 2021 20:31:59 +0000</pubDate>
+    </item>
+    <item>
+      <title>TODO List cho tính năng của blog</title>
+      <link>https://justkhoa.me/posts/TODO</link>
+      <description>&lt;p&gt;Một số tính năng tui (đã / đang / muốn / sẽ) triển khai cho góc nho nhỏ thân yêu này, mọi người có ý tưởng hay đóng góp gì thì có thể comment&amp;hellip;&lt;/p&gt;&#xA;</description>
+      <content:encoded><![CDATA[<p>Một số tính năng tui (đã / đang / muốn / sẽ) triển khai cho góc nho nhỏ thân yêu này, mọi người có ý tưởng hay đóng góp gì thì có thể comment phía dưới nhé 🥺 <del>(tui thích hay không thì còn tuỳ)</del></p>
+<h2>General</h2>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> 404 redirect page</li>
+<li><input checked="" disabled="" type="checkbox"> Add some important meta tags</li>
+<li><input disabled="" type="checkbox"> Dark theme</li>
+<li><input disabled="" type="checkbox"> RSS<br>
+Cũng không biết có nên làm cái này không, tại tui thấy ít người dùng cái này quá.</li>
+</ul>
+<h2>Homepage</h2>
+<ul>
+<li><input disabled="" type="checkbox"> Hashtag filter</li>
+<li><input disabled="" type="checkbox"> Post search</li>
+<li><input disabled="" type="checkbox"> Paging<br>
+Phân trang danh sách bài viết, cái này chắc đợi viết được nhiều bài rồi thêm vô cũng được.</li>
+</ul>
+<h2>Post renderer</h2>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> Default markdown</li>
+<li><input checked="" disabled="" type="checkbox"> Latex</li>
+<li><input checked="" disabled="" type="checkbox"> Auto generate table of content</li>
+</ul>
+<h2>Post interface</h2>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> Display table of content<br>
+Chức năng này là tui <del>ăn cắp</del> mượn ý tưởng từ tiền bối nè, mà tiền bối bỏ luôn vụ này rồi, đang suy nghĩ không biết có nên bỏ luôn không :))</li>
+<li><input checked="" disabled="" type="checkbox"> Zoom image when click</li>
+<li><input disabled="" type="checkbox"> Post reactions (Like, Heart, Wow, Confuse, Angry)<br>
+Tui tính làm giống FB luôn, để nút reaction ở góc dưới phải bài viết, lúc người dùng hover vào thì hiện danh sách reaction ra.</li>
+<li><input checked="" disabled="" type="checkbox"> Post read time</li>
+<li><input checked="" disabled="" type="checkbox"> Code highlight</li>
+</ul>
+<h2>Post editor page for admin</h2>
+<p>Tui lười làm cái này quá, toàn viết post trên app, xong copy nội dung rồi gửi request lên server thôi :))</p>
+<h2>Comment Section</h2>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> Login to comment (Github, Google)
+<ul>
+<li><input disabled="" type="checkbox"> Fix Github login on mobile</li>
+</ul>
+</li>
+<li><input checked="" disabled="" type="checkbox"> With reply</li>
+<li><input checked="" disabled="" type="checkbox"> Recaptcha v3<br>
+Chống nắc cơ, sợ lắm :((</li>
+<li><input disabled="" type="checkbox"> Comment level tracking<br>
+Nói thiệt là tui cũng không biết phải gọi chức năng này là gì :)) Nhưng đại loại là cái thanh chỉa nhánh phân cấp comment giống chức năng mới của FB á.</li>
+<li><input disabled="" type="checkbox"> Paging</li>
+</ul>
+<h2>Development aspects</h2>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> Containerize project with Docker for Cloud Run deployment</li>
+</ul>
+]]></content:encoded>
+      <author>ND Dang Khoa</author>
+      <guid>https://justkhoa.me/posts/TODO</guid>
+      <pubDate>Mon, 30 Aug 2021 21:50:21 +0000</pubDate>
+    </item>
+    <item>
+      <title>Tui là ai, đây là đâu?</title>
+      <link>https://justkhoa.me/posts/about</link>
+      <description>&lt;p&gt;Đôi lời về bản thân và blog của tui&lt;/p&gt;&#xA;</description>
+      <content:encoded><![CDATA[<h2>Tui là ai?</h2>
+<p>Tui hiện đang là sinh viên quèn tại khoa toán trường Đại học Khoa học tự nhiên - TPHCM. Xuất thân là dân tin, đam mê và bắt đầu học lập trình từ sớm so với bạn bè đồng trang lứa, đã từng kinh qua nhiều món như Web dev, App dev, Blockchain, CP,&hellip;. Với khả năng cũng như đam mê cháy bỏng ấy, tui đã quyết định theo đuổi sự nghiệp&hellip;&hellip;..học toán và làm toán 🙂(còn lý do thì chắc phải dành riêng cho một bài viết khác). Tui hiện tại thì mong muốn tương lai được làm nghiên cứu về toán, toán gì thì tui chưa dám xác định, một phần là vì thấy hướng nào cũng hay ho hết, phần lớn còn lại thì vì trình còn gà quá &#x1f622;.</p>
+<h2>Đây là đâu?</h2>
+<p>Đây là góc nhỏ để tui bày tỏ, chém gió, chia sẻ kiến thức và cuộc sống của tui với mọi người. Có lẽ tui sẽ viết chủ yếu về toán và tin (tất nhiên, ngành tui học mà 🙂), tui nghĩ việc chia sẻ kiến thức cho người khác, đồng thời tổng hợp lại thành một bài viết có cấu trúc là một cách hiệu quả để tui review và trau dồi lại kiến thức, <del>đấy là người ta sẽ nói thế chứ tui chủ yếu muốn loè mắt mọi người thôi</del>. Ngoài ra thì tui cũng muốn kiếm thêm nguồn động lực để học nữa, chứ tui lười lắm &#x1f62d;.</p>
+<h3>Lịch sử của blog</h3>
+<p>Như các tiền bối IT đã từng nói, muốn viết blog thì hãy tập trung vào nội dung, đừng tập trung code hẳn một cái blog, vì tới lúc code xong thì bạn đã hết hứng viết nội dung rồi. Biết trước được điều đó, nên tui đã quyết định&hellip;&hellip;..dành toàn bộ khoảng hè ngắn ngủi năm 2021 để code hẳn một cái blog, và thế là &ldquo;Góc nhỏ của <span class="math inline">\(\overrightarrow{K}\)</span>&rdquo; ra đời 🙂.</p>
+<h3>Tại sao không viết blog trên nền tảng có sẵn mà lại code từ đầu?</h3>
+<ol>
+<li>Vì nó có ích<br>
+Ngoài những lý do sến súa sướt mướt mà tui viết blog bên trên, thì blog này cũng là một side project để tui khè với nhà tuyển dụng, nếu tui có ý định đi code thuê.</li>
+<li>Vì nó vui<br>
+Code là chân lý, cứ được code là vui rồi, không cần lý do nhé 🙂.</li>
+<li>Dễ Customize<br>
+Đây có lẽ là lý do chính, tui đã từng thử dùng qua nhiều nền tảng viết blog như wordpress, ghost, blogspot,&hellip; các thứ rồi. Dùng rất dễ nhưng để thêm tính năng mà tui muốn thì rất khó, hoặc thậm chí là không thể (hoặc là do tui gà). Mà định hướng tui tính sẽ đưa những dự án mô phỏng vô nữa, cần độ custom cao. Hoặc bạn có thể thấy trực tiếp trên blog là tui khá chú trọng làm animation để tăng UX cho web. Nên tui nghĩ tự code cho mình một quả blog là một định hướng tốt.</li>
+<li>Học được nhiều thứ<br>
+Cụ thể thì tui học được cách:</li>
+</ol>
+<ul>
+<li>Chửi máy tính mình đang dùng trong khi lỗi là ở framework (I mean you Nuxt).</li>
+<li>Kìm chế cảm xúc khi debug cả ngày trời nhưng tới cuối ngày thì phát hiện ra là mình viết sai chính tả.</li>
+</ul>
+<ol start="5">
+<li><del>Vì tui có máu M, thích sự đau khổ</del></li>
+</ol>
+<h3>Những công nghệ tui dùng để làm blog</h3>
+<p><strong>Frontend:</strong> Vue (Nuxt)<br>
+Lý do dùng Vue đơn giản là vì nó đơn giản 🙂còn tại sao dùng kèm Nuxt thì là vì bản thân Vue là client-side rendering, mà tui lại muốn có thêm server side rendering để tối ưu SEO tốt hơn, xịn xò hơn.</p>
+<p><strong>Backend:</strong> Go<br>
+Ban đầu tui tính dùng NodeJS vì deploy chung với Nuxt sẽ dễ hơn, nhưng mà sau nhiều năm xương máu code NodeJS thì tui đã nhận ra mỗi lần code xong, codebase sẽ rất là gớm và dễ lỗi vì Javascript không strongly-typed. Thật ra tui biết codebase gớm một phần là do bản thân gà, với cả nếu dùng chung với Typescript cũng khắc phục được chuyện strongly-typed, nhưng dù sao thì tui cũng đã có kinh nghiệm với Go, từng được sờ vào dự án Go thực tế rồi, với tui cũng tính đầu tư làm blog này lâu dài nên lỡ xài TS mà cũng gớm như thằng JS thì hơi toang 🙂.</p>
+<p><strong>Database:</strong> MySQL<br>
+Thằng này thì khỏi bình luận nhé, thuận mắt thì xài thôi 🙂Vả lại biết mỗi thằng này với MongoDB, mà MongoDB tui dùng thấy không linh hoạt được, nên thôi dùng MySQL cho lành.</p>
+<p>Ngoài ra thì tui còn dùng Docker để deploy lên Cloud Run của gu gồ, database cũng dùng của gu gồ nốt. Về phía client thì tui dùng Katex để render Latex, nghe bảo thằng này nhanh hơn Mathjax nên dùng thôi :))</p>
+<h3>Định hướng cho blog</h3>
+<p>Như tui cũng có nói, nội dung chủ yếu của blog sẽ là toán + tin, và tui cũng tính sẽ đưa một số project của mình lên nữa, làm như là một portfolio luôn. Hy vọng mọi người sẽ ủng hộ nhiệt tình &#x1f622;.</p>
+<h3>Credit cho tiền bối</h3>
+<p>Một số chức năng và cách tui thiết kế bố cục bài đăng cho blog được lấy cảm hứng từ <a href="https://thefullsnack.com" target="_blank"><a href="https://thefullsnack.com">https://thefullsnack.com</a></a> (có credit rồi nên mọi người đừng chửi tui ăn cắp ý tưởng nhé &#x1f622;). Đọc blog của anh này cũng là một trong những lý do mà tui quyết định bắt tay vào làm blog, quả blog anh làm đơn giản nhìn ghiền thiệt sự. Hiện thì ảnh đang là kĩ sư &ldquo;mặt tiền&rdquo; ở Silicon (nói chung là gia thế xịn nghen), chủ đề anh viết độc lạ hơn nhiều so với đa số blog IT ngoài kia nên là khuyến khích mọi người ngó qua nhà ảnh thử :)) Bạn có thể tham khảo thêm một số blog hay ho khác <a href="/posts/resources">ở đây</a>.</p>
+]]></content:encoded>
+      <author>ND Dang Khoa</author>
+      <guid>https://justkhoa.me/posts/about</guid>
+      <pubDate>Mon, 30 Aug 2021 01:02:19 +0000</pubDate>
+    </item>
+  </channel>
+</rss>
