@@ -4,7 +4,7 @@
     <link>https://justkhoa.me</link>
     <description>K&#39;s corner blog, mostly about maths and programming</description>
     <managingEditor> (ND Dang Khoa)</managingEditor>
-    <pubDate>Fri, 15 Oct 2021 15:50:31 +0000</pubDate>
+    <pubDate>Mon, 06 Dec 2021 20:31:13 +0000</pubDate>
     <image>
       <url>https://justkhoa.me/logo.svg</url>
       <title>logo</title>
@@ -221,7 +221,7 @@ Góc bài tập về nhà: Bạn có thể thử suy nghĩ cách chứng minh đ
       <description>&lt;p&gt;Một số tính năng tui (đã / đang / muốn / sẽ) triển khai cho góc nho nhỏ thân yêu này, mọi người có ý tưởng hay đóng góp gì thì có thể comment&amp;hellip;&lt;/p&gt;&#xA;</description>
       <content:encoded><![CDATA[<p>Một số tính năng tui (đã / đang / muốn / sẽ) triển khai cho góc nho nhỏ thân yêu này, mọi người có ý tưởng hay đóng góp gì thì có thể comment phía dưới nhé 🥺 <del>(tui thích hay không thì còn tuỳ)</del></p>
 <h2>General</h2>
-<ul>
+<ul class="task-list">
 <li><input checked="" disabled="" type="checkbox"> 404 redirect page</li>
 <li><input checked="" disabled="" type="checkbox"> Add some important meta tags</li>
 <li><input disabled="" type="checkbox"> Dark theme</li>
@@ -229,20 +229,20 @@ Góc bài tập về nhà: Bạn có thể thử suy nghĩ cách chứng minh đ
 Cũng không biết có nên làm cái này không, tại tui thấy ít người dùng cái này quá.</li>
 </ul>
 <h2>Homepage</h2>
-<ul>
+<ul class="task-list">
 <li><input disabled="" type="checkbox"> Hashtag filter</li>
 <li><input disabled="" type="checkbox"> Post search</li>
 <li><input disabled="" type="checkbox"> Paging<br>
 Phân trang danh sách bài viết, cái này chắc đợi viết được nhiều bài rồi thêm vô cũng được.</li>
 </ul>
 <h2>Post renderer</h2>
-<ul>
+<ul class="task-list">
 <li><input checked="" disabled="" type="checkbox"> Default markdown</li>
 <li><input checked="" disabled="" type="checkbox"> Latex</li>
 <li><input checked="" disabled="" type="checkbox"> Auto generate table of content</li>
 </ul>
 <h2>Post interface</h2>
-<ul>
+<ul class="task-list">
 <li><input checked="" disabled="" type="checkbox"> Display table of content<br>
 Chức năng này là tui <del>ăn cắp</del> mượn ý tưởng từ tiền bối nè, mà tiền bối bỏ luôn vụ này rồi, đang suy nghĩ không biết có nên bỏ luôn không :))</li>
 <li><input checked="" disabled="" type="checkbox"> Zoom image when click</li>
@@ -254,9 +254,9 @@ Tui tính làm giống FB luôn, để nút reaction ở góc dưới phải bà
 <h2>Post editor page for admin</h2>
 <p>Tui lười làm cái này quá, toàn viết post trên app, xong copy nội dung rồi gửi request lên server thôi :))</p>
 <h2>Comment Section</h2>
-<ul>
+<ul class="task-list">
 <li><input checked="" disabled="" type="checkbox"> Login to comment (Github, Google)
-<ul>
+<ul class="task-list">
 <li><input disabled="" type="checkbox"> Fix Github login on mobile</li>
 </ul>
 </li>
@@ -268,7 +268,7 @@ Nói thiệt là tui cũng không biết phải gọi chức năng này là gì 
 <li><input disabled="" type="checkbox"> Paging</li>
 </ul>
 <h2>Development aspects</h2>
-<ul>
+<ul class="task-list">
 <li><input checked="" disabled="" type="checkbox"> Containerize project with Docker for Cloud Run deployment</li>
 </ul>
 ]]></content:encoded>
