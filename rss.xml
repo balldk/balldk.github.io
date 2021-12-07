@@ -4,7 +4,7 @@
     <link>https://justkhoa.me</link>
     <description>K&#39;s corner blog, mostly about maths and programming</description>
     <managingEditor> (ND Dang Khoa)</managingEditor>
-    <pubDate>Tue, 07 Dec 2021 22:22:28 +0700</pubDate>
+    <pubDate>Tue, 07 Dec 2021 15:29:52 +0000</pubDate>
     <image>
       <url>https://justkhoa.me/logo.svg</url>
       <title>logo</title>
@@ -213,7 +213,7 @@ Góc bài tập về nhà: Bạn có thể thử suy nghĩ cách chứng minh đ
 ]]></content:encoded>
       <author>ND Dang Khoa</author>
       <guid>https://justkhoa.me/posts/interesting-tail-call-elimination-problem</guid>
-      <pubDate>Tue, 31 Aug 2021 20:31:59 +0700</pubDate>
+      <pubDate>Tue, 31 Aug 2021 20:31:59 +0000</pubDate>
     </item>
     <item>
       <title>TODO List cho tính năng của blog</title>
@@ -225,7 +225,7 @@ Góc bài tập về nhà: Bạn có thể thử suy nghĩ cách chứng minh đ
 <li><input checked="" disabled="" type="checkbox"> 404 redirect page</li>
 <li><input checked="" disabled="" type="checkbox"> Add some important meta tags</li>
 <li><input disabled="" type="checkbox"> Dark theme</li>
-<li><input disabled="" type="checkbox"> RSS<br>
+<li><input checked="" disabled="" type="checkbox"> RSS<br>
 Cũng không biết có nên làm cái này không, tại tui thấy ít người dùng cái này quá.</li>
 </ul>
 <h2>Homepage</h2>
@@ -240,12 +240,13 @@ Phân trang danh sách bài viết, cái này chắc đợi viết được nhi�
 <li><input checked="" disabled="" type="checkbox"> Default markdown</li>
 <li><input checked="" disabled="" type="checkbox"> Latex</li>
 <li><input checked="" disabled="" type="checkbox"> Auto generate table of content</li>
+<li><input checked="" disabled="" type="checkbox"> AST Transformer: Add class name for task list</li>
 </ul>
 <h2>Post interface</h2>
 <ul class="task-list">
 <li><input checked="" disabled="" type="checkbox"> Display table of content<br>
 Chức năng này là tui <del>ăn cắp</del> mượn ý tưởng từ tiền bối nè, mà tiền bối bỏ luôn vụ này rồi, đang suy nghĩ không biết có nên bỏ luôn không :))</li>
-<li><input disabled="" type="checkbox"> Zoom image when click</li>
+<li><input checked="" disabled="" type="checkbox"> Zoom image when click</li>
 <li><input disabled="" type="checkbox"> Post reactions (Like, Heart, Wow, Confuse, Angry)<br>
 Tui tính làm giống FB luôn, để nút reaction ở góc dưới phải bài viết, lúc người dùng hover vào thì hiện danh sách reaction ra.</li>
 <li><input checked="" disabled="" type="checkbox"> Post read time</li>
@@ -274,7 +275,7 @@ Nói thiệt là tui cũng không biết phải gọi chức năng này là gì 
 ]]></content:encoded>
       <author>ND Dang Khoa</author>
       <guid>https://justkhoa.me/posts/TODO</guid>
-      <pubDate>Mon, 30 Aug 2021 21:50:21 +0700</pubDate>
+      <pubDate>Mon, 30 Aug 2021 21:50:21 +0000</pubDate>
     </item>
     <item>
       <title>Tui là ai, đây là đâu?</title>
@@ -319,7 +320,7 @@ Thằng này thì khỏi bình luận nhé, thuận mắt thì xài thôi 🙂V�
 ]]></content:encoded>
       <author>ND Dang Khoa</author>
       <guid>https://justkhoa.me/posts/about</guid>
-      <pubDate>Mon, 30 Aug 2021 01:02:19 +0700</pubDate>
+      <pubDate>Mon, 30 Aug 2021 01:02:19 +0000</pubDate>
     </item>
   </channel>
 </rss>
