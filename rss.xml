@@ -4,7 +4,7 @@
     <link>https://justkhoa.me</link>
     <description>K&#39;s corner blog, mostly about maths and programming</description>
     <managingEditor> (ND Dang Khoa)</managingEditor>
-    <pubDate>Tue, 07 Dec 2021 15:45:10 +0000</pubDate>
+    <pubDate>Tue, 07 Dec 2021 17:07:01 +0000</pubDate>
     <image>
       <url>https://justkhoa.me/logo.svg</url>
       <title>logo</title>
@@ -14,7 +14,7 @@
       <title>Góc nhìn khác về tail call elimination</title>
       <link>https://justkhoa.me/posts/interesting-tail-call-elimination-problem</link>
       <description>&lt;p&gt;Một bài toán thú vị về tối ưu đệ quy giúp tui có góc nhìn khác về tail call elimination như thế nào.&lt;/p&gt;&#xA;</description>
-      <content:encoded><![CDATA[<p>Tui thì đó giờ hay cày rank trên <a href="https://www.codewars.com">Codewars</a>, chủ yếu là vì giao diện của nó ngầu lòi hơn ba mấy web thuật toán chán ngắt khác 😄Chơi một thời gian thì tui cũng lên được 4 kyu và gặp phải bài toán này <a href="https://www.codewars.com/kata/57040e445a726387a1001cf7">The fusc function - Part 2</a>. Bài này thú vị ở chỗ, thay vì như thông thường họ chỉ đưa mình đề bài, thì bài này họ còn đưa cho mình một bài khác ví dụ mẫu cho phương pháp mà họ muốn mình dùng. Nói chung là giải xong sẽ học được phương pháp gì đó mới, chỉ tiếc là tui lúc đó đã quyết định gập máy đi ngủ 🙂Mới đầu năm nay thì tui thử mở ra làm lại, và congrats, não tui đã được thông, giờ tui đi thông ngược lại cho mấy bạn đây.</p>
+      <content:encoded><![CDATA[<p>Tui thì đó giờ hay cày rank trên <a href="https://www.codewars.com">Codewars</a>, chủ yếu là vì giao diện của nó ngầu lòi hơn ba mấy web thuật toán chán ngắt khác 😄 Chơi một thời gian thì tui cũng lên được 4 kyu và gặp phải bài toán này <a href="https://www.codewars.com/kata/57040e445a726387a1001cf7">The fusc function - Part 2</a>. Bài này thú vị ở chỗ, thay vì như thông thường họ chỉ đưa mình đề bài, thì bài này họ còn đưa cho mình một bài khác ví dụ mẫu cho phương pháp mà họ muốn mình dùng. Nói chung là giải xong sẽ học được phương pháp gì đó mới, chỉ tiếc là tui lúc đó đã quyết định gập máy đi ngủ 🙂 Mới đầu năm nay thì tui thử mở ra làm lại, và congrats, não tui đã được thông, giờ tui đi thông ngược lại cho mấy bạn đây.</p>
 <p>Trong bài viết này, tui sẽ đi giải quyết bài toán trên trước, mục tiêu bài toán là đưa từ một hàm đệ quy thành một hàm đệ quy đuôi (tail call elimination), đừng lo, tui sẽ giải thích kĩ hơn những thuật ngữ này ở phía dưới. Sau đó tui sẽ chia sẻ một chút về góc nhìn của tui tại sao phương pháp của bài toán này khá độc đáo so với thực tế. Okay triển thôi nào!</p>
 <h2>Nội dung bài toán</h2>
 <p>Dành cho những con người chây lười không chịu bấm vào link đọc trước (ừa tui đang nói bạn đó) thì tui sẽ trình bày lại bài toán ở đây luôn, <del>chứ không phải vì tui muốn bài mình dài ra đâu nha</del>. Với lại tui cũng sẽ làm rõ một số chỗ mà bài viết gốc không đề cập tới.</p>
@@ -87,7 +87,7 @@ function fact(n, acc) {
 <li><span class="math inline">\((*)\)</span> cho ta công thức đệ quy của <span class="math inline">\(F\)</span>.</li>
 <li><span class="math inline">\((5)\)</span> cho ta base case đệ quy của <span class="math inline">\(F\)</span>.</li>
 </ul>
-<p>Hy vọng tới đây mọi thứ make sense được với bạn, nếu lú thì cũng không sao cứ đọc lại nhé, mấy lần đầu mình đọc cũng lú 🙂Giờ thì code thôi (2 code dưới này đều là của tác giả bài toán hết nha, không phải của tui):</p>
+<p>Hy vọng tới đây mọi thứ make sense được với bạn, nếu lú thì cũng không sao cứ đọc lại nhé, mấy lần đầu mình đọc cũng lú 🙂 Giờ thì code thôi (2 code dưới này đều là của tác giả bài toán hết nha, không phải của tui):</p>
 <pre><code class="language-python">def fib(n):
 
     def F(a, b, n):
