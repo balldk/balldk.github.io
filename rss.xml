@@ -4,7 +4,7 @@
     <link>https://justkhoa.me</link>
     <description>K&#39;s corner blog, mostly about maths and programming</description>
     <managingEditor> (ND Dang Khoa)</managingEditor>
-    <pubDate>Wed, 08 Dec 2021 10:50:36 +0000</pubDate>
+    <pubDate>Fri, 10 Dec 2021 04:57:09 +0000</pubDate>
     <image>
       <url>https://justkhoa.me/logo.svg</url>
       <title>logo</title>
@@ -282,7 +282,7 @@ Nói thiệt là tui cũng không biết phải gọi chức năng này là gì 
       <link>https://justkhoa.me/posts/about</link>
       <description>&lt;p&gt;Đôi lời về bản thân và blog của tui&lt;/p&gt;&#xA;</description>
       <content:encoded><![CDATA[<h2>Tui là ai?</h2>
-<p>Tui hiện đang là sinh viên quèn tại khoa toán trường Đại học Khoa học tự nhiên - TPHCM. Xuất thân là dân tin, đam mê và bắt đầu học lập trình từ sớm so với bạn bè đồng trang lứa, đã từng kinh qua nhiều món như Web dev, App dev, Blockchain, CP,&hellip;. Với khả năng cũng như đam mê cháy bỏng ấy, tui đã quyết định theo đuổi sự nghiệp&hellip;&hellip;..học toán và làm toán 🙂(còn lý do thì chắc phải dành riêng cho một bài viết khác). Tui hiện tại thì mong muốn tương lai được làm nghiên cứu về toán, toán gì thì tui chưa dám xác định, một phần là vì thấy hướng nào cũng hay ho hết, phần lớn còn lại thì vì trình còn gà quá &#x1f622;.</p>
+<p>Tui hiện đang là sinh viên quèn tại khoa toán trường Đại học Khoa học tự nhiên - TPHCM. Xuất thân là dân tin, đam mê và bắt đầu học lập trình từ sớm so với bạn bè đồng trang lứa, đã từng kinh qua nhiều món như Web dev, App dev, Blockchain, CP,&hellip;. Với khả năng cũng như đam mê cháy bỏng ấy, tui đã quyết định theo đuổi sự nghiệp&hellip;&hellip;..học toán và làm toán 🙂 (còn lý do thì chắc phải dành riêng cho một bài viết khác). Tui hiện tại thì mong muốn tương lai được làm nghiên cứu về toán, toán gì thì tui chưa dám xác định, một phần là vì thấy hướng nào cũng hay ho hết, phần lớn còn lại thì vì trình còn gà quá &#x1f622;.</p>
 <h2>Đây là đâu?</h2>
 <p>Đây là góc nhỏ để tui bày tỏ, chém gió, chia sẻ kiến thức và cuộc sống của tui với mọi người. Có lẽ tui sẽ viết chủ yếu về toán và tin (tất nhiên, ngành tui học mà 🙂), tui nghĩ việc chia sẻ kiến thức cho người khác, đồng thời tổng hợp lại thành một bài viết có cấu trúc là một cách hiệu quả để tui review và trau dồi lại kiến thức, <del>đấy là người ta sẽ nói thế chứ tui chủ yếu muốn loè mắt mọi người thôi</del>. Ngoài ra thì tui cũng muốn kiếm thêm nguồn động lực để học nữa, chứ tui lười lắm &#x1f62d;.</p>
 <h3>Lịch sử của blog</h3>
@@ -307,11 +307,11 @@ Cụ thể thì tui học được cách:</li>
 </ol>
 <h3>Những công nghệ tui dùng để làm blog</h3>
 <p><strong>Frontend:</strong> Vue (Nuxt)<br>
-Lý do dùng Vue đơn giản là vì nó đơn giản 🙂còn tại sao dùng kèm Nuxt thì là vì bản thân Vue là client-side rendering, mà tui lại muốn có thêm server side rendering để tối ưu SEO tốt hơn, xịn xò hơn.</p>
+Lý do dùng Vue đơn giản là vì nó đơn giản 🙂 còn tại sao dùng kèm Nuxt thì là vì bản thân Vue là client-side rendering, mà tui lại muốn có thêm server side rendering để tối ưu SEO tốt hơn, xịn xò hơn.</p>
 <p><strong>Backend:</strong> Go<br>
 Ban đầu tui tính dùng NodeJS vì deploy chung với Nuxt sẽ dễ hơn, nhưng mà sau nhiều năm xương máu code NodeJS thì tui đã nhận ra mỗi lần code xong, codebase sẽ rất là gớm và dễ lỗi vì Javascript không strongly-typed. Thật ra tui biết codebase gớm một phần là do bản thân gà, với cả nếu dùng chung với Typescript cũng khắc phục được chuyện strongly-typed, nhưng dù sao thì tui cũng đã có kinh nghiệm với Go, từng được sờ vào dự án Go thực tế rồi, với tui cũng tính đầu tư làm blog này lâu dài nên lỡ xài TS mà cũng gớm như thằng JS thì hơi toang 🙂.</p>
 <p><strong>Database:</strong> MySQL<br>
-Thằng này thì khỏi bình luận nhé, thuận mắt thì xài thôi 🙂Vả lại biết mỗi thằng này với MongoDB, mà MongoDB tui dùng thấy không linh hoạt được, nên thôi dùng MySQL cho lành.</p>
+Thằng này thì khỏi bình luận nhé, thuận mắt thì xài thôi 🙂 Vả lại biết mỗi thằng này với MongoDB, mà MongoDB tui dùng thấy không linh hoạt được, nên thôi dùng MySQL cho lành.</p>
 <p>Ngoài ra thì tui còn dùng Docker để deploy lên Cloud Run của gu gồ, database cũng dùng của gu gồ nốt. Về phía client thì tui dùng Katex để render Latex, nghe bảo thằng này nhanh hơn Mathjax nên dùng thôi :))</p>
 <h3>Định hướng cho blog</h3>
 <p>Như tui cũng có nói, nội dung chủ yếu của blog sẽ là toán + tin, và tui cũng tính sẽ đưa một số project của mình lên nữa, làm như là một portfolio luôn. Hy vọng mọi người sẽ ủng hộ nhiệt tình &#x1f622;.</p>
