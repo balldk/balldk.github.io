@@ -4,12 +4,163 @@
     <link>https://justkhoa.me</link>
     <description>K&#39;s corner blog, mostly about maths and programming</description>
     <managingEditor> (ND Dang Khoa)</managingEditor>
-    <pubDate>Sat, 02 Jul 2022 19:00:03 +0000</pubDate>
+    <pubDate>Tue, 16 Aug 2022 20:33:25 +0000</pubDate>
     <image>
       <url>https://justkhoa.me/logo.svg</url>
       <title>logo</title>
       <link></link>
     </image>
+    <item>
+      <title></title>
+      <link>https://justkhoa.me/posts/vila</link>
+      <description>&lt;h2&gt;Một số ví dụ&lt;/h2&gt;&#xA;&lt;p&gt;Câu lệnh cơ bản&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;cho A = [1..100]&#xA;&#xA;với mỗi n thuộc A, n :&#xA;&#x9;nếu n % 3 == 1:&#xA;&#x9;&#x9;xuất n, &amp;quot;chia 3 dư 1&amp;quot;&#xA;&#x9;còn nếu n % 3 == 2:&#xA;&#x9;&#x9;xuất n, &amp;quot;chia 3 dữ 2&amp;quot;&#xA;&#x9;còn không:&#xA;&#x9;&#x9;xuất n, &amp;quot;chia hết cho 3&amp;quot;...&lt;/code&gt;&lt;/pre&gt;&#xA;</description>
+      <content:encoded><![CDATA[<h2>Một số ví dụ</h2>
+<p>Câu lệnh cơ bản</p>
+<pre><code>cho A = [1..100]
+
+với mỗi n thuộc A, n :
+	nếu n % 3 == 1:
+		xuất n, &quot;chia 3 dư 1&quot;
+	còn nếu n % 3 == 2:
+		xuất n, &quot;chia 3 dữ 2&quot;
+	còn không:
+		xuất n, &quot;chia hết cho 3&quot;
+</code></pre>
+<p>Tính hàm hợp, với <span class="math inline">\((f.g)(x) = f(g(x))\)</span></p>
+<pre><code>cho f(x) = 2x(x^2 - 2x)(3x - 5)
+cho g(x) = 5x
+
+cho a = 5
+xuất f.g(a)
+</code></pre>
+<p><code>2x(x^2 - 2x)(3x - 5)</code> là cách viết ngắn gọn hơn của <code>2*x*(x^2 - 2*x)*(3*x - 5)</code></p>
+<p>Sử dụng list comprehension để định nghĩa mảng vô hạn các phần tử, với <code>fib[i]</code> là phần tử thứ <code>i</code> trong dãy fibonacci</p>
+<pre><code>cho fib = {0, 1, 1} + { fib[n-1] + fib[n-2] | n thuoc [3..] }
+
+với mỗi n thuộc fib:
+    xuất n
+</code></pre>
+<p>List comprehension có tính &ldquo;lazy&rdquo;,  tức là khi ta định nghĩa <code>fib</code> thì chưa phần tử nào trong mảng được tính cả, chỉ khi ta cần dùng tới phần tử nào thì phần tử đó mới được tính ra, do đó ta có thể dễ dàng tạo ra mảng vô hạn phần tử trong Vila</p>
+<h2>Cài đặt</h2>
+<h2>Cú pháp</h2>
+<h3>Khai báo biến</h3>
+<p>Biến được định nghĩa thông qua từ khóa <code>cho</code>, với cấu trúc như sau</p>
+<pre><code>cho &lt;tên biến&gt; = &lt;biểu thức&gt;
+</code></pre>
+<p>Ví dụ</p>
+<pre><code>cho x = 10
+cho ngày sinh = 15
+</code></pre>
+<p>Một số hằng số được định nghĩa sẵn</p>
+<pre><code>xuất Pi // 3.14159...
+xuất E  // 2.71828...
+</code></pre>
+<h3>Khai báo hàm</h3>
+<p>Khai báo hàm tương đối giống với khai báo biến</p>
+<pre><code>cho &lt;tên hàm&gt;(&lt;danh sách các tham số&gt;) = &lt;biểu thức&gt;
+</code></pre>
+<p>Ví dụ</p>
+<pre><code>cho f(x,y,z) = 2x(x^2 - 2x + 1) - y^z
+xuất f(100, 5, 3)
+</code></pre>
+<p>Ở ví dụ trên, hàm chỉ được định nghĩa ngắn gọn trong một hàng, để viết một số hàm phức tạp, cần thực hiện nhiều câu lệnh hơn, ta có thể dùng &ldquo;Biểu thức nhóm&rdquo;</p>
+<pre><code>cho f(x) = (cho a = 5; cho b = 6; a+b+x)
+xuất f(2) // 13
+</code></pre>
+<p>Biểu thức cuối cùng trong biểu thức nhóm sẽ là giá trị trả về cho toàn bộ biểu thức, ở ví dụ trên <code>a+b+x = 5+6+2 = 13</code> là giá trị của <code>f(2)</code></p>
+<p>Trên thực tế ta sẽ tách các câu lệnh trong biểu thức nhóm bằng cách xuống dòng</p>
+<pre><code>// Trả về đúng nếu n là số chẵn, sai nếu n là số lẻ
+cho là chẵn(n) = (
+	cho two = 2
+	nếu n % two == 0:
+		=&gt; đúng
+	sai
+)
+</code></pre>
+<p>Dấu suy ra <code>=&gt;</code> có ý nghĩa tương đương với câu lệnh <code>return</code> ở những ngôn ngữ khác, nếu gặp <code>=&gt;</code> thì biểu thức nhóm sẽ kết thúc và lấy biểu thức sau <code>=&gt;</code> làm giá trị trả về</p>
+<p>Một số hàm được định nghĩa sẵn</p>
+<pre><code>xuất cos(Pi)  // -1
+xuất sin(Pi)  // 0
+xuất tan(Pi)  // 0
+xuất E^ln(2)  // 2
+</code></pre>
+<h3>Các kiểu dữ liệu cơ bản</h3>
+<pre><code>// Số nguyên
+15
+// số thực
+3.14
+// Phân số
+3/14
+</code></pre>
+<h3>Phép toán</h3>
+<h4>Số học</h4>
+<pre><code>cho a = 15
+cho b = 3/5
+
+xuất a + b  // 13/2
+xuất a - b  // 3/2
+xuất a * b  // 10
+xuất a / b  // 8/5
+xuất a ^ b  // 32
+xuất a % 7  // 4
+</code></pre>
+<h4>Logic</h4>
+<pre><code>xuất 1 == 2  // sai
+xuất 1 != 2  // đúng
+xuất 1 &lt; 1   // sai
+xuất 1 &lt;= 1  // đúng
+xuất 1 &gt; 1   // sai
+xuất 1 &gt;= 1  // đúng
+
+xuất đúng và sai  // sai
+xuất đúng hay sai // đúng
+</code></pre>
+]]></content:encoded>
+      <author>ND Dang Khoa</author>
+      <guid>https://justkhoa.me/posts/vila</guid>
+      <pubDate>Tue, 16 Aug 2022 20:32:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>This post is only for testing purposes</title>
+      <link>https://justkhoa.me/posts/test-post</link>
+      <description>&lt;p&gt;This post is only for testing purposes&lt;/p&gt;&#xA;</description>
+      <content:encoded><![CDATA[<h2>Write some code</h2>
+<p>Javascript</p>
+<pre><code class="language-js">function sum() {
+	var s = 0
+	for (let i = 0; i &lt; 100; i++) {
+		s += i * 2
+	}
+	console.log('end line')
+}
+</code></pre>
+<p>HTML</p>
+<pre><code class="language-html">&lt;div class=&quot;container&quot;&gt;
+	&lt;h1&gt;This is a title&lt;/h1&gt;
+&lt;/div&gt;
+</code></pre>
+<p>Inline code<br>
+<code>console.log(&quot;Hello world&quot;)</code></p>
+<h2>Latex</h2>
+<p><span class="math display">\[\begin{align*}
+&fusc(0)\ \ \ \ \ \ \ \ = 0\\
+&fusc(1)\ \ \ \ \ \ \ \ = 1\\
+&fusc(2n)\ \ \ \ \ \ = fusc(n)\\
+&fusc(2n + 1) = fusc(n) + fusc(n + 1)\\
+\end{align*}
+\]</span></p>
+<h2>Images</h2>
+<p>Desktop screenshot</p>
+<p><img src="https://i.imgur.com/yoKDKTn.png" alt="submit-code-img"></p>
+<p>Mobile screenshot</p>
+<p><img src="https://i.pinimg.com/236x/a5/94/15/a5941570b14940255f5277ed7a29a37a.jpg" alt="680 Screenshot ideas in 2021 | iphone, iphone organization, iphone layout"></p>
+<p>Logo</p>
+<p><img src="https://rustacean.net/assets/rustlogo.png" alt="Rust logo"></p>
+]]></content:encoded>
+      <author>ND Dang Khoa</author>
+      <guid>https://justkhoa.me/posts/test-post</guid>
+      <pubDate>Tue, 16 Aug 2022 20:31:45 +0000</pubDate>
+    </item>
     <item>
       <title>Góc nhìn khác về tail call elimination</title>
       <link>https://justkhoa.me/posts/interesting-tail-call-elimination-problem</link>
@@ -44,19 +195,19 @@ Phần này trong lúc đọc mấy bạn không cần quá hoang mang những t
 // fact(n-1) thì hàm phải thực hiện thêm phép nhân
 // với n nữa mới kết thúc
 function fact(n) {
-	if (n === 1)
-		return 1
-	else
-		return n * fact(n-1)
+    if (n === 1)
+        return 1
+    else
+        return n * fact(n-1)
 }
 
 // Đây là tail recursion vì chỉ cần gọi fact(n-1, acc*n)
 // xong thì hàm sẽ kết thúc
 function fact(n, acc) {
-	if (n === 1)
-		return acc
-	else
-		return fact(n-1, acc*n)
+    if (n === 1)
+        return acc
+    else
+        return fact(n-1, acc*n)
 }
 </code></pre>
 <p>Bạn có thể tự tìm hiểu kĩ hơn tại sao khi đưa về tail recursion thì sẽ tối ưu hơn, nhưng để nói sơ qua thì bình thường khi bạn gọi đệ quy, những giá trị, ô nhớ các thứ ở hiện tại sẽ được đẩy lên call stack, cứ mỗi lần gọi đệ quy lồng nhau thì call stack sẽ càng ngày càng cao lên, bộ nhớ phình to ra, cho đến khi vượt quá call stack size thì chương trình trả về lỗi stack overflow. Tail recursion thì lại khác, vì đệ quy là câu lệnh được thực hiện cuối cùng nên compiler sẽ thoải mái giải phóng stack hiện tại vì nó chắc chắn stack hiện tại không cần dùng nữa, nên dù có gọi đệ quy vô hạn lần thì cũng không lo bị stack overflow.</p>
@@ -158,18 +309,18 @@ F(a,b,2n+1)
 <p>Code thoai:</p>
 <pre><code class="language-js">function fusc(n) {
 
-	function F(a, b, k) {
-		if (k === 0)  // See (6.1)
-			return b
-		else if (k === 1)  // See (6.2)
-			return a + b
-		else if (k % 2 === 0)  // See (*)
-			return F(a+b, b, Math.round(k / 2))
-		else  // See (**)
-			return F(a, a+b, Math.round((k-1) / 2))
-	}
+    function F(a, b, k) {
+        if (k === 0)  // See (6.1)
+            return b
+        else if (k === 1)  // See (6.2)
+            return a + b
+        else if (k % 2 === 0)  // See (*)
+            return F(a+b, b, Math.round(k / 2))
+        else  // See (**)
+            return F(a, a+b, Math.round((k-1) / 2))
+    }
 
-	return F(1, 0, n)  // See (7)
+    return F(1, 0, n)  // See (7)
 }
 </code></pre>
 <p>Submit thử:<br>
@@ -189,18 +340,18 @@ fusc n = aux 1 0 n
 <p>Trong pure functional programming language (FP) như Haskell thì không có vòng lặp cho bạn dùng, thay vào đó nếu bạn muốn lặp thì bạn phải xây dựng đệ quy. Mà thực tế có những tính năng bạn cần lặp vô hạn hoặc lặp rất nhiều lần, để không bị stack overflow trên những tính năng đó thì họ phải hướng tới tail recursion. Vậy làm sao để xây dựng tail recursion? ừa thì linh cảm, tâm linh là chính thôi, lấy ví dụ cho hàm tính giai thừa:</p>
 <pre><code class="language-js">// Đệ quy thông thường
 function fact(n) {
-	if (n === 1)
-		return 1
-	else
-		return n * fact(n-1)
+    if (n === 1)
+        return 1
+    else
+        return n * fact(n-1)
 }
 
 // Tail recursion
 function fact(n, acc) {
-	if (n === 1)
-		return acc
-	else
-		return fact(n-1, acc*n)
+    if (n === 1)
+        return acc
+    else
+        return fact(n-1, acc*n)
 }
 fact(10, 1) // tính 10!
 </code></pre>
@@ -213,7 +364,7 @@ Góc bài tập về nhà: Bạn có thể thử suy nghĩ cách chứng minh đ
 ]]></content:encoded>
       <author>ND Dang Khoa</author>
       <guid>https://justkhoa.me/posts/interesting-tail-call-elimination-problem</guid>
-      <pubDate>Tue, 31 Aug 2021 20:31:59 +0000</pubDate>
+      <pubDate>Tue, 16 Aug 2022 20:31:32 +0000</pubDate>
     </item>
     <item>
       <title>TODO List cho tính năng của blog</title>
@@ -275,7 +426,7 @@ Nói thiệt là tui cũng không biết phải gọi chức năng này là gì 
 ]]></content:encoded>
       <author>ND Dang Khoa</author>
       <guid>https://justkhoa.me/posts/TODO</guid>
-      <pubDate>Mon, 30 Aug 2021 21:50:21 +0000</pubDate>
+      <pubDate>Tue, 16 Aug 2022 20:31:20 +0000</pubDate>
     </item>
     <item>
       <title>Tui là ai, đây là đâu?</title>
@@ -320,7 +471,7 @@ Thằng này thì khỏi bình luận nhé, thuận mắt thì xài thôi 🙂 V
 ]]></content:encoded>
       <author>ND Dang Khoa</author>
       <guid>https://justkhoa.me/posts/about</guid>
-      <pubDate>Mon, 30 Aug 2021 01:02:19 +0000</pubDate>
+      <pubDate>Tue, 16 Aug 2022 20:30:05 +0000</pubDate>
     </item>
   </channel>
 </rss>
