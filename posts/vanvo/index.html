@@ -1,0 +1,192 @@
+<!doctype html>
+<html data-n-head-ssr lang="vi" data-n-head="%7B%22lang%22:%7B%22ssr%22:%22vi%22%7D%7D">
+  <head>
+    <title>VanVo - Ngôn ngữ với cú pháp thuần Việt | Góc nhỏ của K</title><meta data-n-head="ssr" charset="utf-8"><meta data-n-head="ssr" name="viewport" content="width=device-width,initial-scale=1"><meta data-n-head="ssr" data-hid="og:image" property="og:image" content="https://justkhoa.me/meta-img.png"><meta data-n-head="ssr" data-hid="og:site_name" property="og:site_name" content="Góc nhỏ của K"><meta data-n-head="ssr" data-hid="description" name="description" content="Tất tần tật về ngôn ngữ lập trình VanVo (Văn Vở)."><meta data-n-head="ssr" data-hid="og:title" property="og:title" content="VanVo - Ngôn ngữ với cú pháp thuần Việt | Góc nhỏ của K"><meta data-n-head="ssr" data-hid="og:description" property="og:description" content="Tất tần tật về ngôn ngữ lập trình VanVo (Văn Vở)."><meta data-n-head="ssr" data-hid="keywords" name="keywords" content="project"><meta data-n-head="ssr" data-hid="og:type" property="og:type" content="article"><link data-n-head="ssr" rel="icon" type="image/x-icon" href="/logo.svg"><link data-n-head="ssr" rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous"><link data-n-head="ssr" rel="preconnect" href="https://fonts.googleapis.com"><link data-n-head="ssr" rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"><link data-n-head="ssr" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Signika:wght@300;400;500;600;700&display=swap"><link data-n-head="ssr" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"><link data-n-head="ssr" rel="stylesheet" href='https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"'><script data-n-head="ssr" async src="https://www.googletagmanager.com/gtag/js?id=G-4MQS973THQ"></script><link rel="preload" href="/_nuxt/fba887b.js" as="script"><link rel="preload" href="/_nuxt/09d1fcd.js" as="script"><link rel="preload" href="/_nuxt/css/c333c37.css" as="style"><link rel="preload" href="/_nuxt/2af6bb6.js" as="script"><link rel="preload" href="/_nuxt/css/5de77db.css" as="style"><link rel="preload" href="/_nuxt/34c8403.js" as="script"><link rel="preload" href="/_nuxt/css/e4d5fac.css" as="style"><link rel="preload" href="/_nuxt/37da564.js" as="script"><link rel="preload" href="/_nuxt/e0b0199.js" as="script"><link rel="preload" href="/_nuxt/css/a3d379c.css" as="style"><link rel="preload" href="/_nuxt/febdb27.js" as="script"><link rel="stylesheet" href="/_nuxt/css/c333c37.css"><link rel="stylesheet" href="/_nuxt/css/5de77db.css"><link rel="stylesheet" href="/_nuxt/css/e4d5fac.css"><link rel="stylesheet" href="/_nuxt/css/a3d379c.css"><link rel="preload" href="/_nuxt/static/1660846254/posts/vanvo/state.js" as="script"><link rel="preload" href="/_nuxt/static/1660846254/posts/vanvo/payload.js" as="script"><link rel="preload" href="/_nuxt/static/1660846254/manifest.js" as="script">
+  </head>
+  <body>
+    <div data-server-rendered="true" id="__nuxt"><!----><div id="__layout"><div><article><div class="head-bar"><div class="post-logo-container"><a href="/" class="post-logo logo nuxt-link-active"></a></div></div> <div class="post-container"><!----> <div class="post-content-container"><div class="post-header"><h1 class="post-title">VanVo - Ngôn ngữ với cú pháp thuần Việt</h1> <p class="post-info"><i class="far fa-edit"></i> Đăng vào 19-8-2022</p> <p class="post-info"><i class="far fa-clock"></i> 6 phút đọc</p> <!----></div> <div class="post-content"><p>VanVo (Văn Vở) là ngôn ngữ lập trình được thiết kế với cú pháp thuần Việt, nhưng không chỉ đơn giản là dịch lại một cách gượng gạo từ các ngôn ngữ tiếng Anh khác, mình cố gắng để thiết kế một ngôn ngữ sao cho các câu lệnh trông tự nhiên như tiếng Việt nhất có thể, thuận tiện cho người Việt nhất có thể. Điển hình là bạn có thể đặt tên định danh có khoảng trắng như <code>số nguyên tố</code>.</p>
+<p>Ngôn ngữ sẽ có hơi thiên hướng toán học, những bạn học toán có thể sẽ cảm thấy quen thuộc hơn, vì mình định hướng ngôn ngữ được sử dụng như một CAS (Computer Algebra System). Tuy nhiên VanVo vẫn có thể dùng như một ngôn ngữ đa mục đích (General-purpose language) thông thường.</p>
+<h2>Điểm qua một số tính năng của VanVo</h2>
+<ul>
+<li>Hỗ trợ những câu lệnh rẽ nhánh, cấu trúc lặp, cấu trúc dữ liệu và phép toán cơ bản.</li>
+<li>Có thể đặt tên định danh có khoảng trắng như <code>số nguyên tố</code>.</li>
+<li>Không cần <code>;</code> ở cuối mỗi câu lệnh, và các khối lệnh sẽ được xác định bởi mức thụt dòng (indent level) như Python.</li>
+<li>Phép nhân giữa hằng số, biến và mở ngoặc có thể lược bỏ, ví dụ <code>2x(x-1)</code> sẽ tương đương với <code>2*x*(x-1)</code>.</li>
+<li>List comprehension.</li>
+<li>Lazy evaluation.</li>
+<li>Các thao tác và phép toán trên tập hợp như hội, giao, hiệu, tích Descartes.</li>
+</ul>
+<h2>Một số ví dụ minh họa</h2>
+<p><strong>Ví dụ 1:</strong> Xét tính chia hết của n cho 2 và 3, với n là các số nguyên trong khoảng <span class="math inline">\([1,100]\)</span></p>
+<pre><code class="language-vila">cho A = [1..100]
+
+với mỗi n thuộc A:
+	nếu n % 2 == 0:
+		xuất n, "chia hết cho 2"
+	còn nếu n % 3 == 0:
+		xuất n, "chia hết cho 3"
+	còn không:
+		xuất n, "không chia hết cho cả 2 và 3"
+</code></pre>
+<p><strong>Ví dụ 2:</strong> Tính giá trị của hàm hợp, với <span class="math inline">\((f.g)(x) = f(g(x))\)</span></p>
+<pre><code class="language-vila">cho f(x) = 2x(x^2 - 2x)(3x - 5)
+cho g(x) = 5x
+
+cho a = 5
+xuất f.g(a)
+</code></pre>
+<p><code>2x(x^2 - 2x)(3x - 5)</code> là cách viết ngắn gọn hơn của <code>2*x*(x^2 - 2*x)*(3*x - 5)</code>.</p>
+<p><strong>Ví dụ 3:</strong> Sử dụng list comprehension để định nghĩa mảng vô hạn các phần tử, với <code>fib[i]</code> là phần tử thứ <code>i</code> trong dãy fibonacci</p>
+<pre><code class="language-vila">cho fib = {0, 1, 1} + { fib[n-1] + fib[n-2] | n thuộc [3..] }
+
+với mỗi n thuộc fib:
+    xuất n
+</code></pre>
+<p>List comprehension có tính “lazy”,  tức là chỉ khi ta cần dùng phần tử nào trong mảng thì phần tử đó mới được tính ra, do đó ta có thể dễ dàng định nghĩa ra mảng vô hạn phần tử trong VanVo.</p>
+<h2>Cài đặt</h2>
+<h2>Cú pháp</h2>
+<p><strong>Lưu ý</strong>: vì mình có sử dụng ligature font cho code trên web nên các kí hiệu như =>, >=, &lt;=, != sẽ trở thành <code>=></code>, <code>>=</code>, <code>&lt;=</code>, <code>!=</code>.</p>
+<h3>Quy định đặt tên và từ khóa</h3>
+<p>Tên định danh là tên được bạn đặt cho biến và hàm trong chương trình, VanVo bao gồm các quy tắc đặt tên định danh như sau:</p>
+<ul>
+<li>Có thể chứa các kí tự <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, <code>_</code> và toàn bộ bảng chữ cái cũng như dấu trong tiếng Việt.</li>
+<li>Không được bắt đầu bằng một chữ số.</li>
+<li>Khác với hầu hết các ngôn ngữ khác, VanVo cho phép bạn đặt tên định danh với khoảng trắng, nhưng có một lưu ý là khoảng trắng giữa các từ không quan trọng, ví dụ <code>nguyên tố</code> và <code>nguyên   tố </code> là hai tên định danh giống nhau.</li>
+<li>Phân biệt hoa thường (case sensitive).</li>
+<li>Không được đặt tên định danh trùng với từ khóa.</li>
+</ul>
+<p>Danh sách các từ khóa trong VanVo:</p>
+<p><code>cho</code>, <code>thuộc</code>, <code>và</code>, <code>hay</code>, <code>với</code>, <code>với mỗi</code>, <code>nếu</code>, <code>còn nếu</code>, <code>còn không</code>, <code>đúng</code>, <code>sai</code>, <code>nhập</code>, <code>xuất</code></p>
+<p><strong>Note:</strong> Bạn có thể viết các từ khóa không dấu, ví dụ <code>neu</code>, <code>voi</code> là các từ khóa hợp lệ. Tuy nhiên bạn chỉ có thể viết đầy đủ dấu hoặc là viết không dấu hoàn toàn, ví dụ <code>đung</code> không phải là một từ khóa hợp lệ vì thiếu dấu sắc.</p>
+<h3>Khai báo biến</h3>
+<p>Biến được định nghĩa thông qua từ khóa <code>cho</code>, với cấu trúc như sau</p>
+<pre><code class="language-bnf">cho &lt;tên biến> = &lt;biểu thức>
+</code></pre>
+<p>Ví dụ</p>
+<pre><code class="language-vila">cho x = 10.2
+cho ngày sinh = 15
+</code></pre>
+<p>Một số hằng số được định nghĩa sẵn</p>
+<pre><code class="language-vila">xuất Pi // 3.14159...
+xuất E  // 2.71828...
+</code></pre>
+<h3>Khai báo hàm</h3>
+<p>Khai báo hàm tương đối giống với khai báo biến</p>
+<pre><code class="language-bnf">cho &lt;tên hàm>(&lt;danh sách các tham số>) = &lt;biểu thức>
+</code></pre>
+<p>Ví dụ</p>
+<pre><code class="language-vila">cho f(x,y,z) = 2x(x^2 - 2x + 1) - y^z
+xuất f(100, 5, 3)
+</code></pre>
+<p>Ở ví dụ trên, hàm chỉ được định nghĩa ngắn gọn trong một hàng, để viết một số hàm phức tạp, cần thực hiện nhiều câu lệnh hơn, ta có thể dùng “Biểu thức nhóm”</p>
+<pre><code class="language-vila">cho f(x) = (cho a = 5; cho b = 6; a+b+x)
+xuất f(2) // 13
+</code></pre>
+<p>Biểu thức cuối cùng trong biểu thức nhóm sẽ là giá trị trả về cho toàn bộ biểu thức, ở ví dụ trên <code>a+b+x = 5+6+2 = 13</code> là giá trị của <code>f(2)</code></p>
+<p>Trên thực tế ta sẽ xuống dòng tách các câu lệnh trong biểu thức nhóm</p>
+<pre><code class="language-vila">// Trả về đúng, nếu n là số chẵn, sai nếu n là số lẻ
+cho là chẵn(n) = (
+	cho two = 2
+	nếu n % two == 0:
+		=> đúng
+	sai
+)
+</code></pre>
+<p>Dấu suy ra <code>=></code> có ý nghĩa tương đương với câu lệnh <code>return</code> ở những ngôn ngữ khác, khi gặp <code>=></code> thì biểu thức nhóm sẽ kết thúc và trả về giá trị cho biểu thức</p>
+<p>Một số hàm được định nghĩa sẵn</p>
+<pre><code class="language-vila">xuất cos(Pi)  // -1
+xuất sin(Pi)  // 0
+xuất tan(Pi)  // 0
+xuất E^ln(2)  // 2
+</code></pre>
+<h3>Các kiểu dữ liệu cơ bản</h3>
+<pre><code class="language-vila">// Số nguyên
+15
+// số thực
+3.14
+// Phân số
+3/14
+// Số phức
+3/2 - 2I
+// Logic
+đúng
+sai
+</code></pre>
+<h3>Phép toán</h3>
+<h4>Số học</h4>
+<pre><code class="language-vila">cho a = 15
+cho b = 3/5
+
+xuất a + b  // 13/2
+xuất a - b  // 3/2
+xuất a * b  // 10
+xuất a / b  // 8/5
+xuất a ^ b  // 32
+xuất a % 7  // 4
+</code></pre>
+<h4>Logic</h4>
+<pre><code class="language-vila">xuất 1 == 2  // sai
+xuất 1 != 2  // đúng
+xuất 1 &lt; 1   // sai
+xuất 1 &lt;= 1  // đúng
+xuất 1 > 1   // sai
+xuất 1 >= 1  // đúng
+
+xuất đúng và sai  // sai
+xuất đúng hay sai // đúng
+</code></pre>
+<h3>Câu lệnh điều kiện</h3>
+<p>Câu lệnh điều kiện có cấu trúc như sau</p>
+<pre><code class="language-bnf">nếu &lt;điều kiện 1>:
+	...
+còn nếu &lt;điều kiện 2>:
+	...
+còn không:
+	...
+</code></pre>
+<p><code>...</code> ở đây là khối lệnh, một khối lệnh được xác định bởi mức thụt dòng (indent level) của đoạn code. Không như Python, ở trong VanVo thì indent size được cố định là 4, tab cũng được chương trình mặc định hiểu là 4 spaces.</p>
+<p>Ví dụ</p>
+<pre><code class="language-vila">cho n = 100
+
+nếu n &lt; 0:
+	xuất n, "là số âm"
+còn nếu n > 0:
+	xuất n, "là số dương"
+còn không:
+	xuất n, "là 0"
+</code></pre>
+<h3>Cấu trúc lặp</h3>
+<p>Trong VanVo có hai cấu trúc lặp</p>
+<h3>Tập hợp</h3>
+<p>Ban đầu khi mình phát thảo ý tưởng cho ngôn ngữ này thì mình lấy tập hợp, các phép toán và mệnh đề trên tập hợp làm tư tưởng chính. Nhưng càng về sau thì mình nhận ra là để xây dựng khái niệm tập hợp chuẩn thì tương đối không hiệu quả, và hầu hết các trường hợp thì mảng vẫn hữu dụng hơn, cho nên khái niệm mảng và tập hợp trong VanVosssss mình sẽ dùng trùng lặp nhau, bạn đọc nên hiểu hai khái niệm này trong VanVo là một, nhưng chúng không tương đương với khái niệm tập hợp thông thường.</p>
+<h4>Khoảng Thực (Real interval)</h4>
+<p>Khoảng thực <span class="math inline">\([a,b]\)</span> là tập các số thực <span class="math inline">\(x\)</span> sao cho <span class="math inline">\(a\leq x \leq b\)</span>, bạn có thể dùng toán tử <code>thuộc</code> để xét xem một giá trị <span class="math inline">\(x\)</span> có thuộc vào một tập hay không, lấy ví dụ</p>
+<pre><code class="language-vila">cho A = [0,5]
+
+xuất 2 thuộc A    // đúng
+xuất 5 thuộc A    // đúng
+xuất -1 thuộc A   // sai
+xuất I thuộc A    // sai
+</code></pre>
+<h4>Khoảng rời rạc (Discrete interval)</h4>
+<p>Khoảng rời rạc <span class="math inline">\([a..b]\)</span> là tập các số <span class="math inline">\(n\)</span> sao cho <span class="math inline">\(a \leq n \leq b\)</span>, và các phần tử liên tiếp cách nhau đúng một đơn vị, lấy ví dụ</p>
+<pre><code class="language-vila">cho a = 1.2
+cho b = 5
+cho A = [a..b]
+
+xuất 5 thuộc A        // sai
+xuất 1.2 thuộc A      // đúng
+xuất 1.2 + 1 thuộc A  // đúng
+xuất 1.2 - 1 thuộc A  // sai
+</code></pre>
+<h4>Danh sách</h4>
+</div> <div class="post-hashtag-container"><div class="hashtag" data-v-50d0602d>
+        #project</div></div></div> <div class="comment-section"><div class="comment-divider"></div> <div class="comment-input-container"><!----> <div class="comment-login"><p>Tham gia bình luận với</p> <button class="comment-login-site"><i class="fab fa-github"></i></button> <p>hoặc</p> <button class="comment-login-site"><i class="fab fa-google"></i></button></div></div> <div class="comment-list"></div></div></div> <div id="footer"><p id="footer-text">
+        Created by
+            <a href="https://www.facebook.com/100007015541619" target="_blank"><span></span></a>
+        with
+        <span id="footer-emoji-heart" class="fas fa-heart"></span>
+        and some 
+        <span id="footer-emoji-tear" class="fas fa-tint"></span></p></div></article></div></div></div><script defer src="/_nuxt/static/1660846254/posts/vanvo/state.js"></script><script src="/_nuxt/fba887b.js" defer></script><script src="/_nuxt/37da564.js" defer></script><script src="/_nuxt/e0b0199.js" defer></script><script src="/_nuxt/febdb27.js" defer></script><script src="/_nuxt/09d1fcd.js" defer></script><script src="/_nuxt/2af6bb6.js" defer></script><script src="/_nuxt/34c8403.js" defer></script>
+  </body>
+</html>
