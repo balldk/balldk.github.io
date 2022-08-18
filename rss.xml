@@ -4,127 +4,12 @@
     <link>https://justkhoa.me</link>
     <description>K&#39;s corner blog, mostly about maths and programming</description>
     <managingEditor> (ND Dang Khoa)</managingEditor>
-    <pubDate>Wed, 17 Aug 2022 14:16:21 +0000</pubDate>
+    <pubDate>Thu, 18 Aug 2022 12:36:21 +0000</pubDate>
     <image>
       <url>https://justkhoa.me/logo.svg</url>
       <title>logo</title>
       <link></link>
     </image>
-    <item>
-      <title></title>
-      <link>https://justkhoa.me/posts/vila</link>
-      <description>&lt;h2&gt;Một số ví dụ&lt;/h2&gt;&#xA;&lt;p&gt;Câu lệnh cơ bản&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code class=&#34;language-vila&#34;&gt;cho A = [1..100]&#xA;&#xA;với mỗi n thuộc A:&#xA;&#x9;nếu n % 3 == 1:&#xA;&#x9;&#x9;xuất n, &amp;quot;chia 3 dư 1&amp;quot;&#xA;&#x9;còn nếu n % 3 == 2:&#xA;&#x9;&#x9;xuất n, &amp;quot;chia 3 dư 2&amp;quot;&#xA;&#x9;còn không:&#xA;&#x9;&#x9;xuất n, &amp;quot;chia hết cho 3&amp;quot;...&lt;/code&gt;&lt;/pre&gt;&#xA;</description>
-      <content:encoded><![CDATA[<h2>Một số ví dụ</h2>
-<p>Câu lệnh cơ bản</p>
-<pre><code class="language-vila">cho A = [1..100]
-
-với mỗi n thuộc A:
-	nếu n % 3 == 1:
-		xuất n, &quot;chia 3 dư 1&quot;
-	còn nếu n % 3 == 2:
-		xuất n, &quot;chia 3 dư 2&quot;
-	còn không:
-		xuất n, &quot;chia hết cho 3&quot;
-</code></pre>
-<p>Tính hàm hợp, với <span class="math inline">\((f.g)(x) = f(g(x))\)</span></p>
-<pre><code class="language-vila">cho f(x) = 2x(x^2 - 2x)(3x - 5)
-cho g(x) = 5x
-
-cho a = 5
-xuất f.g(a)
-xuat 1
-</code></pre>
-<p><code>2x(x^2 - 2x)(3x - 5)</code> là cách viết ngắn gọn hơn của <code>2*x*(x^2 - 2*x)*(3*x - 5)</code></p>
-<p>Sử dụng list comprehension để định nghĩa mảng vô hạn các phần tử, với <code>fib[i]</code> là phần tử thứ <code>i</code> trong dãy fibonacci</p>
-<pre><code class="language-vila">cho fib = {0, 1, 1} + { fib[n-1] + fib[n-2] | n thuộc [3..] }
-
-với mỗi n thuộc fib:
-    xuất n
-</code></pre>
-<p>List comprehension có tính &ldquo;lazy&rdquo;,  tức là khi ta định nghĩa <code>fib</code> thì chưa phần tử nào trong mảng được tính cả, chỉ khi ta cần dùng tới phần tử nào thì phần tử đó mới được tính ra, do đó ta có thể dễ dàng tạo ra mảng vô hạn phần tử trong Vila</p>
-<h2>Cài đặt</h2>
-<h2>Cú pháp</h2>
-<p><strong>Lưu ý</strong>: vì mình có sử dụng ligature font cho code nên các kí hiệu như &ldquo;=&gt;&rdquo;, &ldquo;&gt;=&rdquo;, &ldquo;&lt;=&rdquo;, &ldquo;!=&rdquo; sẽ biến thành <code>=&gt;</code>, <code>&gt;=</code>, <code>&lt;=</code>, <code>!=</code></p>
-<h3>Khai báo biến</h3>
-<p>Biến được định nghĩa thông qua từ khóa <code>cho</code>, với cấu trúc như sau</p>
-<pre><code class="language-bnf">cho &lt;tên biến&gt; = &lt;biểu thức&gt;
-</code></pre>
-<p>Ví dụ</p>
-<pre><code class="language-vila">cho x = 10
-cho ngày sinh = 15
-</code></pre>
-<p>Một số hằng số được định nghĩa sẵn</p>
-<pre><code class="language-vila">xuất Pi // 3.14159...
-xuất E  // 2.71828...
-</code></pre>
-<h3>Khai báo hàm</h3>
-<p>Khai báo hàm tương đối giống với khai báo biến</p>
-<pre><code class="language-bnfssss">cho &lt;tên hàm&gt;(&lt;danh sách các tham số&gt;) = &lt;biểu thức&gt;
-</code></pre>
-<p>Ví dụ</p>
-<pre><code class="language-vila">cho f(x,y,z) = 2x(x^2 - 2x + 1) - y^z
-xuất f(100, 5, 3)
-</code></pre>
-<p>Ở ví dụ trên, hàm chỉ được định nghĩa ngắn gọn trong một hàng, để viết một số hàm phức tạp, cần thực hiện nhiều câu lệnh hơn, ta có thể dùng &ldquo;Biểu thức nhóm&rdquo;</p>
-<pre><code class="language-vila">cho f(x) = (cho a = 5; cho b = 6; a+b+x)
-xuất f(2) // 13
-</code></pre>
-<p>Biểu thức cuối cùng trong biểu thức nhóm sẽ là giá trị trả về cho toàn bộ biểu thức, ở ví dụ trên <code>a+b+x = 5+6+2 = 13</code> là giá trị của <code>f(2)</code></p>
-<p>Trên thực tế ta sẽ tách các câu lệnh trong biểu thức nhóm bằng cách xuống dòng</p>
-<pre><code class="language-vila">// Trả về đúng nếu n là số chẵn, sai nếu n là số lẻ
-cho là chẵn(n) = (
-	cho two = 2
-	nếu n % two == 0:
-		=&gt; đúng
-	sai
-)
-</code></pre>
-<p>Dấu suy ra <code>=&gt;</code> có ý nghĩa tương đương với câu lệnh <code>return</code> ở những ngôn ngữ khác, nếu gặp <code>=&gt;</code> thì biểu thức nhóm sẽ kết thúc và lấy biểu thức sau <code>=&gt;</code> làm giá trị trả về</p>
-<p>Một số hàm được định nghĩa sẵn</p>
-<pre><code class="language-vila">xuất cos(Pi)  // -1
-xuất sin(Pi)  // 0
-xuất tan(Pi)  // 0
-xuất E^ln(2)  // 2
-</code></pre>
-<h3>Các kiểu dữ liệu cơ bản</h3>
-<pre><code class="language-vila">// Số nguyên
-15
-// số thực
-3.14
-// Phân số
-3/14
-// Logic
-đúng
-sai
-</code></pre>
-<h3>Phép toán</h3>
-<h4>Số học</h4>
-<pre><code class="language-vila">cho a = 15
-cho b = 3/5
-
-xuất a + b  // 13/2
-xuất a - b  // 3/2
-xuất a * b  // 10
-xuất a / b  // 8/5
-xuất a ^ b  // 32
-xuất a % 7  // 4
-</code></pre>
-<h4>Logic</h4>
-<pre><code class="language-vila">xuất 1 == 2  // sai
-xuất 1 != 2  // đúng
-xuất 1 &lt; 1   // sai
-xuất 1 &lt;= 1  // đúng
-xuất 1 &gt; 1   // sai
-xuất 1 &gt;= 1  // đúng
-
-xuất đúng và sai  // sai
-xuất đúng hay sai // đúng
-</code></pre>
-]]></content:encoded>
-      <author>ND Dang Khoa</author>
-      <guid>https://justkhoa.me/posts/vila</guid>
-      <pubDate>Tue, 16 Aug 2022 20:32:35 +0000</pubDate>
-    </item>
     <item>
       <title>Góc nhìn khác về tail call elimination</title>
       <link>https://justkhoa.me/posts/interesting-tail-call-elimination-problem</link>
