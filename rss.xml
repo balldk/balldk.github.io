@@ -4,7 +4,7 @@
     <link>https://justkhoa.me</link>
     <description>K&#39;s corner blog, mostly about maths and programming</description>
     <managingEditor> (ND Dang Khoa)</managingEditor>
-    <pubDate>Fri, 19 Aug 2022 12:17:50 +0000</pubDate>
+    <pubDate>Fri, 19 Aug 2022 12:46:19 +0000</pubDate>
     <image>
       <url>https://justkhoa.me/logo.svg</url>
       <title>logo</title>
@@ -19,6 +19,7 @@
 <h2>Điểm qua một số tính năng của VanVo</h2>
 <ul>
 <li>Hỗ trợ những câu lệnh rẽ nhánh, cấu trúc lặp, cấu trúc dữ liệu và phép toán cơ bản.</li>
+<li>Hỗ trợ phân số và số phức.</li>
 <li>Có thể đặt tên định danh có khoảng trắng như <code>số nguyên tố</code>.</li>
 <li>Không cần <code>;</code> ở cuối mỗi câu lệnh, và các khối lệnh sẽ được xác định bởi mức thụt dòng (indent level) như Python.</li>
 <li>Phép nhân giữa hằng số, biến và mở ngoặc có thể lược bỏ, ví dụ <code>2x(x-1)</code> sẽ tương đương với <code>2*x*(x-1)</code>.</li>
@@ -145,6 +146,14 @@ xuất 1 &gt;= 1  // đúng
 
 xuất đúng và sai  // sai
 xuất đúng hay sai // đúng
+</code></pre>
+<h4>Toán tử ba ngôi</h4>
+<p>Cấu trúc của toán tử ba ngôi</p>
+<pre><code class="language-bnf">&lt;biểu thức 1&gt; nếu &lt;điều kiện&gt; còn không &lt;biểu thức 2&gt;
+</code></pre>
+<p>Nếu <code>&lt;điều kiện&gt;</code> thỏa thì toán tử ba ngồi sẽ trả về giá trị của <code>&lt;biểu thức 1&gt;</code>, còn không thì trả về giá trị của <code>&lt;biểu thức 2</code>&gt;. Ví dụ</p>
+<pre><code class="language-vanvo">cho gtln(a, b) = a nếu a &gt; b còn không b
+xuất gtln(2, 3)  // 3	
 </code></pre>
 <h3>Câu lệnh điều kiện</h3>
 <p>Câu lệnh điều kiện có cấu trúc như sau</p>
