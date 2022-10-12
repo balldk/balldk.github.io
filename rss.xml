@@ -4,7 +4,7 @@
     <link>https://justkhoa.me</link>
     <description>K&#39;s corner blog, mostly about maths and programming</description>
     <managingEditor> (ND Dang Khoa)</managingEditor>
-    <pubDate>Fri, 19 Aug 2022 12:46:19 +0000</pubDate>
+    <pubDate>Wed, 12 Oct 2022 16:10:41 +0000</pubDate>
     <image>
       <url>https://justkhoa.me/logo.svg</url>
       <title>logo</title>
@@ -57,7 +57,7 @@ với mỗi n thuộc fib:
 <p>List comprehension có tính &ldquo;lazy&rdquo;,  tức là chỉ khi ta cần dùng phần tử nào trong mảng thì phần tử đó mới được tính ra, do đó ta có thể dễ dàng định nghĩa ra mảng vô hạn phần tử trong VanVo.</p>
 <h2>Cài đặt</h2>
 <h2>Cú pháp</h2>
-<p><strong>Lưu ý</strong>: vì mình có sử dụng ligature font cho code trên web nên các kí hiệu như =&gt;, &gt;=, &lt;=, != sẽ trở thành <code>=&gt;</code>, <code>&gt;=</code>, <code>&lt;=</code>, <code>!=</code>.</p>
+<p><strong>Lưu ý</strong>: vì mình có sử dụng ligature font cho code trên web nên các kí hiệu như =&gt;, &gt;=, &lt;=, ==, != sẽ trở thành <code>=&gt;</code>, <code>&gt;=</code>, <code>&lt;=</code>, <code>==</code>, <code>!=</code>.</p>
 <h3>Quy định đặt tên và từ khóa</h3>
 <p>Tên định danh là tên được bạn đặt cho biến và hàm trong chương trình, VanVo bao gồm các quy tắc đặt tên định danh như sau:</p>
 <ul>
@@ -126,8 +126,8 @@ sai
 </code></pre>
 <h3>Phép toán</h3>
 <h4>Số học</h4>
-<pre><code class="language-vanvo">cho a = 15
-cho b = 3/5
+<pre><code class="language-vanvo">cho a = 4
+cho b = 5/2
 
 xuất a + b  // 13/2
 xuất a - b  // 3/2
@@ -196,7 +196,7 @@ với 0 &lt;= i, i &lt; 100:
 	...
 </code></pre>
 <p>Hãy thử nhìn vào ví dụ trước nhé, chương trình sau sẽ xuất ra các số chẵn trong khoảng <span class="math inline">\([1,100]\)</span></p>
-<pre><code>với mỗi n thuộc [1..100], x % 2 == 0:
+<pre><code class="language-vanvo">với mỗi n thuộc [1..100], x % 2 == 0:
 	xuất n
 
 // Output:
@@ -208,13 +208,13 @@ với 0 &lt;= i, i &lt; 100:
 </code></pre>
 <p>Ở chương trình trên, <code>n</code> lặp qua từng phần tử trong <code>[1..100]</code>, với <code>[1..100]</code> là tập các số nguyên trong khoảng từ 1 đến 100. Nếu <code>n</code> thỏa mọi ràng buộc được cho thì khối lệnh bên trong sẽ được thực hiện (trong trường hợp này thì ràng buộc là <code>n % 2 == 0</code>). Dĩ nhiên không phải tập hợp nào cũng có thể lặp qua được, phần tiếp theo sẽ giải thích vấn đề này chi tiết hơn.</p>
 <p>Bạn có thể lặp qua nhiều tập và có nhiều ràng buộc cùng một lúc, lấy ví dụ</p>
-<pre><code>với mỗi n thuộc [1..5], m thuộc [3..5], n % 2 == 0, m % 2 == 1:
+<pre><code class="language-vanvo">với mỗi n thuộc [1..5], m thuộc [3..5], n % 2 == 0, m % 2 == 1:
 	xuất n, m
 
 // Output:
-2 3 
-2 5 
-4 3 
+2 3
+2 5
+4 3
 4 5
 </code></pre>
 <h3>Tập hợp</h3>
@@ -283,7 +283,22 @@ với mỗi phần tử thuộc A:
 <pre><code class="language-vanvo">cho A = { 2n | n thuộc [1..] }
 </code></pre>
 <p>Bạn có thể nghi ngờ rằng khi chạy câu lệnh trên thì chương trình bị vướng vào vòng lặp vô hạn và không thể chạy tiếp những câu lệnh khác, nhưng thực tế thì chương trình vẫn tiếp tục chạy những câu lệnh tiếp theo, bạn có thể thao tác trên <code>A</code>, hay lấy ra bất kì phần tử nào trong tập <code>A</code> đó mà bạn muốn. Lý do ta có thể làm được việc này là vì VanVo có hỗ trợ lazy evaluation cho list comprehension, chỉ khi bạn cần phần tử nào thì chương trình mới tính ra phần tử đó (và các phần tử trước) rồi lưu lại. Vì vậy ta có thể dễ dàng định nghĩa ra mảng vô hạn các phần tử trong VanVo.</p>
-<h4>Các phép toán trên tập hợp</h4>
+<h4>Các thao tác và phép toán trên tập hợp</h4>
+<p><strong>Lực lượng (#)</strong>: Hiện tại chỉ có thể lấy lực lượng (số phần tử) trên Tập đếm được</p>
+<pre><code>cho A = [1..100, 2]
+cho B = {3, 5, 7}
+
+#A      // 50
+#B      // 3
+#(A-B)  //
+</code></pre>
+<p><strong>Chỉ số:</strong> Tương tự, chỉ có Tập đếm được mới có chỉ số</p>
+<pre><code>cho A = [1..100, 2]
+cho fib = {0, 1, 1} + { fib[n-1] + fib[n-2] | n thuoc [3..] }
+
+A[1]     // 3
+fib[50]  // 12586269025
+</code></pre>
 <p><strong>Phép hội (+)</strong>: Đối với trường hợp lấy hội 2 Tập đếm được thì ta hiểu đây là phép hợp nối mảng sẽ chính xác hơn</p>
 <pre><code class="language-vanvo">cho A = {1, 2} + [6..10]  // {1, 2, 6, 7, 8, 9, 10}
 cho B = {1, 2} + [6, 10]  // B là Tập không đếm được
@@ -305,6 +320,8 @@ A*B
 //   {2, 1}, {2, 2}, {2, 3},
 //   {3, 1}, {3, 2}, {3, 3} }
 </code></pre>
+<h2>Túm cái váy</h2>
+<p>Hiện tại ngôn ngữ vẫn còn sơ khai và sẽ còn nhiều thay đổi trong thời gian tới, nhìn chung thì dự án này cũng chỉ là sở thích cá nhân thôi, mình không có ý định tạo ra với mục đích thay thế bất kì ngôn ngữ nào trên thị trường cả nên các bạn có ý kiến đóng góp hay ý tưởng gì thì cồm men bên dưới nhẹ nhàng hoặc có thể tạo issue trên github nhé.</p>
 ]]></content:encoded>
       <author>ND Dang Khoa</author>
       <guid>https://justkhoa.me/posts/vanvo</guid>
