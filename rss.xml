@@ -4,7 +4,7 @@
     <link>https://balldk.github.io</link>
     <description>K&#39;s corner blog, mostly about maths and programming</description>
     <managingEditor> (ND Dang Khoa)</managingEditor>
-    <pubDate>Sun, 01 Jan 2023 11:19:22 +0700</pubDate>
+    <pubDate>Sun, 01 Jan 2023 05:55:36 +0000</pubDate>
     <image>
       <url>https://balldk.github.io/logo.svg</url>
       <title>logo</title>
@@ -325,7 +325,7 @@ A*B
 ]]></content:encoded>
       <author>ND Dang Khoa</author>
       <guid>https://balldk.github.io/posts/vanvo</guid>
-      <pubDate>Thu, 18 Aug 2022 18:06:33 +0700</pubDate>
+      <pubDate>Thu, 18 Aug 2022 18:06:33 +0000</pubDate>
     </item>
     <item>
       <title>Góc nhìn khác về tail call elimination</title>
@@ -530,7 +530,7 @@ Góc bài tập về nhà: Bạn có thể thử suy nghĩ cách chứng minh đ
 ]]></content:encoded>
       <author>ND Dang Khoa</author>
       <guid>https://balldk.github.io/posts/interesting-tail-call-elimination-problem</guid>
-      <pubDate>Wed, 01 Sep 2021 20:31:32 +0700</pubDate>
+      <pubDate>Wed, 01 Sep 2021 20:31:32 +0000</pubDate>
     </item>
     <item>
       <title>TODO List cho tính năng của blog</title>
@@ -592,7 +592,7 @@ Nói thiệt là tui cũng không biết phải gọi chức năng này là gì 
 ]]></content:encoded>
       <author>ND Dang Khoa</author>
       <guid>https://balldk.github.io/posts/TODO</guid>
-      <pubDate>Tue, 31 Aug 2021 20:31:20 +0700</pubDate>
+      <pubDate>Tue, 31 Aug 2021 20:31:20 +0000</pubDate>
     </item>
     <item>
       <title>Tui là ai, đây là đâu?</title>
@@ -637,7 +637,7 @@ Thằng này thì khỏi bình luận nhé, thuận mắt thì xài thôi 🙂 V
 ]]></content:encoded>
       <author>ND Dang Khoa</author>
       <guid>https://balldk.github.io/posts/about</guid>
-      <pubDate>Mon, 30 Aug 2021 20:30:05 +0700</pubDate>
+      <pubDate>Mon, 30 Aug 2021 20:30:05 +0000</pubDate>
     </item>
   </channel>
 </rss>
