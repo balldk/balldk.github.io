@@ -4,7 +4,7 @@
     <link>https://balldk.github.io</link>
     <description>K&#39;s corner blog, mostly about maths and programming</description>
     <managingEditor> (ND Dang Khoa)</managingEditor>
-    <pubDate>Sun, 01 Jan 2023 06:01:55 +0000</pubDate>
+    <pubDate>Sun, 01 Jan 2023 06:27:03 +0000</pubDate>
     <image>
       <url>https://balldk.github.io/logo.svg</url>
       <title>logo</title>
@@ -56,6 +56,12 @@ với mỗi n thuộc fib:
 </code></pre>
 <p>List comprehension có tính &ldquo;lazy&rdquo;,  tức là chỉ khi ta cần dùng phần tử nào trong mảng thì phần tử đó mới được tính ra, do đó ta có thể dễ dàng định nghĩa ra mảng vô hạn phần tử trong VanVo.</p>
 <h2>Cài đặt</h2>
+<p>Nếu bạn đã tải <a href="https://go.dev/">Go </a>thì cách đơn giản nhất để cài đặt là clone và build trực tiếp từ source như sau</p>
+<pre><code class="language-bash">git clone https://github.com/balldk/vanvo
+cd vanvo
+go install .
+</code></pre>
+<p>Ngoài ra bạn có thể tải file thực thi tại đây <a href="https://github.com/balldk/vanvo/releases/tag/v0.1.0">Releases v0.1.0</a>.</p>
 <h2>Cú pháp</h2>
 <p><strong>Lưu ý</strong>: vì mình có sử dụng ligature font cho code trên web nên các kí hiệu như =&gt;, &gt;=, &lt;=, ==, != sẽ trở thành <code>=&gt;</code>, <code>&gt;=</code>, <code>&lt;=</code>, <code>==</code>, <code>!=</code>.</p>
 <h3>Quy định đặt tên và từ khóa</h3>
@@ -230,8 +236,8 @@ xuất -1 thuộc A   // sai
 xuất I thuộc A    // sai
 </code></pre>
 <p>Khoảng thực là Tập không đếm được.</p>
-<h4>Khoảng cách đều</h4>
-<p>Khoảng cách đều <span class="math inline">\([a..b]\)</span> là tập các số <span class="math inline">\(n\)</span> sao cho <span class="math inline">\(a \leq n \leq b\)</span>, và các phần tử liên tiếp cách nhau đúng một đơn vị, lấy ví dụ</p>
+<h4>Khoảng đều</h4>
+<p>Khoảng đều <span class="math inline">\([a..b]\)</span> là tập các số <span class="math inline">\(n\)</span> sao cho <span class="math inline">\(a \leq n \leq b\)</span>, và các phần tử liên tiếp cách nhau đúng một đơn vị, lấy ví dụ</p>
 <pre><code class="language-vanvo">cho a = 1.2
 cho b = 5
 cho A = [a..b]
@@ -248,7 +254,7 @@ xuất b thuộc A
 4.2
 sai
 </code></pre>
-<p>Từ ví dụ trên ta có thể nhận thấy Khoảng cách đều là một Tập đếm được.</p>
+<p>Từ ví dụ trên ta có thể nhận thấy Khoảng đều là một Tập đếm được.</p>
 <p>Bạn có thể đặt bước nhảy (step) cho một Khoảng với cú pháp <code>[a..b, step]</code>, ví dụ</p>
 <pre><code class="language-vanvo">với mỗi n thuộc [0..4, 2]:
 	xuất n
