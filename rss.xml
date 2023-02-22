@@ -4,7 +4,7 @@
     <link>https://balldk.github.io</link>
     <description>K&#39;s corner blog, mostly about maths and programming</description>
     <managingEditor> (ND Dang Khoa)</managingEditor>
-    <pubDate>Wed, 22 Feb 2023 15:20:06 +0000</pubDate>
+    <pubDate>Wed, 22 Feb 2023 15:42:06 +0000</pubDate>
     <image>
       <url>https://balldk.github.io/logo.svg</url>
       <title>logo</title>
@@ -19,9 +19,8 @@
 <p><img src="https://i.imgur.com/ooO1I24.png" alt="torus"></p>
 <p>Để ý về mặt trực quan, đường đi <span class="math inline">\(a_1\)</span> có thể co giãn biến đổi liên tục để trở thành <span class="math inline">\(a_2\)</span>, thậm chí ta có thể co <span class="math inline">\(a_1\)</span> lại hẳn thành điểm <span class="math inline">\(x_0\)</span>. Tương tự <span class="math inline">\(c_1\)</span> có thể biến đổi liên tục thành <span class="math inline">\(c_2\)</span>, nhưng <span class="math inline">\(c_1\)</span> không thể biến đổi liên tục để thành <span class="math inline">\(a_1\)</span> được vì ta không thể co <span class="math inline">\(c_1\)</span> lại thành một điểm. Vì thế đường đi <span class="math inline">\(c_1\)</span> và <span class="math inline">\(c_2\)</span> trên phương diện nào đó giúp ta phát hiện được &ldquo;lỗ&rdquo; của hình xuyến. Quan hệ <span class="math inline">\(f\)</span> có thể biến đổi liên tục thành <span class="math inline">\(g\)</span> được gọi là quan hệ đồng luân. Hơn nữa ta có thể định nghĩa phép toán trên tập các đường đi đó theo nghĩa với <span class="math inline">\(a,b\)</span> là hai đường đi thì <span class="math inline">\(a*b\)</span> là đường đi qua <span class="math inline">\(a\)</span>, sau đó qua <span class="math inline">\(b\)</span>. Lúc này ta xét tập các lớp tương đương của các đường đi đó theo quan hệ đồng luân, kèm theo phép toán được định nghĩa như trên, sẽ trở thành một nhóm. Ta gọi nhóm này là <em>nhóm cơ bản</em> của hình xuyến với điểm mút là <span class="math inline">\(x_0\)</span>. Để tính được nhóm cơ bản của hình xuyến không phải điều hiểu nhiên. Ta thử xét một ví dụ khác</p>
 <p><img src="https://i.imgur.com/Io5BT2B.png" alt="sphere_draw"></p>
-<p>Đây là mặt cầu với điểm cố định <span class="math inline">\(x_0\)</span>. Khi đó mọi đường đi lấy <span class="math inline">\(x_0\)</span> là điểm mút đều có thể co lại thành một điểm, tức là chúng đồng luân với nhau. Vậy nên nhóm cơ bản của mặt cầu chỉ có một phần tử, và đó là nhóm là nhóm tầm thường.</p>
+<p>Đây là mặt cầu với điểm cố định <span class="math inline">\(x_0\)</span>. Khi đó mọi đường đi lấy <span class="math inline">\(x_0\)</span> là điểm mút đều có thể co lại thành một điểm, tức là chúng đồng luân với nhau. Vậy nên nhóm cơ bản của mặt cầu chỉ có một phần tử, và đó là nhóm là nhóm tầm thường. Bây giờ chúng ta sẽ đi vào chi tiết.</p>
 <p><em>Note:</em> Tính chất bất biến của không gian topo là tính chất không thay đổi giữa các không gian topo đồng phôi với nhau.</p>
-<p>Đó là một số động lực cho topo đại số, bây giờ chúng ta sẽ đi vào chi tiết.</p>
 <h2>Đồng luân</h2>
 <p><strong>Định nghĩa:</strong> Cho <span class="math inline">\(f,g: X \rightarrow Y\)</span> là hai ánh xạ liên tục. <span class="math inline">\(f\)</span> đươc gọi là <em>đồng luân</em> (homotopic) với <span class="math inline">\(g\)</span> nếu tồn tại <span class="math inline">\(F: X \times [0,1] \rightarrow Y\)</span> liên tục thỏa <span class="math inline">\(\forall x \in X\)</span>, ta có</p>
 <p><span class="math display">\[F(x,0) = f(x) \text{ và } F(x,1) = g(x)
@@ -44,7 +43,7 @@ F(x,2t) & 0 \leq t \leq \frac{1}{2}\\
 G(x,2t-1) & \frac{1}{2} \leq t \leq 1
 \end{cases}
 \]</span></p>
-<p><span class="math inline">\(H\)</span> định nghĩa tốt do <span class="math inline">\(H(x,\frac{1}{2}) = F(x,1) = G(x,0) = g(x)\)</span>. Vì <span class="math inline">\(F\)</span> và <span class="math inline">\(G\)</span> liên tục nên theo bổ đề dán thì <span class="math inline">\(H\)</span> liên tục. Ngoài ra <span class="math inline">\(H(x,0) = F(x,0) = f(x)\)</span> và <span class="math inline">\(H(x,1) = G(x,1) = h(x)\)</span>. Vậy <span class="math inline">\(H: f \simeq g\)</span>. <span class="math inline">\(\QED\)</span></p>
+<p><span class="math inline">\(H\)</span> định nghĩa tốt do <span class="math inline">\(H(x,\frac{1}{2}) = F(x,1) = G(x,0) = g(x)\)</span>. Vì <span class="math inline">\(F\)</span> và <span class="math inline">\(G\)</span> liên tục nên theo bổ đề dán thì <span class="math inline">\(H\)</span> liên tục. Ngoài ra <span class="math inline">\(H(x,0) = F(x,0) = f(x)\)</span> và <span class="math inline">\(H(x,1) = G(x,1) = h(x)\)</span>. Vậy <span class="math inline">\(H: f \simeq g\)</span>.</p>
 </li>
 </ul>
 ]]></content:encoded>
