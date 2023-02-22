@@ -4,12 +4,54 @@
     <link>https://balldk.github.io</link>
     <description>K&#39;s corner blog, mostly about maths and programming</description>
     <managingEditor> (ND Dang Khoa)</managingEditor>
-    <pubDate>Sun, 01 Jan 2023 06:27:03 +0000</pubDate>
+    <pubDate>Wed, 22 Feb 2023 14:45:46 +0000</pubDate>
     <image>
       <url>https://balldk.github.io/logo.svg</url>
       <title>logo</title>
       <link></link>
     </image>
+    <item>
+      <title>Ghi chú về tôpô đại số</title>
+      <link>https://balldk.github.io/posts/algebraic-topo-note-1</link>
+      <description>&lt;p&gt;Đây là một số ghi chú của mình trong quá trình học topo đại số, những lời dẫn và cách hiểu của mình về các khái niệm được thể hiện ở dưới góc nhìn là người mới đang học về top&amp;hellip;&lt;/p&gt;&#xA;</description>
+      <content:encoded><![CDATA[<p>Đây là một số ghi chú của mình trong quá trình học topo đại số, những lời dẫn và cách hiểu của mình về các khái niệm được thể hiện ở dưới góc nhìn là người mới đang học về topo đại số nên có thể không hoàn toàn đúng. Do đó nếu có bất kì khuất mắt hay sai sót nào thì mọi người cứ <del>chửi</del> góp ý cho mình nhé.</p>
+<p>Đại khái topo đại số là bộ môn sử dụng những công cụ đại số, cấu trúc đại số để nghiên cứu topo. Topo đại số đưa ra những <em>tính chất bất biến</em> dựa trên các khái niệm đại số, điển hình là <em>nhóm cơ bản</em> của một không gian topo. Nhóm cơ bản có thể coi là một cách để ta phát hiện ra các lỗ (genus) của một đối tượng topo. Lấy ví dụ, ta xét hình xuyến (torus) và chọn một điểm <span class="math inline">\(x_0\)</span> cố định trên đó, sau đó ta xét tất cả các đường đi kín có điểm xuất phát và kết thúc tại <span class="math inline">\(x_0\)</span> (như hình minh họa)</p>
+<p><img src="https://i.imgur.com/ooO1I24.png" alt="torus"></p>
+<p>Để ý về mặt trực quan, đường đi <span class="math inline">\(a_1\)</span> có thể co giãn biến đổi liên tục để trở thành <span class="math inline">\(a_2\)</span>, thậm chí ta có thể co <span class="math inline">\(a_1\)</span> lại hẳn thành điểm <span class="math inline">\(x_0\)</span>. Tương tự <span class="math inline">\(c_1\)</span> có thể biến đổi liên tục thành <span class="math inline">\(c_2\)</span>, nhưng <span class="math inline">\(c_1\)</span> không thể biến đổi liên tục để thành <span class="math inline">\(a_1\)</span> vì ta không thể co <span class="math inline">\(c_1\)</span> lại thành một điểm. Vì thế đường đi <span class="math inline">\(c_1\)</span> và <span class="math inline">\(c_2\)</span> trên phương diện nào đó giúp ta phát hiện được &ldquo;lỗ&rdquo; của hình xuyến. Quan hệ <span class="math inline">\(f\)</span> có thể biến đổi liên tục thành <span class="math inline">\(g\)</span> được gọi là quan hệ đồng luân. Hơn nữa ta có thể định nghĩa phép toán trên tập các đường đi đó theo nghĩa với <span class="math inline">\(a,b\)</span> là hai đường đi thì <span class="math inline">\(a*b\)</span> là đường đi qua <span class="math inline">\(a\)</span>, sau đó qua <span class="math inline">\(b\)</span>. Lúc này ta xét tập các lớp tương đương của các đường đi đó theo quan hệ đồng luân, kèm theo phép toán được định nghĩa như trên, sẽ trở thành một nhóm. Ta gọi nhóm này là <em>nhóm cơ bản</em> của hình xuyến với điểm mút là <span class="math inline">\(x_0\)</span>. Để tính được nhóm cơ bản của hình xuyến không phải điều hiểu nhiên. Ta thử xét một ví dụ khác</p>
+<p><img src="https://i.imgur.com/Io5BT2B.png" alt="sphere_draw"></p>
+<p>Đây là mặt cầu với điểm cố định <span class="math inline">\(x_0\)</span>. Khi đó mọi đường đi lấy <span class="math inline">\(x_0\)</span> là điểm mút đều có thể co lại thành một điểm, tức là chúng đồng luân với nhau. Vậy nên nhóm cơ bản của mặt cầu chỉ có một phần tử, và đó là nhóm là nhóm tầm thường.</p>
+<p><em>Note:</em> Tính chất bất biến của không gian topo là tính chất không thay đổi giữa các không gian topo đồng phôi với nhau.</p>
+<p>Đó là một số động lực cho topo đại số, bây giờ chúng ta sẽ đi vào chi tiết.</p>
+<h2>Đồng luân</h2>
+<p>Đường đi nối hai điểm <span class="math inline">\(a\)</span> và <span class="math inline">\(b\)</span> trong không gian topo <span class="math inline">\(X\)</span> là một hàm liên tục <span class="math inline">\(p: [0,1] \rightarrow X\)</span> với <span class="math inline">\(p(0) = a\)</span>, <span class="math inline">\(p(1) = b\)</span> và ta hiểu <span class="math inline">\(p(t)\)</span> là vị trí trên đường đi đó tại thời gian <span class="math inline">\(t\)</span>. Bây giờ thay vì ta xét đường đi nối hai điểm, thì ta có thể xét đường đi nối hai hàm <span class="math inline">\(f\)</span> và <span class="math inline">\(g\)</span>, khái niệm đó được gọi là đồng luân.</p>
+<p><strong>Định nghĩa:</strong> Cho <span class="math inline">\(X\)</span> và <span class="math inline">\(Y\)</span> là không gian topo. Ta nói hai ánh xạ liên tục <span class="math inline">\(f,g: X \rightarrow Y\)</span> là <em>đồng luân</em> (homotopic) nếu tồn tại ánh xạ liên tục <span class="math inline">\(F: X \times [0,1] \rightarrow Y\)</span> thỏa <span class="math inline">\(\forall x \in X\)</span>,</p>
+<p><span class="math display">\[F(x,0) = f(x) \text{ và } F(x,1) = g(x)
+\]</span></p>
+<p>ta gọi <span class="math inline">\(F\)</span> là một đồng luân từ <span class="math inline">\(f\)</span> vào <span class="math inline">\(g\)</span>, kí hiệu <span class="math inline">\(F: f \simeq g\)</span>.</p>
+<p><strong>Định lí:</strong> Đồng luân là quan hệ tương đương trên tập các ánh xạ liên tục từ <span class="math inline">\(X \rightarrow Y\)</span>.</p>
+<p><em>Chứng minh:</em></p>
+<ul>
+<li>
+<p>Phản xạ: Với <span class="math inline">\(f:X \rightarrow Y\)</span> liên tục, ta định nghĩa <span class="math inline">\(F(x,t) = f(x), \forall x \in X, t \in [0,1]\)</span>. <span class="math inline">\(F\)</span> liên tục do <span class="math inline">\(f\)</span> liên tục. Vậy <span class="math inline">\(F: f\simeq f\)</span>.</p>
+</li>
+<li>
+<p>Đối xứng: Với <span class="math inline">\(f,g:X \rightarrow Y\)</span> liên tục. Giả sử <span class="math inline">\(F: f \simeq g\)</span>. Ta xét <span class="math inline">\(G(x,t) = F(x,1-t)\)</span> liên tục. Hơn nữa <span class="math inline">\(G(x,0) = F(x,1) = g(x)\)</span> và <span class="math inline">\(G(x,1) = F(x,0) = f(x)\)</span>. Vậy <span class="math inline">\(G: g \simeq f\)</span>.</p>
+</li>
+<li>
+<p>Bắc cầu: Với <span class="math inline">\(f,g,h: X \rightarrow Y\)</span>. Giả sử <span class="math inline">\(F: f \simeq g\)</span> và <span class="math inline">\(G: g \simeq h\)</span>. Đặt</p>
+<p><span class="math display">\[H(x,t) = \begin{cases}
+F(x,2t) & 0 \leq t \leq \frac{1}{2}\\
+G(x,2t-1) & \frac{1}{2} \leq t \leq 1
+\end{cases}
+\]</span></p>
+<p><span class="math inline">\(H\)</span> định nghĩa tốt do <span class="math inline">\(H(x,\frac{1}{2}) = F(x,1) = G(x,0) = g(x)\)</span>. Vì <span class="math inline">\(F\)</span> và <span class="math inline">\(G\)</span> liên tục nên theo bổ đề dán thì <span class="math inline">\(H\)</span> liên tục. Ngoài ra <span class="math inline">\(H(x,0) = F(x,0) = f(x)\)</span> và <span class="math inline">\(H(x,1) = G(x,1) = h(x)\)</span>. Vậy <span class="math inline">\(H: f \simeq g\)</span>.</p>
+</li>
+</ul>
+]]></content:encoded>
+      <author>ND Dang Khoa</author>
+      <guid>https://balldk.github.io/posts/algebraic-topo-note-1</guid>
+      <pubDate>Tue, 21 Feb 2023 18:28:16 +0000</pubDate>
+    </item>
     <item>
       <title>VanVo - Ngôn ngữ lập trình với cú pháp thuần Việt</title>
       <link>https://balldk.github.io/posts/vanvo</link>
