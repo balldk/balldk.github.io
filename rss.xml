@@ -4,7 +4,7 @@
     <link>https://balldk.github.io</link>
     <description>K&#39;s corner blog, mostly about maths and programming</description>
     <managingEditor> (ND Dang Khoa)</managingEditor>
-    <pubDate>Thu, 01 Jun 2023 12:44:53 +0000</pubDate>
+    <pubDate>Thu, 01 Jun 2023 14:15:53 +0000</pubDate>
     <image>
       <url>https://balldk.github.io/logo.svg</url>
       <title>logo</title>
@@ -18,16 +18,18 @@
 <p>Ở khóa này mình sẽ cung cấp cho các bạn đầy đủ kiến thức về backend (sử dụng NodeJS) để các bạn có thể bắt đầu ứng tuyển vị trí thực tập ở các công ty. Cách dạy của mình sẽ đi sâu vào bản chất, vì chỉ tư duy đó mới khiến bạn thích ứng được với sự thay đổi công nghệ chóng mặt trong lĩnh vực này, NodeJS được mình sử dụng trong khóa này chỉ là một công nghệ cụ thể để bạn có thể lập trình backend. Nói là thế, nhưng mình chỉ đi sâu vào lý thuyết khi các bạn đã được nhúng tay vào thực hành, vì theo mình lý thuyết chỉ có thể hiếu nếu mình đã có sẵn trực giác về nó. Cụ thể, mình sẽ tổ chức khóa học theo hình thức project-based learning. Ngoài ra mình và các bạn trợ giảng sẽ luôn sẵn sàng hỗ trợ, tư vấn mọi vấn đề mà bạn gặp phải, mình có thể review CV, định hướng và chia sẻ những kinh nghiệm thực chiến về ngành cho các bạn, việc của các bạn chỉ là sẵn sàng hỏi mà thôi ^^</p>
 <p>Hình thức học sẽ là trực tiếp (offline) tại khu vực Quận Thủ Đức. Tổng cộng 30 buổi học, mỗi tuần học 2 buổi, kéo dài khoảng 3 tháng rưỡi, mình sẽ sẵn sàng tăng thêm buổi học nếu số buổi cố định là chưa đủ.</p>
 <h2>Điều kiện tiên quyết</h2>
-<p>Biết lập trình cơ bản ở một ngôn ngữ bất kì.</p>
-<p>Có kiến thức cơ bản về HTML, CSS và Javascript (DOM).</p>
+<ul>
+<li>Biết lập trình cơ bản ở một ngôn ngữ bất kì.</li>
+<li>Có kiến thức cơ bản về HTML, CSS và Javascript (DOM).</li>
+</ul>
 <h2>Nội dung khóa học</h2>
 <p>Như mình nói ở trên, mình sẽ tổ chức khóa học theo hình thức project-based learning, những mục ở dưới này sẽ được dạy tương ứng với một project nào đó và không nhất thiết phải theo thứ tự thời gian, ví dụ mình có thể nói về event loop và bản chất của bất đồng bộ trong Javascript (mục 2) sau khi mọi người đã làm quen với việc viết ra một REST API cơ bản.</p>
-<ol>
-<li>Giới thiệu sơ lược về Backend, NodeJS và cài đặt.</li>
-<li>Cú pháp của Javascript, ES6 và các khái niệm thứ yếu trong NodeJS: arrow function, spread operator, rest parameter, destructing, callback, xử lí bất đồng bộ, event loop, fetch data, file IO,&hellip;</li>
-<li>Sơ lược về Git, Github và hướng dẫn dùng Git để nộp bài tập về nhà.</li>
-<li>Tất tần tật về viết một API server với Express:
-<ol>
+<h3>Giới thiệu sơ lược về Backend, NodeJS và cài đặt.</h3>
+<h3>Cú pháp của Javascript, ES6</h3>
+<p>Arrow function, spread operator, rest parameter, destructing, callback, xử lí bất đồng bộ, event loop, fetch data, file IO,&hellip;</p>
+<h3>Sơ lược về Git, Github và hướng dẫn dùng Git để nộp bài tập về nhà.</h3>
+<h3>Tất tần tật về viết một API server với Express:</h3>
+<ul>
 <li>Các khái niệm về API, REST API, CRUD, HTTP request,&hellip;</li>
 <li>Receiving request, request object, param, query, routes,&hellip;</li>
 <li>Serving static file, upload file và image.</li>
@@ -35,28 +37,24 @@
 <li>Session, cookie và local storage.</li>
 <li>Error handling.</li>
 <li>Một số convention và standard.</li>
-</ol>
-</li>
-<li>Database:
-<ol>
+</ul>
+<h3>Database:</h3>
+<ul>
 <li>Sơ lược về SQL, SQL vs no-SQL.</li>
 <li>Kết nối database (MySQL) với NodeJS.</li>
 <li>Thiết kế database và các kĩ thuật với database.</li>
-</ol>
-</li>
-<li>Authentication:
-<ol>
+</ul>
+<h3>Authentication:</h3>
+<ul>
 <li>Kiến thức cơ bản về bảo mật ứng dụng.</li>
 <li>JWT, access token, refresh token và tiêu chuẩn OAuth 2.0.</li>
 <li>PassportJS và Google/Facebook login.</li>
-</ol>
-</li>
-<li>Tất tần tật về Web Socket để xây dựng một realtime application.</li>
-<li>Caching với Redis.</li>
-<li>Docker, reverse proxy, server deployment, CI/CD.</li>
-<li>Các folder structures và kiến trúc thiết kế API trong NodeJS.</li>
-<li>Project cuối khóa.</li>
-</ol>
+</ul>
+<h3>Tất tần tật về Web Socket để xây dựng một realtime application.</h3>
+<h3>Caching với Redis.</h3>
+<h3>Docker, reverse proxy, server deployment, CI/CD.</h3>
+<h3>Các folder structures và kiến trúc thiết kế API trong NodeJS.</h3>
+<h3>Project cuối khóa.</h3>
 ]]></content:encoded>
       <author>ND Dang Khoa</author>
       <guid>https://balldk.github.io/posts/nodejs-backend-course</guid>
