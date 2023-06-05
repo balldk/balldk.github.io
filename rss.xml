@@ -4,7 +4,7 @@
     <link>https://balldk.github.io</link>
     <description>K&#39;s corner blog, mostly about maths and programming</description>
     <managingEditor> (ND Dang Khoa)</managingEditor>
-    <pubDate>Thu, 01 Jun 2023 14:47:40 +0000</pubDate>
+    <pubDate>Mon, 05 Jun 2023 05:59:19 +0000</pubDate>
     <image>
       <url>https://balldk.github.io/logo.svg</url>
       <title>logo</title>
@@ -156,16 +156,41 @@ G(x,2t-1) & \frac{1}{2} \leq t \leq 1
 <p>Ngôn ngữ sẽ có hơi thiên hướng toán học, những bạn học toán có thể sẽ cảm thấy quen thuộc hơn, vì mình định hướng ngôn ngữ được sử dụng như một CAS (Computer Algebra System). Tuy nhiên VanVo vẫn có thể dùng như một ngôn ngữ đa mục đích (General-purpose language) thông thường.</p>
 <h2>Điểm qua một số tính năng của VanVo</h2>
 <ul>
-<li>Hỗ trợ những câu lệnh rẽ nhánh, cấu trúc lặp, cấu trúc dữ liệu và phép toán cơ bản.</li>
-<li>Hỗ trợ phân số và số phức.</li>
-<li>Có thể đặt tên định danh có khoảng trắng như <code>số nguyên tố</code>.</li>
-<li>Không cần <code>;</code> ở cuối mỗi câu lệnh, và các khối lệnh sẽ được xác định bởi mức thụt dòng (indent level) như Python.</li>
-<li>Phép nhân giữa hằng số, biến và mở ngoặc có thể lược bỏ, ví dụ <code>2x(x-1)</code> sẽ tương đương với <code>2*x*(x-1)</code>.</li>
-<li>List comprehension như <code>{ n*m | n thuộc [1..10], m thuộc [1..10], n != m }</code></li>
-<li>Lazy evaluation.</li>
-<li>Các thao tác và phép toán trên tập hợp như hội, giao, hiệu, tích Descartes.</li>
-<li>Gạch chân chính xác vị trí có lỗi khi chạy chương trình.</li>
+<li>
+<p>Hỗ trợ những câu lệnh rẽ nhánh, cấu trúc lặp, cấu trúc dữ liệu và phép toán cơ bản.</p>
+</li>
+<li>
+<p>Hỗ trợ phân số và số phức.</p>
+</li>
+<li>
+<p>Có thể đặt tên định danh có khoảng trắng như <code>số nguyên tố</code>.</p>
+</li>
+<li>
+<p>Không cần <code>;</code> ở cuối mỗi câu lệnh, và các khối lệnh sẽ được xác định bởi mức thụt dòng (indent level) như Python.</p>
+</li>
+<li>
+<p>Phép nhân giữa hằng số, biến và mở ngoặc có thể lược bỏ, ví dụ <code>2x(x-1)</code> sẽ tương đương với <code>2*x*(x-1)</code>.</p>
+</li>
+<li>
+<p>List comprehension như <code>{ n*m | n thuộc [1..10], m thuộc [1..10], n != m }</code></p>
+</li>
+<li>
+<p>Lazy evaluation.</p>
+</li>
+<li>
+<p>Các thao tác và phép toán trên tập hợp như hội, giao, hiệu, tích Descartes.</p>
+</li>
+<li>
+<p>Gạch chân chính xác vị trí có lỗi khi chạy chương trình.</p>
+</li>
 </ul>
+<h2>Cài đặt</h2>
+<p>Nếu bạn đã tải <a href="https://go.dev/">Go </a>thì cách đơn giản nhất để cài đặt là clone và build trực tiếp từ source như sau</p>
+<pre><code class="language-bash">git clone https://github.com/balldk/vanvo
+cd vanvo
+go install .
+</code></pre>
+<p>Ngoài ra bạn có thể tải file thực thi tại đây <a href="https://github.com/balldk/vanvo/releases/tag/v0.1.0">Releases v0.1.0</a>.</p>
 <h2>Một số ví dụ minh họa</h2>
 <p><strong>Ví dụ 1:</strong> Xét tính chia hết của n cho 2 và 3, với n là các số nguyên trong khoảng <span class="math inline">\([1,100]\)</span></p>
 <pre><code class="language-vanvo">cho A = [1..100]
@@ -193,13 +218,6 @@ với mỗi n thuộc fib:
     xuất n
 </code></pre>
 <p>List comprehension có tính &ldquo;lazy&rdquo;,  tức là chỉ khi ta cần dùng phần tử nào trong mảng thì phần tử đó mới được tính ra, do đó ta có thể dễ dàng định nghĩa ra mảng vô hạn phần tử trong VanVo.</p>
-<h2>Cài đặt</h2>
-<p>Nếu bạn đã tải <a href="https://go.dev/">Go </a>thì cách đơn giản nhất để cài đặt là clone và build trực tiếp từ source như sau</p>
-<pre><code class="language-bash">git clone https://github.com/balldk/vanvo
-cd vanvo
-go install .
-</code></pre>
-<p>Ngoài ra bạn có thể tải file thực thi tại đây <a href="https://github.com/balldk/vanvo/releases/tag/v0.1.0">Releases v0.1.0</a>.</p>
 <h2>Cú pháp</h2>
 <p><strong>Lưu ý</strong>: vì mình có sử dụng ligature font cho code trên web nên các kí hiệu như =&gt;, &gt;=, &lt;=, ==, != sẽ trở thành <code>=&gt;</code>, <code>&gt;=</code>, <code>&lt;=</code>, <code>==</code>, <code>!=</code>.</p>
 <h3>Quy định đặt tên và từ khóa</h3>
@@ -434,7 +452,7 @@ cho B = {3, 5, 7}
 
 #A      // 50
 #B      // 3
-#(A-B)  //
+#(A-B)  // 50
 </code></pre>
 <p><strong>Chỉ số:</strong> Tương tự, chỉ có Tập đếm được mới có chỉ số</p>
 <pre><code>cho A = [1..100, 2]
