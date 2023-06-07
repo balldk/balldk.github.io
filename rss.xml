@@ -4,7 +4,7 @@
     <link>https://balldk.github.io</link>
     <description>K&#39;s corner blog, mostly about maths and programming</description>
     <managingEditor> (ND Dang Khoa)</managingEditor>
-    <pubDate>Wed, 07 Jun 2023 16:31:08 +0000</pubDate>
+    <pubDate>Wed, 07 Jun 2023 16:58:07 +0000</pubDate>
     <image>
       <url>https://balldk.github.io/logo.svg</url>
       <title>logo</title>
@@ -192,7 +192,7 @@ go install .
 </code></pre>
 <p>Ngoài ra bạn có thể tải file thực thi tại đây <a href="https://github.com/balldk/vanvo/releases/tag/v0.1.0">Releases v0.1.0</a>.</p>
 <p><strong>Cài đặt language support:</strong> Để ngôn ngữ có syntax highlight và snippets trên VSCode thì bạn hãy qua đây cài thêm extension nhé: <a href="https://github.com/balldk/vscode-vanvo">github.com/balldk/vscode-vanvo</a>.</p>
-<p>Để chạy chương trình thì ta dùng lệnh</p>
+<p>Để chạy chương trình ta dùng lệnh</p>
 <pre><code class="language-vanvo">vanvo program.vv
 </code></pre>
 <p>Trong đó <code>program.vv</code> là file chứa nội dung code. Nói chung file extension của VanVo là <code>.vv</code>.</p>
@@ -223,6 +223,8 @@ với mỗi n thuộc fib:
     xuất n
 </code></pre>
 <p>List comprehension có tính &ldquo;lazy&rdquo;,  tức là chỉ khi ta cần dùng phần tử nào trong mảng thì phần tử đó mới được tính ra, do đó ta có thể dễ dàng định nghĩa ra mảng vô hạn phần tử trong VanVo.</p>
+<p><strong>Ví dụ 4:</strong> Hệ thống báo lỗi của chương trình</p>
+<p><img src="https://i.imgur.com/49okCkK.png" alt="screenshot_error"></p>
 <h2>Cú pháp</h2>
 <p><strong>Lưu ý</strong>: vì mình có sử dụng ligature font cho code trên web nên các kí hiệu như =&gt;, &gt;=, &lt;=, ==, != sẽ trở thành <code>=&gt;</code>, <code>&gt;=</code>, <code>&lt;=</code>, <code>==</code>, <code>!=</code>.</p>
 <h3>Quy định đặt tên và từ khóa</h3>
