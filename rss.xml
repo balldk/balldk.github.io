@@ -4,7 +4,7 @@
     <link>https://balldk.github.io</link>
     <description>K&#39;s corner blog, mostly about maths and programming</description>
     <managingEditor> (ND Dang Khoa)</managingEditor>
-    <pubDate>Wed, 07 Jun 2023 16:08:46 +0000</pubDate>
+    <pubDate>Wed, 07 Jun 2023 16:09:21 +0000</pubDate>
     <image>
       <url>https://balldk.github.io/logo.svg</url>
       <title>logo</title>
@@ -195,7 +195,7 @@ go install .
 <p>Để chạy chương trình thì ta dùng lệnh</p>
 <pre><code class="language-vanvo">vanvo program.vv
 </code></pre>
-<p>Trong đó <code>program.vv</code> là file chứa nội dung code. Nói chung đuôi file extension của VanVo là <code>.vv</code>.</p>
+<p>Trong đó <code>program.vv</code> là file chứa nội dung code. Nói chung file extension của VanVo là <code>.vv</code>.</p>
 <h2>Một số ví dụ minh họa</h2>
 <p><strong>Ví dụ 1:</strong> Xét tính chia hết của n cho 2 và 3, với n là các số nguyên trong khoảng <span class="math inline">\([1,100]\)</span></p>
 <pre><code class="language-vanvo">cho A = [1..100]
