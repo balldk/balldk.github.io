@@ -4,73 +4,12 @@
     <link>https://balldk.github.io</link>
     <description>K&#39;s corner blog, mostly about maths and programming</description>
     <managingEditor> (ND Dang Khoa)</managingEditor>
-    <pubDate>Thu, 10 Aug 2023 17:45:41 +0000</pubDate>
+    <pubDate>Fri, 11 Aug 2023 16:18:30 +0700</pubDate>
     <image>
       <url>https://balldk.github.io/logo.svg</url>
       <title>logo</title>
       <link></link>
     </image>
-    <item>
-      <title>Khóa học lập trình backend với NodeJS</title>
-      <link>https://balldk.github.io/posts/nodejs-backend-course</link>
-      <description>&lt;p&gt;Sắp tới khoảng tầm đầu tháng 7/2023 mình sẽ mở một lớp học lập trình backend với NodeJS cùng &lt;a href=&#34;https://www.facebook.com/db.fpt.02&#34;&gt;@Bình&lt;/a&gt; và &lt;a href=&#34;https://www.facebook.com/profile.php?id=100015958814280&#34;&gt;@Giang&lt;/a&gt;. Kh&amp;hellip;&lt;/p&gt;&#xA;</description>
-      <content:encoded><![CDATA[<p>Sắp tới khoảng tầm đầu tháng 7/2023 mình sẽ mở một lớp học lập trình backend với NodeJS cùng <a href="https://www.facebook.com/db.fpt.02">@Bình</a> và <a href="https://www.facebook.com/profile.php?id=100015958814280">@Giang</a>. Khóa học nhắm đến những bạn đã có kiến thức nền tảng về lập trình, biết một chút về frontend (HTML/CSS/JS) và muốn học tiếp backend.</p>
-<p>Ở khóa này mình sẽ cung cấp cho các bạn đầy đủ kiến thức về backend (sử dụng NodeJS) để các bạn có thể bắt đầu ứng tuyển vị trí thực tập ở các công ty. Cách dạy của mình sẽ đi sâu vào bản chất, vì chỉ tư duy đó mới khiến bạn thích ứng được với sự thay đổi công nghệ chóng mặt trong lĩnh vực này, NodeJS được mình sử dụng trong khóa này chỉ là một công nghệ cụ thể để bạn có thể lập trình backend. Nói là thế, nhưng mình chỉ đi sâu vào lý thuyết khi các bạn đã được nhúng tay vào thực hành, vì theo mình lý thuyết chỉ có thể hiếu nếu mình đã có sẵn trực giác về nó. Cụ thể, mình sẽ tổ chức khóa học theo hình thức project-based learning. Ngoài ra mình và các bạn trợ giảng sẽ luôn sẵn sàng hỗ trợ, tư vấn mọi vấn đề mà bạn gặp phải, mình có thể review CV, định hướng và chia sẻ những kinh nghiệm thực chiến về ngành cho các bạn, việc của các bạn chỉ là sẵn sàng hỏi mà thôi ^^</p>
-<p>Hình thức học sẽ là trực tiếp (offline) tại khu vực Quận Thủ Đức. Tổng cộng 30 buổi học, mỗi tuần học 2 buổi, kéo dài khoảng 3 tháng rưỡi, mình sẽ sẵn sàng tăng thêm buổi học nếu số buổi cố định là chưa đủ.</p>
-<h2>Điều kiện tiên quyết</h2>
-<ul>
-<li>Biết lập trình cơ bản ở một ngôn ngữ bất kì.</li>
-<li>Có kiến thức cơ bản về HTML, CSS và Javascript (DOM).</li>
-</ul>
-<h2>Nội dung khóa học</h2>
-<p>Như mình nói ở trên, mình sẽ tổ chức khóa học theo hình thức project-based learning, những mục ở dưới này sẽ được dạy tương ứng với một project nào đó và không nhất thiết phải theo thứ tự thời gian, ví dụ mình có thể nói về event loop và bản chất của bất đồng bộ trong Javascript (mục 2) sau khi mọi người đã làm quen với việc viết ra một REST API cơ bản.</p>
-<ol>
-<li><strong>Giới thiệu sơ lược về Backend, NodeJS và cài đặt.</strong></li>
-<li><strong>Javascript, NodeJS và ES6:</strong>
-<ul>
-<li>Cú pháp Javascript cơ bản.</li>
-<li>Các tính năng nổi bật của ES6: Arrow function, spread operator, rest parameter, destructing, callback, xử lí bất đồng bộ,&hellip;</li>
-<li>Các cơ chế của NodeJS: đơn luồng, non-blocking, event loop.</li>
-</ul>
-</li>
-<li><strong>Sơ lược về Git, Github và hướng dẫn dùng Git để nộp bài tập về nhà.</strong></li>
-<li><strong>Tất tần tật về viết một API server với Express:</strong>
-<ul>
-<li>Các khái niệm về API, REST API, CRUD, HTTP request,&hellip;</li>
-<li>Receiving request, request object, param, query, routes,&hellip;</li>
-<li>Serving static file, upload file và image.</li>
-<li>Middleware.</li>
-<li>Session, cookie và local storage.</li>
-<li>Error handling.</li>
-<li>Một số convention và standard.</li>
-</ul>
-</li>
-<li><strong>Database:</strong>
-<ul>
-<li>Sơ lược về SQL, SQL vs no-SQL.</li>
-<li>Kết nối database (MySQL) với NodeJS.</li>
-<li>Thiết kế database và các kĩ thuật trong database.</li>
-</ul>
-</li>
-<li><strong>Authentication và Authorization:</strong>
-<ul>
-<li>Kiến thức cơ bản về bảo mật ứng dụng.</li>
-<li>Xây dựng cơ chế login và signup.</li>
-<li>JWT, access token, refresh token và tiêu chuẩn OAuth 2.0.</li>
-<li>PassportJS và Google/Facebook login.</li>
-</ul>
-</li>
-<li><strong>Tất tần tật về Web Socket để xây dựng một realtime application.</strong></li>
-<li><strong>Caching với Redis.</strong></li>
-<li><strong>Docker, reverse proxy, server deployment, CI/CD.</strong></li>
-<li><strong>Các folder structures và kiến trúc thiết kế API trong NodeJS.</strong></li>
-<li><strong>Project cuối khóa.</strong></li>
-</ol>
-]]></content:encoded>
-      <author>ND Dang Khoa</author>
-      <guid>https://balldk.github.io/posts/nodejs-backend-course</guid>
-      <pubDate>Thu, 01 Jun 2023 12:36:40 +0000</pubDate>
-    </item>
     <item>
       <title>(P1) Ghi chú về tôpô đại số</title>
       <link>https://balldk.github.io/posts/algebraic-topo-note-1</link>
@@ -146,7 +85,84 @@ G(x,2t-1) & \frac{1}{2} \leq t \leq 1
 ]]></content:encoded>
       <author>ND Dang Khoa</author>
       <guid>https://balldk.github.io/posts/algebraic-topo-note-1</guid>
-      <pubDate>Fri, 24 Feb 2023 18:28:16 +0000</pubDate>
+      <pubDate>Fri, 24 Feb 2023 18:28:16 +0700</pubDate>
+    </item>
+    <item>
+      <title>(P2) Ghi chú về tôpô đại số</title>
+      <link>https://balldk.github.io/posts/algebraic-topo-note-2</link>
+      <description>&lt;p&gt;Đây là một số ghi chú của mình trong quá trình học topo đại số, tài liệu tham khảo chủ yếu là cuốn &lt;em&gt;An introduction to algebraic topology&lt;/em&gt; của Joseph Rotman. Những lời dẫn và cách hiểu của mình&amp;hellip;&lt;/p&gt;&#xA;</description>
+      <content:encoded><![CDATA[<p>Đây là một số ghi chú của mình trong quá trình học topo đại số, tài liệu tham khảo chủ yếu là cuốn <em>An introduction to algebraic topology</em> của Joseph Rotman. Những lời dẫn và cách hiểu của mình về các khái niệm trong bài viết được thể hiện ở dưới góc nhìn là một người mới và đang học về topo đại số nên có thể không hoàn toàn đúng. Vì vậy nếu có bất kì khuất mắt hay sai sót nào thì mọi người cứ <del>chửi</del> góp ý cho mình nhé.</p>
+<p>Đại khái topo đại số là bộ môn sử dụng những công cụ đại số, cấu trúc đại số để nghiên cứu topo. Topo đại số đưa ra những <em>tính chất bất biến</em> dựa trên các khái niệm đại số, điển hình là <em>nhóm cơ bản</em> của một không gian topo. Nhóm cơ bản có thể coi là một cách để ta phát hiện ra các lỗ (genus) của một đối tượng topo. Lấy ví dụ, ta xét hình xuyến (torus) và chọn một điểm <span class="math inline">\(x_0\)</span> cố định trên đó, sau đó ta xét tất cả các đường đi kín có điểm xuất phát và kết thúc tại <span class="math inline">\(x_0\)</span> (như hình minh họa)</p>
+<p><img src="https://i.imgur.com/BFLN2Q0.png" alt="torus"></p>
+<p>Để ý về mặt trực quan, đường đi <span class="math inline">\(a_1\)</span> có thể co giãn biến đổi liên tục để trở thành <span class="math inline">\(a_2\)</span>, thậm chí ta có thể co <span class="math inline">\(a_1\)</span> lại hẳn thành điểm <span class="math inline">\(x_0\)</span>. Tương tự <span class="math inline">\(c_1\)</span> có thể biến đổi liên tục thành <span class="math inline">\(c_2\)</span>, nhưng <span class="math inline">\(c_1\)</span> không thể biến đổi liên tục để thành <span class="math inline">\(a_1\)</span> được vì ta không thể co <span class="math inline">\(c_1\)</span> lại thành một điểm. Vì thế đường đi <span class="math inline">\(c_1\)</span> và <span class="math inline">\(c_2\)</span> trên phương diện nào đó giúp ta phát hiện được &ldquo;lỗ&rdquo; của hình xuyến. Quan hệ <span class="math inline">\(f\)</span> có thể biến đổi liên tục thành <span class="math inline">\(g\)</span> được gọi là quan hệ đồng luân. Hơn nữa ta có thể định nghĩa phép toán trên tập các đường đi đó theo nghĩa với <span class="math inline">\(a,b\)</span> là hai đường đi thì <span class="math inline">\(a*b\)</span> là đường đi qua <span class="math inline">\(a\)</span>, sau đó qua <span class="math inline">\(b\)</span>. Lúc này ta xét tập các lớp tương đương của các đường đi đó theo quan hệ đồng luân, kèm theo phép toán được định nghĩa như trên, sẽ trở thành một nhóm. Ta gọi nhóm này là <em>nhóm cơ bản</em> của hình xuyến với điểm mút là <span class="math inline">\(x_0\)</span>. Để tính được nhóm cơ bản của hình xuyến không phải điều hiểu nhiên. Ta thử xét một ví dụ khác</p>
+<p><img src="https://i.imgur.com/eZY9sfE.png" alt="sphere_draw"></p>
+<p>Đây là mặt cầu với điểm cố định <span class="math inline">\(x_0\)</span>. Khi đó mọi đường đi lấy <span class="math inline">\(x_0\)</span> là điểm mút đều có thể co lại thành một điểm, tức là chúng đồng luân với nhau. Vậy nên nhóm cơ bản của mặt cầu chỉ có một phần tử, và đó chính xác là nhóm tầm thường. Bây giờ chúng ta sẽ đi vào chi tiết.</p>
+<p><em>Note:</em> Tính chất bất biến của không gian topo là tính chất không thay đổi giữa các không gian topo đồng phôi với nhau.</p>
+<p><strong>Định nghĩa:</strong> Cho <span class="math inline">\(f,g: X \rightarrow Y\)</span> là hai ánh xạ liên tục. <span class="math inline">\(f\)</span> đươc gọi là <em>đồng luân</em> (homotopic) với <span class="math inline">\(g\)</span> nếu tồn tại <span class="math inline">\(F: X \times [0,1] \rightarrow Y\)</span> liên tục thỏa <span class="math inline">\(\forall x \in X\)</span>,</p>
+<p><span class="math display">\[F(x,0) = f(x) \text{ và } F(x,1) = g(x)
+\]</span></p>
+<p>ta nói <span class="math inline">\(F\)</span> là một đồng luân (homotopy) từ <span class="math inline">\(f\)</span> vào <span class="math inline">\(g\)</span>, kí hiệu <span class="math inline">\(F: f \simeq g\)</span>.</p>
+<p>Nếu ta đặt <span class="math inline">\(F_t(x) = F(x,t)\)</span> thì khi đó ta có thể coi <span class="math inline">\(F\)</span> là họ các hàm liên tục <span class="math inline">\(F_t: X \rightarrow Y\)</span> thể hiện sự biến dạng từ <span class="math inline">\(F_0 = f\)</span> sang <span class="math inline">\(F_1 = g\)</span> với tham số thời gian <span class="math inline">\(t\)</span>.</p>
+<p>Lưu ý rằng ta coi không gian <span class="math inline">\([0,1]\)</span> ở đây là không gian con của <span class="math inline">\(\R\)</span> với topo Euclid thông thường, và <span class="math inline">\(X \times [0,1]\)</span> là không gian topo tích (product topology). Để tiện hơn thì từ giờ ta kí hiệu <span class="math inline">\(I = [0,1]\)</span>.</p>
+<p><strong>Định lí:</strong> Đồng luân là quan hệ tương đương trên tập các ánh xạ liên tục từ <span class="math inline">\(X \rightarrow Y\)</span>.</p>
+<p><em>Chứng minh:</em></p>
+<ul>
+<li>
+<p>Phản xạ: Với <span class="math inline">\(f:X \rightarrow Y\)</span> liên tục, ta định nghĩa <span class="math inline">\(F(x,t) = f(x), \forall x \in X, t \in I\)</span>. <span class="math inline">\(F\)</span> liên tục do <span class="math inline">\(f\)</span> liên tục. Vậy <span class="math inline">\(F: f\simeq f\)</span>.</p>
+</li>
+<li>
+<p>Đối xứng: Với <span class="math inline">\(f,g:X \rightarrow Y\)</span> liên tục. Giả sử <span class="math inline">\(F: f \simeq g\)</span>. Ta xét <span class="math inline">\(G(x,t) = F(x,1-t)\)</span> liên tục. Hơn nữa <span class="math inline">\(G(x,0) = F(x,1) = g(x)\)</span> và <span class="math inline">\(G(x,1) = F(x,0) = f(x)\)</span>. Vậy <span class="math inline">\(G: g \simeq f\)</span>.</p>
+</li>
+<li>
+<p>Bắc cầu: Với <span class="math inline">\(f,g,h: X \rightarrow Y\)</span>. Giả sử <span class="math inline">\(F: f \simeq g\)</span> và <span class="math inline">\(G: g \simeq h\)</span>. Đặt</p>
+<p><span class="math display">\[H(x,t) = \begin{cases}
+F(x,2t) & 0 \leq t \leq \frac{1}{2}\\
+G(x,2t-1) & \frac{1}{2} \leq t \leq 1
+\end{cases}
+\]</span></p>
+<p><span class="math inline">\(H\)</span> định nghĩa tốt do <span class="math inline">\(H(x,\frac{1}{2}) = F(x,1) = G(x,0) = g(x)\)</span>. Vì <span class="math inline">\(F\)</span> và <span class="math inline">\(G\)</span> liên tục nên theo bổ đề dán thì <span class="math inline">\(H\)</span> liên tục. Ngoài ra <span class="math inline">\(H(x,0) = F(x,0) = f(x)\)</span> và <span class="math inline">\(H(x,1) = G(x,1) = h(x)\)</span>. Vậy <span class="math inline">\(H: f \simeq g\)</span>.</p>
+</li>
+</ul>
+<p><strong>Định nghĩa:</strong> Cho <span class="math inline">\(f: X \rightarrow Y\)</span> liên tục, ta định nghĩa <em>lớp đồng luân</em> của <span class="math inline">\(f\)</span> là tập các ánh xạ liên tục <span class="math inline">\(g: X \rightarrow Y\)</span> đồng luân với <span class="math inline">\(f\)</span>, nghĩa là</p>
+<p><span class="math display">\[[f] = \{g: X \rightarrow Y \text{ liên tục } | f \simeq g\}
+\]</span></p>
+<p>Họ các lớp đồng luân như vậy ta kí hiệu là <span class="math inline">\([X,Y]\)</span>.</p>
+<p><strong>Định lí:</strong> Cho <span class="math inline">\(f_0,f_1: X \rightarrow Y\)</span> và <span class="math inline">\(g_0,g_1: Y \rightarrow Z\)</span> liên tục. Khi đó nếu <span class="math inline">\(f_0 \simeq f_1\)</span> và <span class="math inline">\(g_0 \simeq g_1\)</span> thì <span class="math inline">\(g_0 \circ f_0 \simeq g_1 \circ f_1\)</span>, nói cách khác <span class="math inline">\([g_0 \circ f_0] = [g_1 \circ f_1]\)</span>.</p>
+<p><em>Chứng minh:</em> Giả sử <span class="math inline">\(F: f_0 \simeq f_1\)</span> và <span class="math inline">\(G: g_0 \simeq g_1\)</span>. Trước tiên ta sẽ đi chứng minh</p>
+<p><span class="math display">\[g_0 \circ f_0 \simeq g_1 \circ f_0 \tag{*}
+\]</span></p>
+<p>Xét <span class="math inline">\(H: X \times I \rightarrow Z\)</span> được định nghĩa bởi <span class="math inline">\(H(x,t) = G(f_0(x), t)\)</span>. Dễ thấy <span class="math inline">\(H\)</span> liên tục. Hơn nữa <span class="math inline">\(H(x,0) = G(f_0(x), 0) = g_0(f_0(x))\)</span> và  <span class="math inline">\(H(x,1) = G(f_0(x), 1) = g_1(f_0(x))\)</span>. Suy ra <span class="math inline">\(H: g_0 \circ f_0 \simeq g_1 \circ f_0\)</span>.</p>
+<p>Tiếp theo ta đi chứng minh</p>
+<p><span class="math display">\[g_0 \circ f_0 \simeq g_0 \circ f_1 \tag{**}
+\]</span></p>
+<p>Thật vậy, xét <span class="math inline">\(K = g_1 \circ F: X \times I \rightarrow Z\)</span> liên tục thỏa <span class="math inline">\(K(x,0) = g_1(F(x,0)) = g_1 \circ f_0 (x)\)</span> và <span class="math inline">\(K(x,1) = g_1(F(x,1)) = g_1 \circ f_1 (x)\)</span>. Vậy nên <span class="math inline">\(K: g_0 \circ f_0 \simeq g_0 \circ f_1\)</span>.</p>
+<p>Từ <span class="math inline">\((*)\)</span> và <span class="math inline">\((**)\)</span> suy ra <span class="math inline">\(g_0 \circ f_0 \simeq g_1 \circ f_1\)</span>  (điều phải chứng minh).</p>
+<p><strong>Định nghĩa:</strong> Ánh xạ liên tục <span class="math inline">\(f: X \rightarrow Y\)</span> được gọi là một <em>tương đương đồng luân</em> (homotopy equivalence) nếu tồn tại <span class="math inline">\(g: Y \rightarrow X\)</span> thỏa</p>
+<p><span class="math display">\[g \circ f \simeq 1_X \text{ và } f \circ g \simeq 1_Y
+\]</span></p>
+<p>Hơn nữa, ta nói hai không gian topo <span class="math inline">\(X\)</span> và <span class="math inline">\(Y\)</span> có <em>cùng loại đồng luân</em> nếu tồn tại một tương đương đồng luân <span class="math inline">\(f: X \rightarrow Y\)</span>.</p>
+<p><strong>Định nghĩa:</strong> Ta nói ánh xạ liên tục <span class="math inline">\(f: X \rightarrow Y\)</span> là <em>đồng luân không</em> (nullhomotopic) nếu <span class="math inline">\(f\)</span> đồng luân với ánh xạ hằng, tức là tồn tại <span class="math inline">\(k: X \rightarrow Y\)</span> thỏa  <span class="math inline">\(k(x) = y_0 \in Y,\forall x \in X\)</span> sao cho <span class="math inline">\(f \simeq k\)</span>.</p>
+<p><strong>Định lí:</strong> Cho <span class="math inline">\(f: S^n \rightarrow Y\)</span> liên tục. Khi đó những điều sau tương đương</p>
+<p><span class="math inline">\((i)\ f\)</span> đồng luân không.</p>
+<p><span class="math inline">\((ii)\ f\)</span> có thể mở rộng thành ánh xạ liên tục từ <span class="math inline">\(D^{n+1} \rightarrow Y\)</span>.</p>
+<p><span class="math inline">\((iii)\)</span> Nếu <span class="math inline">\(x_0 \in S^n\)</span> và <span class="math inline">\(k: S^n \rightarrow Y\)</span> là hàm hằng mang giá trị tại <span class="math inline">\(f(x_0)\)</span> thì tồn tại một đồng luân <span class="math inline">\(F: f \simeq k\)</span> thỏa <span class="math inline">\(F(x_0, t) = f(x_0)\)</span> với mọi <span class="math inline">\(x \in I\)</span>.</p>
+<p><em>Chứng minh:</em> <span class="math inline">\((i) \Rightarrow (ii)\)</span>: Giả sử <span class="math inline">\(F: f \simeq c\)</span> với <span class="math inline">\(c(x) = y_0, \forall x \in S^n\)</span>. Xét <span class="math inline">\(g: D^{n+1} \rightarrow Y\)</span> xác định bởi</p>
+<p><span class="math display">\[g(x) = \begin{cases}
+	F\left(\frac{x}{\|x\|}, 1 - \|x\|\right) & \|x\| \neq 0\\
+	y_0 & \|x\| = 0
+\end{cases}
+\]</span></p>
+<p><span class="math inline">\(g\)</span> định nghĩa tốt do với <span class="math inline">\(x \in D^{n+1}\)</span> thì <span class="math inline">\(\|x\| \in I\)</span>, dẫn tới <span class="math inline">\(\frac{x}{\|x\|} \in S^1\)</span> và <span class="math inline">\(1-\|x\| \in I\)</span>.  Hơn nữa <span class="math inline">\(\forall x \in S^1\)</span>, <span class="math inline">\(g(x) = F(x,0) = f(x)\)</span>. Vậy <span class="math inline">\(f = g_{|S^n}\)</span></p>
+<p><span class="math inline">\((ii) \Rightarrow (iii)\)</span>: Giả sử <span class="math inline">\(g: D^{n+1} \rightarrow Y\)</span> là mở rộng của <span class="math inline">\(f\)</span>. Ta xét <span class="math inline">\(F: S^n \rightarrow Y\)</span> thỏa <span class="math inline">\(F(x,t) = g((1-t)x + tx_0)\)</span>. Ở đây <span class="math inline">\((1-t)x + tx_0\)</span> là đoạn thẳng nối <span class="math inline">\(x\)</span> và <span class="math inline">\(x_0\)</span> nên thuộc <span class="math inline">\(D^{n+1}\)</span> do <span class="math inline">\(D^{n+1}\)</span> lồi. Hơn nữa <span class="math inline">\(F(x,0) = g(x) = f(x)\)</span> và <span class="math inline">\(F(x,1) = g(x_0) = f(x_0),\ \forall x \in S^n\)</span>. Do đó <span class="math inline">\(F: f \simeq k\)</span> với <span class="math inline">\(k: S^n \rightarrow Y\)</span> là hàm hằng mang giá trị tại <span class="math inline">\(f(x_0)\)</span>. Cuối cùng ta có <span class="math inline">\(F(x_0, t) = f(x_0),\ \forall t \in I\)</span>.</p>
+<p><span class="math inline">\((iii) \Rightarrow (i)\)</span>: Chọn <span class="math inline">\(x_0\)</span> là điểm bất kì trong <span class="math inline">\(S^n\)</span> và xét <span class="math inline">\(k: S^n \rightarrow Y\)</span> là hàm hằng tại <span class="math inline">\(f(x_0)\)</span>. Khi đó theo giả thiết thì tồn tại <span class="math inline">\(F: f \simeq k\)</span>. Vậy <span class="math inline">\(f\)</span> đồng luân không.</p>
+<p><strong>Định nghĩa:</strong> Không gian topo <span class="math inline">\(X\)</span> được gọi là <em>co lại được</em> (contractible) nếu <span class="math inline">\(1_X\)</span> đồng luân không.</p>
+<p><strong>Định lí:</strong> Không gian topo <span class="math inline">\(X\)</span> cùng loại đồng luân với không gian 1 điểm nào đó <span class="math inline">\(\Leftrightarrow X\)</span> co lại được.</p>
+<p><em>Chứng minh</em>: Xét <span class="math inline">\(\{a\}\)</span> là không gian 1 điểm bất kì và giả sử <span class="math inline">\(X\)</span> cùng loại đồng luân với <span class="math inline">\(\{a\}\)</span>, tức là tồn tại <span class="math inline">\(f: X \rightarrow \{a\}\)</span> và <span class="math inline">\(g: \{a\} \rightarrow X\)</span> thỏa <span class="math inline">\(g \circ f \simeq 1_X\)</span> và <span class="math inline">\(f \circ g \simeq 1_a\)</span>. Để ý <span class="math inline">\(f\)</span> là hàm hằng tại <span class="math inline">\(a\)</span>, ta có <span class="math inline">\(\forall x \in X\)</span>, <span class="math inline">\(g \circ f(x) = g(a)\)</span>. Do đó <span class="math inline">\(g \circ f\)</span> là hàm hằng, mà <span class="math inline">\(g \circ f \simeq 1_X\)</span> nên <span class="math inline">\(X\)</span> co lại được.</p>
+<p>Ngược lại, giả sử <span class="math inline">\(X\)</span> co lại được, tức là <span class="math inline">\(1_X \simeq c\)</span> với <span class="math inline">\(c: X \rightarrow X,\ c(x) = c_0\ \forall x \in X\)</span>. Xét <span class="math inline">\(f: X \rightarrow \{c_0\}\)</span> là hàm hằng và <span class="math inline">\(g: \{c_0\} \rightarrow X,\ g(c_0) = c_0\)</span>.</p>
+]]></content:encoded>
+      <author>ND Dang Khoa</author>
+      <guid>https://balldk.github.io/posts/algebraic-topo-note-2</guid>
+      <pubDate>Fri, 24 Feb 2023 18:28:16 +0700</pubDate>
     </item>
     <item>
       <title>VanVo - Ngôn ngữ lập trình với cú pháp thuần Việt</title>
@@ -156,46 +172,16 @@ G(x,2t-1) & \frac{1}{2} \leq t \leq 1
 <p>Ngôn ngữ sẽ có hơi thiên hướng toán học, những bạn học toán có thể sẽ cảm thấy quen thuộc hơn, vì mình định hướng ngôn ngữ được sử dụng như một CAS (Computer Algebra System). Tuy nhiên VanVo vẫn có thể dùng như một ngôn ngữ đa mục đích (General-purpose language) thông thường.</p>
 <h2>Điểm qua một số tính năng của VanVo</h2>
 <ul>
-<li>
-<p>Hỗ trợ những câu lệnh rẽ nhánh, cấu trúc lặp, cấu trúc dữ liệu và phép toán cơ bản.</p>
-</li>
-<li>
-<p>Hỗ trợ phân số và số phức.</p>
-</li>
-<li>
-<p>Có thể đặt tên định danh có khoảng trắng như <code>số nguyên tố</code>.</p>
-</li>
-<li>
-<p>Không cần <code>;</code> ở cuối mỗi câu lệnh, và các khối lệnh sẽ được xác định bởi mức thụt dòng (indent level) như Python.</p>
-</li>
-<li>
-<p>Phép nhân giữa hằng số, biến và mở ngoặc có thể lược bỏ, ví dụ <code>2x(x-1)</code> sẽ tương đương với <code>2*x*(x-1)</code>.</p>
-</li>
-<li>
-<p>List comprehension như <code>{ n*m | n thuộc [1..10], m thuộc [1..10], n != m }</code></p>
-</li>
-<li>
-<p>Lazy evaluation.</p>
-</li>
-<li>
-<p>Các thao tác và phép toán trên tập hợp như hội, giao, hiệu, tích Descartes.</p>
-</li>
-<li>
-<p>Gạch chân chính xác vị trí có lỗi khi chạy chương trình.</p>
-</li>
+<li>Hỗ trợ những câu lệnh rẽ nhánh, cấu trúc lặp, cấu trúc dữ liệu và phép toán cơ bản.</li>
+<li>Hỗ trợ phân số và số phức.</li>
+<li>Có thể đặt tên định danh có khoảng trắng như <code>số nguyên tố</code>.</li>
+<li>Không cần <code>;</code> ở cuối mỗi câu lệnh, và các khối lệnh sẽ được xác định bởi mức thụt dòng (indent level) như Python.</li>
+<li>Phép nhân giữa hằng số, biến và mở ngoặc có thể lược bỏ, ví dụ <code>2x(x-1)</code> sẽ tương đương với <code>2*x*(x-1)</code>.</li>
+<li>List comprehension như <code>{ n*m | n thuộc [1..10], m thuộc [1..10], n != m }</code></li>
+<li>Lazy evaluation.</li>
+<li>Các thao tác và phép toán trên tập hợp như hội, giao, hiệu, tích Descartes.</li>
+<li>Gạch chân chính xác vị trí có lỗi khi chạy chương trình.</li>
 </ul>
-<h2>Cài đặt</h2>
-<p>Nếu bạn đã tải <a href="https://go.dev/">Go </a>thì cách đơn giản nhất để cài đặt là clone và build trực tiếp từ source như sau</p>
-<pre><code class="language-bash">git clone https://github.com/balldk/vanvo
-cd vanvo
-go install .
-</code></pre>
-<p>Ngoài ra bạn có thể tải file thực thi tại đây <a href="https://github.com/balldk/vanvo/releases/tag/v0.1.0">Releases v0.1.0</a>.</p>
-<p><strong>Cài đặt language support:</strong> Để ngôn ngữ có syntax highlight và snippets trên VSCode thì bạn hãy qua đây cài thêm extension nhé: <a href="https://github.com/balldk/vscode-vanvo">github.com/balldk/vscode-vanvo</a>.</p>
-<p>Để chạy chương trình ta dùng lệnh</p>
-<pre><code class="language-vanvo">vanvo program.vv
-</code></pre>
-<p>Trong đó <code>program.vv</code> là file chứa nội dung code. Nói chung file extension của VanVo là <code>.vv</code>.</p>
 <h2>Một số ví dụ minh họa</h2>
 <p><strong>Ví dụ 1:</strong> Xét tính chia hết của n cho 2 và 3, với n là các số nguyên trong khoảng <span class="math inline">\([1,100]\)</span></p>
 <pre><code class="language-vanvo">cho A = [1..100]
@@ -223,8 +209,13 @@ với mỗi n thuộc fib:
     xuất n
 </code></pre>
 <p>List comprehension có tính &ldquo;lazy&rdquo;,  tức là chỉ khi ta cần dùng phần tử nào trong mảng thì phần tử đó mới được tính ra, do đó ta có thể dễ dàng định nghĩa ra mảng vô hạn phần tử trong VanVo.</p>
-<p><strong>Ví dụ 4:</strong> Hệ thống báo lỗi của chương trình</p>
-<p><img src="https://i.imgur.com/49okCkK.png" alt="screenshot_error"></p>
+<h2>Cài đặt</h2>
+<p>Nếu bạn đã tải <a href="https://go.dev/">Go </a>thì cách đơn giản nhất để cài đặt là clone và build trực tiếp từ source như sau</p>
+<pre><code class="language-bash">git clone https://github.com/balldk/vanvo
+cd vanvo
+go install .
+</code></pre>
+<p>Ngoài ra bạn có thể tải file thực thi tại đây <a href="https://github.com/balldk/vanvo/releases/tag/v0.1.0">Releases v0.1.0</a>.</p>
 <h2>Cú pháp</h2>
 <p><strong>Lưu ý</strong>: vì mình có sử dụng ligature font cho code trên web nên các kí hiệu như =&gt;, &gt;=, &lt;=, ==, != sẽ trở thành <code>=&gt;</code>, <code>&gt;=</code>, <code>&lt;=</code>, <code>==</code>, <code>!=</code>.</p>
 <h3>Quy định đặt tên và từ khóa</h3>
@@ -459,7 +450,7 @@ cho B = {3, 5, 7}
 
 #A      // 50
 #B      // 3
-#(A-B)  // 50
+#(A-B)  //
 </code></pre>
 <p><strong>Chỉ số:</strong> Tương tự, chỉ có Tập đếm được mới có chỉ số</p>
 <pre><code>cho A = [1..100, 2]
@@ -494,7 +485,7 @@ A*B
 ]]></content:encoded>
       <author>ND Dang Khoa</author>
       <guid>https://balldk.github.io/posts/vanvo</guid>
-      <pubDate>Thu, 18 Aug 2022 18:06:33 +0000</pubDate>
+      <pubDate>Thu, 18 Aug 2022 18:06:33 +0700</pubDate>
     </item>
     <item>
       <title>Góc nhìn khác về tail call elimination</title>
@@ -699,7 +690,7 @@ Góc bài tập về nhà: Bạn có thể thử suy nghĩ cách chứng minh đ
 ]]></content:encoded>
       <author>ND Dang Khoa</author>
       <guid>https://balldk.github.io/posts/interesting-tail-call-elimination-problem</guid>
-      <pubDate>Wed, 01 Sep 2021 20:31:32 +0000</pubDate>
+      <pubDate>Wed, 01 Sep 2021 20:31:32 +0700</pubDate>
     </item>
     <item>
       <title>TODO List cho tính năng của blog</title>
@@ -761,7 +752,7 @@ Nói thiệt là tui cũng không biết phải gọi chức năng này là gì 
 ]]></content:encoded>
       <author>ND Dang Khoa</author>
       <guid>https://balldk.github.io/posts/TODO</guid>
-      <pubDate>Tue, 31 Aug 2021 20:31:20 +0000</pubDate>
+      <pubDate>Tue, 31 Aug 2021 20:31:20 +0700</pubDate>
     </item>
     <item>
       <title>Tui là ai, đây là đâu?</title>
@@ -806,7 +797,7 @@ Thằng này thì khỏi bình luận nhé, thuận mắt thì xài thôi 🙂 V
 ]]></content:encoded>
       <author>ND Dang Khoa</author>
       <guid>https://balldk.github.io/posts/about</guid>
-      <pubDate>Mon, 30 Aug 2021 20:30:05 +0000</pubDate>
+      <pubDate>Mon, 30 Aug 2021 20:30:05 +0700</pubDate>
     </item>
   </channel>
 </rss>
