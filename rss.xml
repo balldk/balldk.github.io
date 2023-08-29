@@ -4,73 +4,12 @@
     <link>https://balldk.github.io</link>
     <description>K&#39;s corner blog, mostly about maths and programming</description>
     <managingEditor> (ND Dang Khoa)</managingEditor>
-    <pubDate>Fri, 11 Aug 2023 10:36:24 +0000</pubDate>
+    <pubDate>Tue, 29 Aug 2023 19:37:16 +0000</pubDate>
     <image>
       <url>https://balldk.github.io/logo.svg</url>
       <title>logo</title>
       <link></link>
     </image>
-    <item>
-      <title>Khóa học lập trình backend với NodeJS</title>
-      <link>https://balldk.github.io/posts/nodejs-backend-course</link>
-      <description>&lt;p&gt;Sắp tới khoảng tầm đầu tháng 7/2023 mình sẽ mở một lớp học lập trình backend với NodeJS cùng &lt;a href=&#34;https://www.facebook.com/db.fpt.02&#34;&gt;@Bình&lt;/a&gt; và &lt;a href=&#34;https://www.facebook.com/profile.php?id=100015958814280&#34;&gt;@Giang&lt;/a&gt;. Kh&amp;hellip;&lt;/p&gt;&#xA;</description>
-      <content:encoded><![CDATA[<p>Sắp tới khoảng tầm đầu tháng 7/2023 mình sẽ mở một lớp học lập trình backend với NodeJS cùng <a href="https://www.facebook.com/db.fpt.02">@Bình</a> và <a href="https://www.facebook.com/profile.php?id=100015958814280">@Giang</a>. Khóa học nhắm đến những bạn đã có kiến thức nền tảng về lập trình, biết một chút về frontend (HTML/CSS/JS) và muốn học tiếp backend.</p>
-<p>Ở khóa này mình sẽ cung cấp cho các bạn đầy đủ kiến thức về backend (sử dụng NodeJS) để các bạn có thể bắt đầu ứng tuyển vị trí thực tập ở các công ty. Cách dạy của mình sẽ đi sâu vào bản chất, vì chỉ tư duy đó mới khiến bạn thích ứng được với sự thay đổi công nghệ chóng mặt trong lĩnh vực này, NodeJS được mình sử dụng trong khóa này chỉ là một công nghệ cụ thể để bạn có thể lập trình backend. Nói là thế, nhưng mình chỉ đi sâu vào lý thuyết khi các bạn đã được nhúng tay vào thực hành, vì theo mình lý thuyết chỉ có thể hiếu nếu mình đã có sẵn trực giác về nó. Cụ thể, mình sẽ tổ chức khóa học theo hình thức project-based learning. Ngoài ra mình và các bạn trợ giảng sẽ luôn sẵn sàng hỗ trợ, tư vấn mọi vấn đề mà bạn gặp phải, mình có thể review CV, định hướng và chia sẻ những kinh nghiệm thực chiến về ngành cho các bạn, việc của các bạn chỉ là sẵn sàng hỏi mà thôi ^^</p>
-<p>Hình thức học sẽ là trực tiếp (offline) tại khu vực Quận Thủ Đức. Tổng cộng 30 buổi học, mỗi tuần học 2 buổi, kéo dài khoảng 3 tháng rưỡi, mình sẽ sẵn sàng tăng thêm buổi học nếu số buổi cố định là chưa đủ.</p>
-<h2>Điều kiện tiên quyết</h2>
-<ul>
-<li>Biết lập trình cơ bản ở một ngôn ngữ bất kì.</li>
-<li>Có kiến thức cơ bản về HTML, CSS và Javascript (DOM).</li>
-</ul>
-<h2>Nội dung khóa học</h2>
-<p>Như mình nói ở trên, mình sẽ tổ chức khóa học theo hình thức project-based learning, những mục ở dưới này sẽ được dạy tương ứng với một project nào đó và không nhất thiết phải theo thứ tự thời gian, ví dụ mình có thể nói về event loop và bản chất của bất đồng bộ trong Javascript (mục 2) sau khi mọi người đã làm quen với việc viết ra một REST API cơ bản.</p>
-<ol>
-<li><strong>Giới thiệu sơ lược về Backend, NodeJS và cài đặt.</strong></li>
-<li><strong>Javascript, NodeJS và ES6:</strong>
-<ul>
-<li>Cú pháp Javascript cơ bản.</li>
-<li>Các tính năng nổi bật của ES6: Arrow function, spread operator, rest parameter, destructing, callback, xử lí bất đồng bộ,&hellip;</li>
-<li>Các cơ chế của NodeJS: đơn luồng, non-blocking, event loop.</li>
-</ul>
-</li>
-<li><strong>Sơ lược về Git, Github và hướng dẫn dùng Git để nộp bài tập về nhà.</strong></li>
-<li><strong>Tất tần tật về viết một API server với Express:</strong>
-<ul>
-<li>Các khái niệm về API, REST API, CRUD, HTTP request,&hellip;</li>
-<li>Receiving request, request object, param, query, routes,&hellip;</li>
-<li>Serving static file, upload file và image.</li>
-<li>Middleware.</li>
-<li>Session, cookie và local storage.</li>
-<li>Error handling.</li>
-<li>Một số convention và standard.</li>
-</ul>
-</li>
-<li><strong>Database:</strong>
-<ul>
-<li>Sơ lược về SQL, SQL vs no-SQL.</li>
-<li>Kết nối database (MySQL) với NodeJS.</li>
-<li>Thiết kế database và các kĩ thuật trong database.</li>
-</ul>
-</li>
-<li><strong>Authentication và Authorization:</strong>
-<ul>
-<li>Kiến thức cơ bản về bảo mật ứng dụng.</li>
-<li>Xây dựng cơ chế login và signup.</li>
-<li>JWT, access token, refresh token và tiêu chuẩn OAuth 2.0.</li>
-<li>PassportJS và Google/Facebook login.</li>
-</ul>
-</li>
-<li><strong>Tất tần tật về Web Socket để xây dựng một realtime application.</strong></li>
-<li><strong>Caching với Redis.</strong></li>
-<li><strong>Docker, reverse proxy, server deployment, CI/CD.</strong></li>
-<li><strong>Các folder structures và kiến trúc thiết kế API trong NodeJS.</strong></li>
-<li><strong>Project cuối khóa.</strong></li>
-</ol>
-]]></content:encoded>
-      <author>ND Dang Khoa</author>
-      <guid>https://balldk.github.io/posts/nodejs-backend-course</guid>
-      <pubDate>Thu, 01 Jun 2023 12:36:40 +0000</pubDate>
-    </item>
     <item>
       <title>(P1) Ghi chú về tôpô đại số</title>
       <link>https://balldk.github.io/posts/algebraic-topo-note-1</link>
