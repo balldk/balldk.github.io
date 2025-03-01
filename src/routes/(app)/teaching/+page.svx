@@ -1,0 +1,22 @@
+<script>
+    let teachingList = [
+        { uni: 'HCMUS-VNU', term: 'Fall 2024', title: 'Discrete Structure', description: 'Instructor for APCS classes, following Rosen\'s book.' },
+        { uni: 'HCMUS-VNU', term: 'Fall 2024', title: 'Discrete Math', description: 'Instructor for CS major classes' },
+        { uni: 'HCMUS-VNU', term: 'Fall 2024', title: 'Linear Algebra', description: 'Instructor for Math major classes' },
+    ]
+</script>
+
+# Teaching Assistant
+
+{#each teachingList as item}
+    <div class="grid grid-cols-[12em_6em_10em_auto] text-[0.9em] border-dashed border-t-1 py-2">
+        <div class="">
+            <img src="/hcmus-logo.png" alt={item.title} class="inline h-6 mr-1 mt-[-3px]" />
+            <span>{item.uni}</span>
+        </div>
+        <div class="">{item.term}</div>
+        <div class="">{item.title}</div>
+        <div class="">{item.description}</div>
+    </div>
+{/each}
+<div class="w-full border-dashed border-t-1"></div>
