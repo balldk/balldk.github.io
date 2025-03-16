@@ -24,7 +24,7 @@
 
     onMount(() => {
         hljs.highlightAll()
-        console.log('data', data)
+        // console.log('data', data)
     })
 </script>
 
