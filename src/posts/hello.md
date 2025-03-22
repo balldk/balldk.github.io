@@ -24,30 +24,6 @@ console.log({})
 console.log({})
 ```
 
-<define label="new-def">
-
-New definition
-
-</define>
-
-<Equation label="new-eq">
-
-New equation $1 + 1 = 2$
-$2+2=4$
-
-</Equation>
-
-<Eq label="new-eq">
-
-</Eq>
-
-<Equation label="new-eq">
-
-New equation $1 + 1 = 2$
-$2+2=4$
-
-</Equation>
-
 This [package][1] is [more than][2nd-half-idiom] meets the eye.
 
 ## Install [remark][8]

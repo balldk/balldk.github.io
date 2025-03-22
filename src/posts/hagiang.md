@@ -4,6 +4,7 @@
 
     onMount(() => {
         setInterval(() => {
+            console.log(counter)
             counter++
         }, 1000)
     })

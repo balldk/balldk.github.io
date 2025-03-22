@@ -7,6 +7,6 @@ export interface Meta {
 }
 
 export interface MarkdownData {
-    content: string
+    PostContent: any
     meta: Meta
 }

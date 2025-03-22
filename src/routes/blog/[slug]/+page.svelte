@@ -19,7 +19,7 @@
 
     let { data }: { data: MarkdownData } = $props()
 
-    let { content, meta } = data
+    let { PostContent, meta } = data
 
     onMount(() => {
         hljs.highlightAll()
@@ -38,7 +38,7 @@
             <Header {meta} />
         {/if}
         <article>
-            {@html content}
+            <PostContent />
         </article>
 
         <img src={OrnamentImg} alt="" class="mx-auto mt-14 h-8 w-full" />

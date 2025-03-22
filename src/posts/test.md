@@ -6,15 +6,24 @@ list: [1, 2, 3, 4, 'boo']
 ---
 
 <script>
+    import { onMount } from 'svelte'
     import Proof from '$lib/mathEnv/Proof.svelte'
     import Equation from '$lib/mathEnv/Equation.svelte'
     import MathEnv from '$lib/mathEnv/MathEnv.svelte'
     import Ref from '$lib/mathEnv/Ref.svelte'
 
     let i = $state(0)
+
+    onMount(async () => {
+        console.log('Something')
+        setInterval(() => {
+            console.log(i)
+            i++
+        }, 1000)
+    })
 </script>
 
-Beginning of something
+Beginning of something {i}
 
 fdsfsda
 

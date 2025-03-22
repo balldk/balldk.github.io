@@ -2,6 +2,7 @@ import { mathEnvStore } from '$lib/mathEnv/mathEnvStore.svelte.js'
 import fs from 'fs'
 import path from 'path'
 import { render } from 'svelte/server'
+import { browser } from '$app/environment'
 
 export async function entries() {
     const files = fs.readdirSync('./src/posts/')
@@ -18,11 +19,13 @@ export async function load({ params }) {
         const post = await import(`$posts/${slug}.md`)
         const envsFile = await import('$lib/math-env.json')
         const envs = { ...envsFile.default, [slug]: post.metadata.envs }
-        fs.writeFileSync('./src/lib/math-env.json', JSON.stringify(envs, null, 4))
+        if (!browser) {
+            fs.writeFileSync('./src/lib/math-env.json', JSON.stringify(envs, null, 4))
+        }
         mathEnvStore.slug = slug
 
         return {
-            content: render(post.default).body,
+            PostContent: post.default,
             meta: { ...post.metadata, slug },
         }
     } catch (err) {
