@@ -81,7 +81,7 @@ article {
         border-radius: 0.2em;
         margin: 0.5em 0;
     }
-    .math-env > p {
+    .math-env p:first-child {
         display: inline;
     }
     &>p:first-child:first-letter {

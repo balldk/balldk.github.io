@@ -27,15 +27,27 @@ console.log({})
 console.log({})
 ```
 
-<Define label="new-def">
+<define label="new-def">
 
 New definition
 
-</Define>
+</define>
 
 <Equation label="new-eq">
 
-New equation
+New equation $1 + 1 = 2$
+$2+2=4$
+
+</Equation>
+
+<Eq label="new-eq">
+
+</Eq>
+
+<Equation label="new-eq">
+
+New equation $1 + 1 = 2$
+$2+2=4$
 
 </Equation>
 

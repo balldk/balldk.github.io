@@ -1,20 +1,24 @@
 <script lang="ts">
+    import { envLookup, type EnvType } from "./mathEnv.types"
+
     const {
         children,
-        title,
+        type,
         count,
-        label,
-    }: { children: any; title: string; count: number; label?: string } = $props()
+        name,
+    }: { children: any; type: EnvType; count: number; name?: string } = $props()
+
+    const label = `${type}:${name}`
+    console.log(type, name)
 </script>
 
-<div class="my-1 math-env">
+<div class="my-1">
     <a
-        class="not-post-link font-bold inline cursor-pointer hover:underline"
+        class="not-post-link font-bold inline cursor-pointer hover:underline first:inline"
         id={`${label}`}
         href={`#${label}`}
     >
-        {title}
-        {count}:
+        {`${envLookup[type]} ${count}:`}
     </a>
     <span class="math-env">
         {@render children()}

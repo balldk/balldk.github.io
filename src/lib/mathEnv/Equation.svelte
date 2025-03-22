@@ -5,10 +5,11 @@
 <script lang="ts">
     import type { MathEnvProp } from './mathEnv.types'
 
-    const { children, label }: MathEnvProp = $props()
+    // name="ABC", count="1"
+    // => label="eq:ABC"
+    const { children, name, count }: MathEnvProp = $props()
 
-    const tag = `eq:${label || count}`
-    count++
+    const tag = `equation:${name || count}`
 </script>
 
 <div class="relative" id={tag}>

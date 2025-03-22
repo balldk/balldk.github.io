@@ -12,6 +12,7 @@
     import python from 'highlight.js/lib/languages/python'
     import bash from 'highlight.js/lib/languages/bash'
     import vanvo from '$lib/utils/vanvo'
+    import { mathEnvStore } from '$lib/mathEnv/mathEnvStore.svelte'
     hljs.registerLanguage('javascript', javascript)
     hljs.registerLanguage('python', python)
     hljs.registerLanguage('vanvo', vanvo)
@@ -20,11 +21,11 @@
     let { data }: { data: MarkdownData } = $props()
 
     let { content, meta } = data
-    console.log(meta)
 
     onMount(() => {
         hljs.highlightAll()
-        console.log('data', data)
+        // mathEnvStore.slug = meta.slug
+        // console.log('data', data)
     })
 </script>
 
