@@ -15,7 +15,7 @@
     <title>Khoa ND</title>
 </svelte:head>
 
-<div class="layout md:grid grid-cols-[18em_auto] min-h-screen bg-background text-text font-cooper">
+<div class="md:flex min-h-screen bg-background text-text font-cooper">
     <Sidebar />
 
     {#key page.url.pathname}

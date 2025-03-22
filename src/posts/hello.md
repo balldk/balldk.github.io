@@ -6,10 +6,7 @@ list: [1, 2, 3, 4, 'boo']
 ---
 
 <script>
-    import Define from '$lib/mathEnv/Define.svelte'
-    import Example from '$lib/mathEnv/Example.svelte'
     import Proof from '$lib/mathEnv/Proof.svelte'
-    import Proposition from '$lib/mathEnv/Proposition.svelte'
     import Equation from '$lib/mathEnv/Equation.svelte'
 
     let i = $state(0)

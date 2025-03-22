@@ -64,7 +64,7 @@
 </script>
 
 <aside class="grid grid-rows-[93%_auto] pt-5 md:border-r-2 border-dashed border-black">
-    <div class="p-6">
+    <div class="p-6 md:w-72">
         <Logo />
         <h1 class="sidebar-heading text-center sidebar-heading">Khoa Nguyen-Dinh</h1>
         <nav class="mt-6 space-y-1 w-full">

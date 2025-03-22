@@ -12,7 +12,6 @@
     import python from 'highlight.js/lib/languages/python'
     import bash from 'highlight.js/lib/languages/bash'
     import vanvo from '$lib/utils/vanvo'
-    import { mathEnvStore } from '$lib/mathEnv/mathEnvStore.svelte'
     hljs.registerLanguage('javascript', javascript)
     hljs.registerLanguage('python', python)
     hljs.registerLanguage('vanvo', vanvo)
@@ -24,10 +23,12 @@
 
     onMount(() => {
         hljs.highlightAll()
-        // mathEnvStore.slug = meta.slug
-        // console.log('data', data)
     })
 </script>
+
+<svelte:head>
+    <title>{meta.title || 'Khoa ND | Blog'}</title>
+</svelte:head>
 
 <div class="bg-background min-h-full">
     <img src={HeaderIllustration} alt="" class="mx-auto mb-0 mt-[-4.5em] z-[-1] h-52" />
