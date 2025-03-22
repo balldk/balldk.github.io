@@ -2,6 +2,10 @@
     import ProjectCard from '$lib/ProjectCard.svelte'
 </script>
 
+<svelte:head>
+    <title>Coding</title>
+</svelte:head>
+
 <h1>Coding</h1>
 
 <div class="grid grid-cols-[repeat(3,minmax(200px,1fr))] gap-4 mt-2">

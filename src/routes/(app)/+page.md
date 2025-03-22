@@ -1,3 +1,8 @@
+<svelte:head>
+
+<title>Khoa ND | About me</title>
+</svelte:head>
+
 # About me
 
 <div class="max-w-[50em] text-justify">
@@ -18,7 +23,7 @@ I completed bachelor degree in [University of Science - VNU](https://en.wikipedi
 I do [coding](/coding) for fun.
 
 $$
-\operatorname{Foods} \xhookrightarrow{\operatorname{eat}} \operatorname{Aut}(\operatorname{Khoa}) \rightarrow 1
+\operatorname{Foods} \xhookrightarrow{\operatorname{eat}} \operatorname{Aut}(\text{Me}) \rightarrow 1
 $$
 
 </div>

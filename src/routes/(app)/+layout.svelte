@@ -11,11 +11,15 @@
     })
 </script>
 
-<div class="flex min-h-screen bg-background text-text font-cooper">
+<svelte:head>
+    <title>Khoa ND</title>
+</svelte:head>
+
+<div class="layout md:grid grid-cols-[18em_auto] min-h-screen bg-background text-text font-cooper">
     <Sidebar />
 
     {#key page.url.pathname}
-        <main in:fly={{ x: -50 }} class="flex-1 h-dvh overflow-auto px-14 py-8">
+        <main in:fly={{ x: -50 }} class="flex-1 h-dvh overflow-auto md:px-14 px-6 py-8">
             {@render children()}
         </main>
     {/key}

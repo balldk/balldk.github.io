@@ -1,3 +1,7 @@
+<svelte:head>
+    <title>Research</title>
+</svelte:head>
+
 # Research
 
 My research interests broadly lies in algebraic topology, group cohomology and computational algebraic geometry.

@@ -63,8 +63,8 @@
     }
 </script>
 
-<aside class="grid grid-rows-[93%_auto] pt-5 border-r-2 border-dashed border-black">
-    <div class="p-6 w-72">
+<aside class="grid grid-rows-[93%_auto] pt-5 md:border-r-2 border-dashed border-black">
+    <div class="p-6">
         <Logo />
         <h1 class="sidebar-heading text-center sidebar-heading">Khoa Nguyen-Dinh</h1>
         <nav class="mt-6 space-y-1 w-full">
@@ -97,8 +97,5 @@
         font-size: 2.6em;
         font-size-adjust: 0.455;
         text-wrap: nowrap;
-        /* text-overflow: clip; */
-        /* font-weight: bold; */
-        /* letter-spacing: 0.02em; */
     }
 </style>

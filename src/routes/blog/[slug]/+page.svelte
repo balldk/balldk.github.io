@@ -32,7 +32,7 @@
 <div class="bg-background min-h-full">
     <img src={HeaderIllustration} alt="" class="mx-auto mb-0 mt-[-4.5em] z-[-1] h-52" />
 
-    <div class="blog-post lg:mx-auto lg:w-[46em] md:mx-[3em] text-justify">
+    <div class="blog-post lg:mx-auto lg:w-[46em] md:mx-[3em] mx-[1em] text-justify">
         {#if meta?.title}
             <Header {meta} />
         {/if}
