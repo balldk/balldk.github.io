@@ -1,0 +1,29 @@
+{
+    "test": {
+        "theorem": {
+            "Định lý bla": 1
+        },
+        "equation": {
+            "eq-fds": 1,
+            "equation": 2
+        },
+        "proposition": {
+            "Định nghĩa ble": 1
+        }
+    },
+    "q-analog": {
+        "definition": {
+            "definition": 1
+        },
+        "example": {
+            "example": 1
+        },
+        "equation": {
+            "q-diff": 1
+        },
+        "proposition": {
+            "qsubspace": 1,
+            "proposition": 2
+        }
+    }
+}

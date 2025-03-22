@@ -1,12 +1,10 @@
-import MathEnv from './MathEnv.svelte'
-
-export type EnvType = 'theorem' | 'define' | 'remark' | 'proposition' | 'example'
-let countTheorem: { [key: string]: number } = {}
+let slug = $state('')
 
 export const mathEnvStore = {
-    init(slot: string) {
-        return {
-            Define: MathEnv,
-        }
+    get slug() {
+        return slug
+    },
+    set slug(val) {
+        slug = val
     },
 }

@@ -1,3 +1,4 @@
+import { mathEnvStore } from '$lib/mathEnv/mathEnvStore.svelte.js'
 import fs from 'fs'
 import path from 'path'
 import { render } from 'svelte/server'
@@ -15,6 +16,11 @@ export async function load({ params }) {
 
     try {
         const post = await import(`$posts/${slug}.md`)
+        const envsFile = await import('$lib/math-env.json')
+        const envs = { ...envsFile.default, [slug]: post.metadata.envs }
+        fs.writeFileSync('./src/lib/math-env.json', JSON.stringify(envs, null, 4))
+        mathEnvStore.slug = slug
+
         return {
             content: render(post.default).body,
             meta: { ...post.metadata, slug },

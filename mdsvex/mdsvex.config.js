@@ -21,7 +21,7 @@ const rehypeKatexPlug = [
 
 export default defineMDSveXConfig({
     extensions: ['.svelte.md', '.md', '.svx'],
-    remarkPlugins: [remarkMathEnv, remarkMath],
+    remarkPlugins: [remarkMath, remarkMathEnv],
     rehypePlugins: [rehypeKatexPlug, [rehypeExternalLinks, { target: '_blank', rel: '' }]],
     // layout: './src/routes/blog/+layout.svelte',
 })

@@ -4,7 +4,7 @@
  */
 import { visit } from 'unist-util-visit'
 
-const envTypes = ['proposition', 'theorem', 'example']
+const envTypes = ['proposition', 'theorem', 'example', 'definition', 'lemma', 'equation']
 
 export default function remarkMathEnv() {
     /**
@@ -14,41 +14,58 @@ export default function remarkMathEnv() {
      *   Nothing.
      */
     return function (tree, file) {
-        let count = 0
-        const regex = /^<([A-Z]\w*)\s*(.*)>$/
         let preNode = {}
         let envTypeNode = {}
-        const envStack = []
-        visit(tree, (node) => {
-            console.log(node == envTypeNode, node)
-            node.type == ''
-            if (node == envTypeNode) {
-            }
-            if (preNode == envTypeNode) {
-                node.value = ''
-            }
-            if (node.type == 'linkReference' && preNode.type == 'text' && preNode.value == '@') {
-                console.log('isin')
+        const envs = {}
+        const envCounters = {}
+
+        function env(prefix, node, callback) {
+            if (node.type == 'linkReference' && preNode.type == 'text' && preNode?.value[preNode.value.length - 1] == prefix) {
                 envTypeNode = node.children[0]
                 if (envTypeNode?.type == 'text' && envTypes.includes(envTypeNode?.value)) {
-                    count++
-                    const envType = envTypeNode.value
-                    const label = `${envType}:${node.label}`
-                    node.type = 'html'
-                    node.value = ''
-                    // node.value = `<MathEnv title="${envType}" label="${label}" count="${count}">`
-                    preNode.value = ''
-                    envTypeNode.value = ''
+                    callback(envTypeNode)
                 }
-                // const match = node.value.match(regex)
-                // if (match) {
-                //     const tag = match[1]
-                //     const props = match[2]
-                //     node.value = `<${tag} level="${count}" ${props}>`
-                // }
             }
+        }
+
+        visit(tree, (node) => {
+            env('@', node, envTypeNode => {
+                const envType = envTypeNode.value
+                const name = node.label
+
+                if (!envs[envType]) {
+                    envs[envType] = {}
+                    envCounters[envType] = 0
+                }
+                let count = ++envCounters[envType]
+                envs[envType][name] = count
+
+                node.type = 'html'
+                node.value = ''
+                if (envType == 'equation') {
+                    node.value = `</p><Equation name="${name}" count="${count}"><p>`
+                } else {
+                    node.value = `</p><MathEnv type="${envType}" name="${name}" count="${count}"><p>`
+                }
+
+                preNode.value = ''
+            })
+
+            env('/', node, envTypeNode => {
+                if (preNode?.value[preNode.value.length - 1] != '/') return
+                node.type = 'html'
+
+                if (envTypeNode?.value == 'equation') {
+                    node.value = '</p></Equation><p>'
+                } else {
+                    node.value = '</p></MathEnv><p>'
+                }
+
+                preNode.value = preNode.value.slice(0, preNode.value.length - 1)
+            })
+
             preNode = node
         })
-        file.data.fm = { ...file.data.fm, new_value: 1 }
+        file.data.fm = { ...file.data.fm, envs }
     }
 }
