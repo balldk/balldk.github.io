@@ -1,1 +1,11 @@
+<script>
+    import PhotoCard from '$lib/gallery/PhotoCard.svelte'
+
+</script>
+
 # Gallery
+
+<br />
+<PhotoCard>
+    <img src="/gallery/img1.jpg" alt="sunset" class="w-56 h-64 mb-2 object-cover" />
+</PhotoCard>

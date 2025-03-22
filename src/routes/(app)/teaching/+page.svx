@@ -1,8 +1,8 @@
 <script>
     let teachingList = [
-        { uni: 'HCMUS-VNU', term: 'Fall 2024', title: 'Discrete Structure', description: 'Instructor for APCS classes, following Rosen\'s book.' },
-        { uni: 'HCMUS-VNU', term: 'Fall 2024', title: 'Discrete Math', description: 'Instructor for CS major classes' },
-        { uni: 'HCMUS-VNU', term: 'Fall 2024', title: 'Linear Algebra', description: 'Instructor for Math major classes' },
+        { uni: 'HCMUS-VNU', term: 'Fall 2024', title: 'Discrete Structure', description: 'Exercise instructor for APCS, following Rosen\'s book.' },
+        { uni: 'HCMUS-VNU', term: 'Fall 2024', title: 'Discrete Math', description: 'Exercise instructor for CS major' },
+        { uni: 'HCMUS-VNU', term: 'Fall 2024', title: 'Linear Algebra', description: 'Exercise instructor for Math major' },
     ]
 </script>
 

@@ -1,1 +1,5 @@
 # Research
+
+My research interests broadly lies in algebraic topology, group cohomology and computational algebraic geometry.
+
+- Bachelor thesis (Vietnamese): [On the cohomology of certain $S$-arithmetic groups](/bachelor-thesis.pdf).
