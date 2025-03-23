@@ -17,12 +17,16 @@
         <div class="flex gap-1">
             <h3>{title}</h3>
             {#if url}
-                <a href={url} target="_blank" class="hover:!border-b-0 translate-y-[2px]">
+                <a href={url} target="_blank" class="hover:!border-b-0 translate-y-[2px] !border-0">
                     <Icon icon="line-md:link" width={24} height={24} />
                 </a>
             {/if}
             {#if githubUrl}
-                <a href={githubUrl} target="_blank" class="hover:!border-b-0 translate-y-[2px]">
+                <a
+                    href={githubUrl}
+                    target="_blank"
+                    class="hover:!border-b-0 translate-y-[2px] !border-0"
+                >
                     <Icon icon="mdi:github" width={24} height={24} />
                 </a>
             {/if}

@@ -36,15 +36,15 @@
             icon: 'solar:gallery-bold',
         },
         {
+            title: 'Miscellany',
+            path: '/misc',
+            icon: 'bx:box',
+        },
+        {
             title: 'CV',
             path: '/CV.pdf',
             isExternal: true,
             icon: 'tabler:quote-filled',
-        },
-        {
-            title: 'Miscellany',
-            path: '/misc',
-            icon: 'bx:box',
         },
     ]
 
