@@ -11,7 +11,7 @@
         $props()
 </script>
 
-<div class="w-80 bg-white rounded-[1em] card-shadow p-2">
+<div class="bg-white rounded-[1em] card-shadow p-2">
     <img src={img} alt="" class="object-cover object-left-top w-full h-52 rounded-t-[0.8em]" />
     <div class="p-2">
         <div class="flex gap-1">
@@ -33,6 +33,7 @@
 
 <style>
     .card-shadow {
-        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     }
 </style>

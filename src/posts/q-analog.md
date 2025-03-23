@@ -1,13 +1,9 @@
 ---
 title: 'Quantum Calculus: Vi tích phân không có giới hạn'
-date: 2024-11-15T20:39:49.752Z
+date: 11/6/2024
 ---
 
 <script>
-    import MathEnv from '$lib/mathEnv/MathEnv.svelte'
-    import Proof from '$lib/mathEnv/Proof.svelte'
-    import Equation from '$lib/mathEnv/Equation.svelte'
-    import Ref from '$lib/mathEnv/Ref.svelte'
 </script>
 
 Trong lúc làm nghiên cứu về chuỗi Hilbert của vành đối đồng điều Grassmann thì mình bắt gặp một lý thuyết mang tên quantum calculus (tạm dịch: vi tích phân lượng tử). Ngoài việc mang tên khá kiêu thì bản thân quantum calulus là một lý thuyết khá thú vị, ý tưởng của quantum calculus hết sức sơ cấp và có ứng dụng mạnh mẽ trong tổ hợp cũng như nhiều lĩnh vực khác. Bản thân chữ lượng tử ở đây là từ ứng dụng của chúng vào cơ lượng tử, cụ thể là một đối tượng mang tên nhóm lượng tử (quantum group). Quantum calculus còn được biết đến với cái tên Vi tích phân không có giới hạn (calculus without limit).
@@ -53,7 +49,7 @@ Hệ số $(q^n-1)/(q-1)$ sẽ xuất hiện rất nhiều trong quantum calculu
 Tu phuong trinh <Ref type="equation" name="q-diff" />
 
 $$
-[n]_q := \frac{q^n-1}{q-1} = q^{n-1} + ... + q + 1.
+[n]_q := \frac{q^n-1}{q-1} = q^{n-1} + \ldots + q + 1.
 $$
 
 Khi $q \rightarrow 1$, ta có $[n] \rightarrow n$.

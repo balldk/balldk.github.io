@@ -1,6 +1,7 @@
 ---
 title: VanVo - Ngôn ngữ lập trình với cú pháp thuần Việt
 description: Tất tần tật về ngôn ngữ lập trình VanVo (Văn Vở).
+date: 2/25/2023
 tags:
     - project
 ---

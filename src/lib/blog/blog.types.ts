@@ -4,6 +4,7 @@ export interface Meta {
     slug: string
     title?: string
     date: string
+    readTime: number
 }
 
 export interface MarkdownData {

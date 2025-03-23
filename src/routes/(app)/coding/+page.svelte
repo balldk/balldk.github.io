@@ -8,7 +8,7 @@
 
 <h1>Coding</h1>
 
-<div class="grid grid-cols-[repeat(3,minmax(200px,1fr))] gap-4 mt-2">
+<div class="grid grid-cols-[repeat(auto-fit,minmax(18em,1fr))] gap-4 mt-2">
     <ProjectCard
         img="/screenshot-zlibrary.png"
         title="ZLibrary Searcher"

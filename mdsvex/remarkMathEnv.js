@@ -6,6 +6,23 @@ import { visit } from 'unist-util-visit'
 
 const envTypes = ['proposition', 'theorem', 'example', 'definition', 'lemma', 'equation']
 
+function insertImport(node) {
+    const scriptTag = '<script>'
+    if (!node?.value?.startsWith(scriptTag)) {
+        return
+    }
+
+    const importStatement = `
+    import MathEnv from '$lib/mathEnv/MathEnv.svelte';
+    import Proof from '$lib/mathEnv/Proof.svelte';
+    import Equation from '$lib/mathEnv/Equation.svelte';
+    import Ref from '$lib/mathEnv/Ref.svelte';
+    `
+
+    const afterScriptTag = node.value.slice(scriptTag.length)
+    node.value = `${scriptTag}\n${importStatement}${afterScriptTag}`
+}
+
 export default function remarkMathEnv() {
     /**
      * @param {Root} tree
@@ -20,7 +37,11 @@ export default function remarkMathEnv() {
         const envCounters = {}
 
         function env(prefix, node, callback) {
-            if (node.type == 'linkReference' && preNode.type == 'text' && preNode?.value[preNode.value.length - 1] == prefix) {
+            if (
+                node.type == 'linkReference' &&
+                preNode.type == 'text' &&
+                preNode?.value[preNode.value.length - 1] == prefix
+            ) {
                 envTypeNode = node.children[0]
                 if (envTypeNode?.type == 'text' && envTypes.includes(envTypeNode?.value)) {
                     callback(envTypeNode)
@@ -29,15 +50,17 @@ export default function remarkMathEnv() {
         }
 
         visit(tree, (node) => {
-            env('@', node, envTypeNode => {
-                const envType = envTypeNode.value
-                const name = node.label
+            insertImport(node)
 
+            env('@', node, (envTypeNode) => {
+                const envType = envTypeNode.value
                 if (!envs[envType]) {
                     envs[envType] = {}
                     envCounters[envType] = 0
                 }
                 let count = ++envCounters[envType]
+                const name = node.label == envType ? count : node.label
+
                 envs[envType][name] = count
 
                 node.type = 'html'
@@ -51,7 +74,7 @@ export default function remarkMathEnv() {
                 preNode.value = ''
             })
 
-            env('/', node, envTypeNode => {
+            env('/', node, (envTypeNode) => {
                 if (preNode?.value[preNode.value.length - 1] != '/') return
                 node.type = 'html'
 

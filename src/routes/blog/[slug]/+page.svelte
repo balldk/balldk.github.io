@@ -11,11 +11,15 @@
     import javascript from 'highlight.js/lib/languages/javascript'
     import python from 'highlight.js/lib/languages/python'
     import bash from 'highlight.js/lib/languages/bash'
+    import bnf from 'highlight.js/lib/languages/bnf'
+    import plaintext from 'highlight.js/lib/languages/plaintext'
     import vanvo from '$lib/utils/vanvo'
     hljs.registerLanguage('javascript', javascript)
     hljs.registerLanguage('python', python)
     hljs.registerLanguage('vanvo', vanvo)
     hljs.registerLanguage('bash', bash)
+    hljs.registerLanguage('bnf', bnf)
+    hljs.registerLanguage('undefined', plaintext)
 
     let { data }: { data: MarkdownData } = $props()
 
@@ -33,16 +37,16 @@
 <div class="bg-background min-h-full">
     <img src={HeaderIllustration} alt="" class="mx-auto mb-0 mt-[-4.5em] z-[-1] h-52" />
 
-    <div class="blog-post lg:mx-auto lg:w-[46em] md:mx-[3em] mx-[1em] text-justify">
+    <article class="blog-post lg:mx-auto lg:w-[46em] md:mx-[3em] mx-[1em] text-justify">
         {#if meta?.title}
             <Header {meta} />
         {/if}
-        <article>
+        <content>
             <PostContent />
-        </article>
+        </content>
 
         <img src={OrnamentImg} alt="" class="mx-auto mt-14 h-8 w-full" />
-    </div>
+    </article>
 
     <Footer />
 </div>

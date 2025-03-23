@@ -84,7 +84,7 @@
     </div>
     <div class="flex gap-6 mx-auto">
         {#each contacts as contact}
-            <a href={contact.link}>
+            <a href={contact.link} target="_blank">
                 <Icon icon={contact.icon} class="w-7 h-7" />
             </a>
         {/each}

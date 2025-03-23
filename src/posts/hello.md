@@ -6,9 +6,6 @@ list: [1, 2, 3, 4, 'boo']
 ---
 
 <script>
-    import Proof from '$lib/mathEnv/Proof.svelte'
-    import Equation from '$lib/mathEnv/Equation.svelte'
-
     let i = $state(0)
 </script>
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { envLookup, type EnvType } from "./mathEnv.types"
+    import { envLookup, type EnvType } from './mathEnv.types'
 
     const {
         children,
@@ -8,8 +8,7 @@
         name,
     }: { children: any; type: EnvType; count: number; name?: string } = $props()
 
-    const label = `${type}:${name}`
-    console.log(type, name)
+    const label = `${type}:${name || count}`
 </script>
 
 <div class="my-1">

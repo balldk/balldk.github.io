@@ -4,6 +4,7 @@ import rehypeKatexSvelte from 'rehype-katex-svelte'
 import rehypeExternalLinks from 'rehype-external-links'
 import remarkMathEnv from './remarkMathEnv.js'
 import { visit } from 'unist-util-visit'
+import remarkReadTime from './remarkReadTime.js'
 
 const rehypeKatexPlug = [
     rehypeKatexSvelte,
@@ -21,7 +22,7 @@ const rehypeKatexPlug = [
 
 export default defineMDSveXConfig({
     extensions: ['.svelte.md', '.md', '.svx'],
-    remarkPlugins: [remarkMath, remarkMathEnv],
+    remarkPlugins: [remarkMath, remarkReadTime, remarkMathEnv],
     rehypePlugins: [rehypeKatexPlug, [rehypeExternalLinks, { target: '_blank', rel: '' }]],
     // layout: './src/routes/blog/+layout.svelte',
 })
