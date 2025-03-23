@@ -4,7 +4,7 @@
  */
 import { visit } from 'unist-util-visit'
 
-const envTypes = ['proposition', 'theorem', 'example', 'definition', 'lemma', 'equation']
+const envTypes = ['proposition', 'theorem', 'example', 'definition', 'lemma', 'equation', 'ref']
 
 function insertImport(node) {
     const scriptTag = '<script>'
@@ -21,6 +21,22 @@ function insertImport(node) {
 
     const afterScriptTag = node.value.slice(scriptTag.length)
     node.value = `${scriptTag}\n${importStatement}${afterScriptTag}`
+}
+
+function parseRef(str) {
+    const regex = /^([^:]+):([^@]+)(?:@(.+))?$/
+    const match = str.match(regex)
+    if (!match) {
+        return {}
+    }
+
+    const [, envType, name, postName] = match
+
+    return {
+        envType,
+        name,
+        postName: postName || null,
+    }
 }
 
 export default function remarkMathEnv() {
@@ -53,7 +69,17 @@ export default function remarkMathEnv() {
             insertImport(node)
 
             env('@', node, (envTypeNode) => {
+                // Handle ref
                 const envType = envTypeNode.value
+                if (envType == 'ref') {
+                    let { envType, name, postName } = parseRef(node.label)
+                    node.type = 'html'
+                    node.value = `<Ref type="${envType}" name="${name}" ${postName ? `post="${postName}"` : ''} />`
+                    preNode.value = ''
+                    return
+                }
+
+                // Handle math environment
                 if (!envs[envType]) {
                     envs[envType] = {}
                     envCounters[envType] = 0

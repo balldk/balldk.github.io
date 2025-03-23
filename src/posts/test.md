@@ -73,3 +73,9 @@ $$
 Tu phuong trinh <Ref type="equation" name="q-diff" post="q-analog" />
 
 Tu <Ref type="proposition" name="qsubspace" post="q-analog" />
+
+Tu 2 @[ref][proposition:qsubspace@q-analog]
+
+Tu phuong trinh 2 @[ref][equation:eq-fds]
+
+Tu @[ref][theorem:Định lý bla]

@@ -53,13 +53,10 @@ content, main {
         }
     }
     a:not(.not-post-link) {
-        color: #333;
-        font-weight: 600;
-        border-bottom: 1px dashed black;
-        // text-decoration: underline dashed black 1px;
+        border-bottom: 1.5px dashed black;
         &:hover {
             color: $primary;
-            border-bottom: 1px dashed $primary;
+            border-bottom: 1.5px dashed $primary;
         }
     }
     code {

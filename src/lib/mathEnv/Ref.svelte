@@ -7,7 +7,7 @@
     // @ts-ignore
     const count = post ? envs[post][type][name] : envs[mathEnvStore.slug][type][name]
 
-    let title = post ? `${envLookup[type]} ${count} [${post}]` : `${envLookup[type]} ${count}`
+    let title = post ? `[${envLookup[type]} ${count}, ${post}]` : `${envLookup[type]} ${count}`
     if (type == 'equation') {
         title = post ? `(${count})[${post}]` : `(${count})`
     }
@@ -15,4 +15,4 @@
     const href = post ? `/posts/${post}/#${label}` : `#${label}`
 </script>
 
-<a {href} target={post ? `_blank` : ''}>{title}</a>
+<a {href} target={post ? `_blank` : ''} class="color-black !border-none">{title}</a>

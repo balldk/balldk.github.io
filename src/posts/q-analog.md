@@ -46,8 +46,6 @@ $$
 
 Hệ số $(q^n-1)/(q-1)$ sẽ xuất hiện rất nhiều trong quantum calculus và do đó ta đưa ra kí hiệu riêng cho hệ số này
 
-Tu phuong trinh <Ref type="equation" name="q-diff" />
-
 $$
 [n]_q := \frac{q^n-1}{q-1} = q^{n-1} + \ldots + q + 1.
 $$
