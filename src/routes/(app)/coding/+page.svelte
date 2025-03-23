@@ -21,7 +21,7 @@
         img="/screenshot-vanvo.png"
         title="VanVo"
         description="A Vietnamese programming language with proper syntax highlighting and documents (and more)."
-        url="/blog/vanvo"
+        url="/posts/vanvo"
         githubUrl="https://balldk.github.io/posts/vanvo/"
     />
 

@@ -1,12 +1,6 @@
-<script module>
-    let count = 0
-</script>
-
 <script lang="ts">
     import type { MathEnvProp } from './mathEnv.types'
 
-    // name="ABC", count="1"
-    // => label="eq:ABC"
     const { children, name, count }: MathEnvProp = $props()
 
     const tag = `equation:${name || count}`

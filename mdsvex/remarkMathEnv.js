@@ -64,11 +64,9 @@ export default function remarkMathEnv() {
                 envs[envType][name] = count
 
                 node.type = 'html'
-                node.value = ''
+                node.value = `</p><MathEnv type="${envType}" name="${name}" count="${count}"><p>`
                 if (envType == 'equation') {
                     node.value = `</p><Equation name="${name}" count="${count}"><p>`
-                } else {
-                    node.value = `</p><MathEnv type="${envType}" name="${name}" count="${count}"><p>`
                 }
 
                 preNode.value = ''

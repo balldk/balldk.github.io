@@ -41,6 +41,11 @@
             isExternal: true,
             icon: 'tabler:quote-filled',
         },
+        {
+            title: 'Miscellany',
+            path: '/misc',
+            icon: 'bx:box',
+        },
     ]
 
     const contacts = [

@@ -34,7 +34,7 @@
     <title>{meta.title || 'Khoa ND | Blog'}</title>
 </svelte:head>
 
-<div class="bg-background min-h-full">
+<div class="bg-background h-screen">
     <img src={HeaderIllustration} alt="" class="mx-auto mb-0 mt-[-4.5em] z-[-1] h-52" />
 
     <article class="blog-post lg:mx-auto lg:w-[46em] md:mx-[3em] mx-[1em] text-justify">
