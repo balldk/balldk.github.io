@@ -5,7 +5,7 @@
 </div> -->
 <div class="logo-container block mx-auto my-0 w-36 h-36 hover:boder-none">
     <div
-        class="logo block relative bg-[url('/portrait.png')] bg-center bg-[#d9ffb6] bg-no-repeat bg-contain h-full border-solid border-primary border-2"
+        class="logo glow-hover block relative bg-[url('/img/portrait.png')] bg-center bg-[#d9ffb6] bg-no-repeat bg-contain h-full border-solid border-primary border-2"
     ></div>
 </div>
 

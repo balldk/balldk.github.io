@@ -10,6 +10,7 @@
         url('/fonts/DanhDa-Bold.ttf') format('truetype'),
         url('/fonts/DanhDa-Bold.woff') format('woff'),
         url('/fonts/DanhDa-Bold.woff2') format('woff2');
+    font-display: swap;
 }
 
 @theme {
@@ -19,5 +20,6 @@
     --color-background2: #ede4e1;
     --color-primary: #f38ba0;
     --color-pink: #ffd3f3;
+    --color-dark: #5c1e1b;
     --font-danhda: Danh Da, Signika, Roboto, sans-serif;
 }
