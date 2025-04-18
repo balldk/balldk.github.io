@@ -64,15 +64,21 @@ main {
     }
     ul li {
         margin: 0;
-        &:not(:has(input[type='checkbox'])):before {
-            display: block;
-            float: left;
-            content: '-';
-            width: 1.2em;
+        // &:not(:has(input[type='checkbox'])):before {
+        //     display: block;
+        //     float: left;
+        //     content: '-';
+        //     width: 1.2em;
+        // }
+        margin-left: 0.8em;
+        list-style-type: disc;
+        &::marker {
+            color: var(--color-brown);
         }
     }
     a:not(.not-post-link) {
-        border-bottom: 1.5px dashed black;
+        // border-bottom: 1.5px dashed black;
+        color: var(--color-primary);
         &:hover {
             color: variables.$primary;
             border-bottom: 1.5px dashed variables.$primary;
@@ -81,8 +87,9 @@ main {
     code {
         font-size: 0.86em;
         background-color: #ddd;
-        padding: 3px 4px 2px 4px;
-        border-radius: 2px;
+        color: #333;
+        padding: 3px 6px 2px 6px;
+        border-radius: 5px;
         font-family: 'JetBrains Mono', monospace;
     }
     pre {

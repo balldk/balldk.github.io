@@ -3,11 +3,15 @@
 <title>Khoa ND | About me</title>
 </svelte:head>
 
+<script>
+    import ContactCard from '$lib/ContactCard.svelte'
+</script>
+
 # About me
 
 <div class="max-w-[50em] text-justify">
 
-Call me **Khoa** (a subword of **Nguyễn Đình Đăng Khoa** in Vietnamese).
+Call me **Khoa** (a subword of **Nguyễn Đình Đăng Khoa** in Vietnamese). I am an incomming PhD student at [University of Virginia](https://www.virginia.edu/).
 
 <!-- I am a first year PhD student at [University of Virginia](https://www.virginia.edu/). My research interests lie in algebraic topology, group cohomology and computational algebraic geometry.
 
@@ -22,9 +26,15 @@ I completed bachelor degree in [University of Science - VNU](https://en.wikipedi
 
 I do [coding](/coding) for fun.
 
-$$
+<!-- $$
 \operatorname{Foods} \xhookrightarrow{\operatorname{eat}} \operatorname{Aut}(\text{Me}) \rightarrow 1
-$$
+$$ -->
+
+<div class="flex space-x-2">
+    <ContactCard icon="mdi:github" label="Github" link="https://github.com/balldk" class="!bg-[#333] text-white" />
+    <ContactCard icon="ic:baseline-facebook" label="Facebook" link="https://www.facebook.com/nddkhoaaa" class="!bg-[#1888c6] text-white" />
+    <ContactCard icon="ic:baseline-email" label="Email" link="mailto:nddkhoaa@gmail.com" class="!bg-[#f17e6d] text-white" />
+</div>
 
 </div>
 

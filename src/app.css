@@ -3,13 +3,9 @@
 
 @font-face {
     font-family: 'Danh Da';
-    src: url('/fonts/DanhDa-Bold.eot');
     src:
-        url('/fonts/DanhDa-Bold.eot?#iefix') format('embedded-opentype'),
-        url('/fonts/DanhDa-Bold.otf') format('opentype'),
-        url('/fonts/DanhDa-Bold.ttf') format('truetype'),
-        url('/fonts/DanhDa-Bold.woff') format('woff'),
-        url('/fonts/DanhDa-Bold.woff2') format('woff2');
+        url('/fonts/DanhDa-Bold.woff2') format('woff2'),
+        url('/fonts/DanhDa-Bold.woff') format('woff');
     font-display: swap;
 }
 
@@ -18,8 +14,11 @@
     /* --color-text: #332e2e; */
     --color-background: #fff7f2;
     --color-background2: #ede4e1;
-    --color-primary: #f38ba0;
+    /* --color-primary: #f38ba0; */
+    --color-primary: #f17e6d;
+    /* --color-primary: #f05f3f; */
     --color-pink: #ffd3f3;
     --color-dark: #5c1e1b;
+    --color-brown: #5c3c3d;
     --font-danhda: Danh Da, Signika, Roboto, sans-serif;
 }

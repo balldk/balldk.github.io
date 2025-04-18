@@ -24,7 +24,7 @@
         </main>
     {/key}
 
-    <div class="fixed bottom-0 left-0 w-screen h-4 bg-pink border-dashed border-t-2 border-black">
+    <div class="fixed bottom-0 left-0 w-screen h-4 bg-white border-dashed border-t-2 border-black">
         <Nyan />
     </div>
 </div>

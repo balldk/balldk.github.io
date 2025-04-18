@@ -29,7 +29,7 @@
     let meowSound: HTMLAudioElement
 
     onMount(() => {
-        meowSound = new Audio('/meow-sound.mp3')
+        meowSound = new Audio('/sounds/meow-sound.mp3')
         meowSound.volume = 0.1
         setTimeout(() => {
             if (!nyanClicked) {
@@ -82,13 +82,15 @@
     }
 </script>
 
-<button class="nyan" onclick={onNyanClick}>
+<!-- svelte-ignore a11y_click_events_have_key_events -->
+<!-- svelte-ignore a11y_no_static_element_interactions -->
+<div class="nyan" onclick={onNyanClick}>
     {#key message}
         {#if showChat}
             <div class="nyan-chat" transition:fly={{ y: 10 }}>{message}</div>
         {/if}
     {/key}
-</button>
+</div>
 
 <style lang="scss">
     .nyan {
