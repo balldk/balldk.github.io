@@ -22,3 +22,14 @@
     --color-brown: #5c3c3d;
     --font-danhda: Danh Da, Signika, Roboto, sans-serif;
 }
+
+.card {
+    @apply flex py-2 px-4 rounded box-border border-1 border-dashed border-dark bg-white;
+    box-shadow: 2px 2px 0 0.5px #e6d2c3;
+    transition: all 0.3s;
+}
+
+.card:hover {
+    transform: translate(-2px);
+    box-shadow: 2px 2px 0 2px #e6d2c3;
+}

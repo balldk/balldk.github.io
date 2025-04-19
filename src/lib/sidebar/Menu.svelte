@@ -59,24 +59,29 @@
     }
 </script>
 
+<svelte:head></svelte:head>
+
 <nav class="mt-4 w-full">
     {#each menus as menu}
-        <a href={menu.path} target={menu.isExternal ? '_blank' : ''}>
-            <Card
-                icon={menu.img && isMatchPath(menu.path) ? null : menu.icon}
-                class={`relative font-semibold text-[0.9em] mt-2 ${isMatchPath(menu.path) && '!bg-primary !text-white border-1'} transition-colors`}
-            >
-                {#if menu.img && isMatchPath(menu.path)}
-                    <div class="w-8 h-5"></div>
-                    <img
-                        in:fade
-                        src={menu.img}
-                        alt={menu.title}
-                        class="absolute w-9 h-9 left-[6px] top-[2px]"
-                    />
-                {/if}
-                <span class="mt-[2px]">{menu.title}</span>
-            </Card>
+        <a
+            href={menu.path}
+            target={menu.isExternal ? '_blank' : ''}
+            class={`card relative font-semibold text-[0.9em] mt-2 ${isMatchPath(menu.path) && '!bg-primary !text-white border-1'} transition-colors`}
+        >
+            {#if menu.img && isMatchPath(menu.path)}
+                <div class="w-8 h-5"></div>
+                <img
+                    in:fade
+                    src={menu.img}
+                    alt={menu.title}
+                    class="absolute w-9 h-9 left-[6px] top-[2px]"
+                />
+            {:else}
+                <div class="w-5 h-5 mr-3">
+                    <Icon icon={menu.icon} class="mt-[2px] w-full h-full" />
+                </div>
+            {/if}
+            <span class="mt-[2px]">{menu.title}</span>
         </a>
     {/each}
 </nav>

@@ -5,7 +5,7 @@
 </script>
 
 <div
-    class={`card flex py-2 px-4 rounded box-border border-1 border-dashed border-dark bg-white ${className}`}
+    class={`flex py-2 px-4 rounded box-border border-1 border-dashed border-dark bg-white ${className}`}
 >
     {#if icon != null}
         <div class="w-5 h-5 mr-3">
