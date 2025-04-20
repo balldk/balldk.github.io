@@ -2,8 +2,7 @@
     import Icon from '@iconify/svelte'
     import { page } from '$app/state'
     import { fade } from 'svelte/transition'
-    import { onMount } from 'svelte'
-    import Card from '$lib/Card.svelte'
+    import { clickSoundStore } from '$lib/utils/clickSoundStore.svelte'
     const menus = [
         {
             title: 'About this Viet guy',
@@ -57,6 +56,9 @@
     function isMatchPath(path: string) {
         return page.url.pathname == path || page.url.pathname == path + '/'
     }
+    function handleMenuClick(e: MouseEvent) {
+        clickSoundStore.play()
+    }
 </script>
 
 <svelte:head></svelte:head>
@@ -67,6 +69,7 @@
             href={menu.path}
             target={menu.isExternal ? '_blank' : ''}
             class={`card relative font-semibold text-[0.9em] mt-2 ${isMatchPath(menu.path) && '!bg-primary !text-white border-1'} transition-colors`}
+            onclick={handleMenuClick}
         >
             {#if menu.img && isMatchPath(menu.path)}
                 <div class="w-8 h-5"></div>

@@ -7,3 +7,4 @@
 My research interests broadly lies in algebraic topology, group cohomology and computational algebraic geometry.
 
 - Bachelor thesis (Vietnamese): [On the cohomology of certain $S$-arithmetic groups](/bachelor-thesis.pdf).
+- A report for VINIF-AC program: [Okounkov body and its volume](/vinif-ac.pdf).
