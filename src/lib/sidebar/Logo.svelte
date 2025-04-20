@@ -4,20 +4,17 @@
     let showHat = $state(false)
 </script>
 
-<!-- <div class="logo-container block mx-auto my-0 w-28 h-28 hover:boder-none">
-    <div
-        class="logo block relative bg-[url('/logo.svg')] bg-center bg-black bg-repeat bg-cover h-full border-solid border-primary border-2"
-    ></div>
-</div> -->
 <!-- svelte-ignore a11y_no_static_element_interactions -->
 <div
-    class="logo-container relative block mx-auto my-0 w-36 h-36 hover:boder-none"
+    class="logo-container relative mx-auto my-0 w-36 h-36 hover:boder-none"
     onmouseenter={() => (showHat = true)}
     onmouseleave={() => (showHat = false)}
 >
-    <div
-        class="logo glow-hover block relative bg-[url('/img/portrait.png')] bg-center bg-[#d9ffb6] bg-no-repeat bg-contain h-full border-solid border-primary border-2"
-    ></div>
+    <img
+        src="/img/portrait.png"
+        alt="Logo"
+        class="logo glow-hover relative bg-[#d9ffb6] w-full h-full border-solid border-primary border-2 object-contain object-center"
+    />
     {#if showHat}
         <img
             transition:fade={{ duration: 300 }}

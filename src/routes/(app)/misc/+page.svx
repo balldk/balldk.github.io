@@ -5,4 +5,4 @@
 <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=Bgrc2CFCiJyjtYd5&amp;list=PLt1gpm5PbdE9WI5sEAiqQVT_Y-QV2Uju-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 <br/>
 
-- I remembered pi up to 100 digits.
+- I remembered the first 100 digits of pi.
