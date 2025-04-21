@@ -14,4 +14,8 @@ export const pageLoadStore = {
     set isFirstEnter(val) {
         isFirstEnter = val
     },
+    init() {
+        setTimeout(() => (isFirstEnter = false), 100)
+        setTimeout(() => (loaded = true))
+    },
 }

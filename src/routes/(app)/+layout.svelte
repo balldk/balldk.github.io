@@ -7,10 +7,6 @@
     import { pageLoadStore } from '$lib/pageLoadStore.svelte'
 
     let { children } = $props()
-    onMount(() => {
-        setTimeout(() => (pageLoadStore.isFirstEnter = false), 200)
-        setTimeout(() => (pageLoadStore.loaded = true))
-    })
 </script>
 
 <svelte:head>
@@ -24,7 +20,7 @@
         <main
             in:fly={{
                 x: -50,
-                delay: pageLoadStore.isFirstEnter ? 600 : 0,
+                delay: pageLoadStore.isFirstEnter ? 700 : 0,
             }}
             class={`flex-1 h-dvh overflow-auto md:px-14 px-6 py-8 ${pageLoadStore.loaded ? '' : 'opacity-0'}`}
         >
@@ -32,7 +28,6 @@
         </main>
     {/key}
 
-    {#if pageLoadStore.loaded}{/if}
     <div class="fixed bottom-0 left-0 w-screen h-4 bg-white border-dashed border-t-2 border-black">
         <Nyan />
     </div>

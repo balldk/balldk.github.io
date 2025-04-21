@@ -11,7 +11,9 @@
         $props()
 </script>
 
-<div class="bg-white rounded-[1em] card-shadow p-2">
+<div
+    class="bg-white rounded-[1em] shadow-md p-2 h-full hover:translate-[-0.2em] hover:shadow-lg transition-all duration-300"
+>
     <img src={img} alt="" class="object-cover object-left-top w-full h-52 rounded-t-[0.8em]" />
     <div class="p-2">
         <div class="flex gap-1">
@@ -34,10 +36,3 @@
         <p class="text-sm">{description}</p>
     </div>
 </div>
-
-<style>
-    .card-shadow {
-        /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
-        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-    }
-</style>

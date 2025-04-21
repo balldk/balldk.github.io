@@ -1,7 +1,7 @@
 <script lang="ts">
     import Icon from '@iconify/svelte'
     import { page } from '$app/state'
-    import { fade } from 'svelte/transition'
+    import { blur } from 'svelte/transition'
     import { clickSoundStore } from '$lib/utils/clickSoundStore.svelte'
 
     const imageModules = import.meta.glob(
@@ -81,16 +81,9 @@
             <enhanced:img src={imageModules[menu.img].default} alt={menu.title} class="hidden" />
             {#if menu.img && isMatchPath(menu.path)}
                 <div class="w-8 h-5"></div>
-                <enhanced:img
-                    in:fade
-                    src={imageModules[menu.img].default}
-                    alt={menu.title}
-                    class="absolute w-9 h-9 left-[6px] top-[2px]"
-                />
-                <!-- <div class="absolute top-[2px] left-[6px] w-9 h-9">
-                    <Image src={menu.img} alt={menu.title} transformer={transform} />
-                    <Img src={menu.img} alt={menu.title} />
-                </div> -->
+                <div in:blur class="absolute top-[2px] left-[6px] w-9 h-9">
+                    <enhanced:img src={imageModules[menu.img].default} alt={menu.title} />
+                </div>
             {:else}
                 <div class="w-5 h-5 mr-3">
                     <Icon icon={menu.icon} class="mt-[2px] w-full h-full" />
