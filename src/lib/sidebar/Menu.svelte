@@ -8,7 +8,6 @@
         '$assets/img/fantasy/*.{avif,gif,heif,jpeg,jpg,png,tiff,webp,svg}',
         { eager: true, query: { enhanced: true } }
     ) as any
-    console.log(imageModules)
 
     const menus = [
         {
