@@ -1,5 +1,9 @@
-<script>
+<script lang="ts">
     import ProjectCard from '$lib/ProjectCard.svelte'
+    const imageModules = import.meta.glob(
+        '/img/project/*.{avif,gif,heif,jpeg,jpg,png,tiff,webp,svg}',
+        { eager: true, query: { enhanced: true } }
+    ) as any
 </script>
 
 <svelte:head>

@@ -10,15 +10,15 @@
     onmouseenter={() => (showHat = true)}
     onmouseleave={() => (showHat = false)}
 >
-    <img
-        src="/img/portrait.png"
+    <enhanced:img
+        src="$assets/img/portrait.png"
         alt="Logo"
         class="logo glow-hover relative bg-[#d9ffb6] w-full h-full border-solid border-primary border-2 object-contain object-center"
     />
     {#if showHat}
-        <img
+        <enhanced:img
             transition:fade={{ duration: 300 }}
-            src="/img/fantasy/wizard-hat-2.png"
+            src="$assets/img/fantasy/wizard-hat-2.png"
             alt="wizard-hat"
             class="absolute top-[-2em] left-[-1.2em] max-w-[11em] rotate-[-8deg]"
         />

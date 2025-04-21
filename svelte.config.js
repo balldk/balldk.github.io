@@ -1,5 +1,6 @@
 import { mdsvex } from 'mdsvex'
 import adapter from '@sveltejs/adapter-static'
+import { imagePreprocessor } from 'svimg'
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte'
 import mdsvexConfig from './mdsvex/mdsvex.config.js'
 

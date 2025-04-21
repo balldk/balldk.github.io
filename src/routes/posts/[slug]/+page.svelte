@@ -1,9 +1,9 @@
 <script lang="ts">
     import type { MarkdownData } from '$lib/blog/blog.types'
-    import HeaderIllustration from '$assets/grapevine.png'
+    import HeaderIllustration from '$assets/img/grapevine.png'
     import Footer from '$lib/blog/Footer.svelte'
     import Header from '$lib/blog/Header.svelte'
-    import OrnamentImg from '$assets/ornament-line.png'
+    import OrnamentImg from '$assets/img/ornament-line.png'
     import { onMount } from 'svelte'
 
     import hljs from 'highlight.js/lib/core'
