@@ -72,11 +72,19 @@
 <nav class="mt-4 w-full">
     {#each menus as menu}
         <a
+            data-sveltekit-preload-data="hover"
             href={menu.path}
             target={menu.isExternal ? '_blank' : ''}
             class={`card relative font-semibold text-[0.9em] mt-2 ${isMatchPath(menu.path) && '!bg-primary !text-white border-1'} transition-colors`}
             onclick={handleMenuClick}
         >
+            <enhanced:img
+                in:fade
+                src={imageModules[menu.img].default}
+                alt={menu.title}
+                class="hidden"
+                loading="lazy"
+            />
             {#if menu.img && isMatchPath(menu.path)}
                 <div class="w-8 h-5"></div>
                 <enhanced:img
