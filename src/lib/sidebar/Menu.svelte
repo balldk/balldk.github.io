@@ -78,13 +78,7 @@
             class={`card relative font-semibold text-[0.9em] mt-2 ${isMatchPath(menu.path) && '!bg-primary !text-white border-1'} transition-colors`}
             onclick={handleMenuClick}
         >
-            <enhanced:img
-                in:fade
-                src={imageModules[menu.img].default}
-                alt={menu.title}
-                class="hidden"
-                loading="lazy"
-            />
+            <enhanced:img src={imageModules[menu.img].default} alt={menu.title} class="hidden" />
             {#if menu.img && isMatchPath(menu.path)}
                 <div class="w-8 h-5"></div>
                 <enhanced:img
