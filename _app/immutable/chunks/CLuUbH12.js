@@ -1,0 +1,1 @@
+const o={theorem:{"Định lý bla":1},equation:{2:2,"eq-fds":1},proposition:{"Định nghĩa ble":1}},e={},n={},t={},a={test:o,"q-analog":{definition:{1:1},example:{1:1},equation:{"q-diff":1},proposition:{2:2,qsubspace:1}},vanvo:e,hello:n,hagiang:t,"privacy-policy-zlib-extension":{},"free-software":{}};export{a as default,t as hagiang,n as hello,o as test,e as vanvo};
