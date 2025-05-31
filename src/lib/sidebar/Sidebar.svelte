@@ -3,8 +3,8 @@
     import { fade, fly, slide } from 'svelte/transition'
     import Logo from './Logo.svelte'
     import Menu from './Menu.svelte'
-    import { pageLoadStore } from '$lib/pageLoadStore.svelte'
-    import { cn } from '$lib/utils/cn'
+    import { pageLoadStore } from '$lib/common/stores/pageLoadStore.svelte'
+    import { cn } from '$lib/common/utils/cn'
 </script>
 
 <aside class="grid md:grid-rows-[90%_auto] pt-5 md:border-r-2 border-dashed border-black">

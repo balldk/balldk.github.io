@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { cn } from '$lib/utils/cn'
+    import { cn } from '$lib/common/utils/cn'
     import { Motion } from 'svelte-motion'
     import { onMount, onDestroy } from 'svelte'
 

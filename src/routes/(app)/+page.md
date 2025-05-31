@@ -4,7 +4,7 @@
 </svelte:head>
 
 <script>
-    import ContactCard from '$lib/ContactCard.svelte'
+    import ContactCard from '$lib/index/components/ContactCard.svelte'
 </script>
 
 # About me

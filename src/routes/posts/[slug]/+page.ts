@@ -17,11 +17,11 @@ export async function load({ params }) {
 
     try {
         const post = await import(`$posts/${slug}.md`)
-        const envsFile = await import('$lib/math-env.json')
+        const envsFile = await import('$lib/mathEnv/math-env.json')
         const envs = { ...envsFile.default, [slug]: post.metadata.envs }
         if (!browser) {
             console.log('On server...')
-            fs.writeFileSync('./src/lib/math-env.json', JSON.stringify(envs, null, 4))
+            fs.writeFileSync('./src/lib/mathEnv/math-env.json', JSON.stringify(envs, null, 4))
         }
         mathEnvStore.slug = slug
 

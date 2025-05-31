@@ -1,6 +1,6 @@
 <script lang="ts">
     import { onMount } from 'svelte'
-    import { axios } from '$lib/axios'
+    import { axios } from '$lib/common/utils/axios'
     import { fly } from 'svelte/transition'
 
     const greetings = [

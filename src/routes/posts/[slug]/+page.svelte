@@ -11,10 +11,10 @@
     import bash from 'highlight.js/lib/languages/bash'
     import bnf from 'highlight.js/lib/languages/bnf'
     import plaintext from 'highlight.js/lib/languages/plaintext'
-    import vanvo from '$lib/utils/vanvo'
-    import { pageLoadStore } from '$lib/pageLoadStore.svelte'
+    import vanvo from '$lib/common/utils/vanvo'
+    import { pageLoadStore } from '$lib/common/stores/pageLoadStore.svelte'
     import { fade, fly, slide } from 'svelte/transition'
-    import { cn } from '$lib/utils/cn'
+    import { cn } from '$lib/common/utils/cn'
     hljs.registerLanguage('javascript', javascript)
     hljs.registerLanguage('python', python)
     hljs.registerLanguage('vanvo', vanvo)

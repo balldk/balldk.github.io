@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { pageLoadStore } from '$lib/pageLoadStore.svelte'
+    import { pageLoadStore } from '$lib/common/stores/pageLoadStore.svelte'
     import ProjectCard from '$lib/coding/ProjectCard.svelte'
     import ImageFade from '$lib/sidebar/ImageFade.svelte'
 

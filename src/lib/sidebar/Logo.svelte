@@ -1,5 +1,6 @@
 <script>
-    import { fade } from 'svelte/transition'
+    import hatImg from '$assets/img/fantasy/wizard-hat-2.png?enhanced'
+    import TransitionWrapper from '$lib/common/components/TransitionWrapper.svelte'
 
     let showHat = $state(false)
 </script>
@@ -7,22 +8,28 @@
 <!-- svelte-ignore a11y_no_static_element_interactions -->
 <div
     class="logo-container relative mx-auto my-0 w-36 h-36 hover:boder-none"
-    onmouseenter={() => (showHat = true)}
-    onmouseleave={() => (showHat = false)}
+    onmouseenter={() => {
+        console.log('showHat', showHat)
+        showHat = true
+    }}
+    onmouseleave={() => {
+        console.log('showHat', showHat)
+        showHat = false
+    }}
 >
     <enhanced:img
         src="$assets/img/portrait.png"
         alt="Logo"
         class="logo glow-hover relative bg-[#d9ffb6] w-full h-full border-solid border-primary border-2 object-contain object-center"
     />
-    {#if showHat}
+
+    <TransitionWrapper show={showHat}>
         <enhanced:img
-            transition:fade={{ duration: 300 }}
-            src="$assets/img/fantasy/wizard-hat-2.png"
+            src={hatImg}
             alt="wizard-hat"
             class="absolute top-[-2em] left-[-1.2em] max-w-[11em] rotate-[-8deg]"
         />
-    {/if}
+    </TransitionWrapper>
 </div>
 
 <style lang="scss">

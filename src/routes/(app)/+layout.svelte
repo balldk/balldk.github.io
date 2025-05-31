@@ -3,8 +3,8 @@
     import { fly } from 'svelte/transition'
     import { page } from '$app/state'
     import { onMount } from 'svelte'
-    import Nyan from '$lib/Nyan.svelte'
-    import { pageLoadStore } from '$lib/pageLoadStore.svelte'
+    import Nyan from '$lib/index/components/Nyan.svelte'
+    import { pageLoadStore } from '$lib/common/stores/pageLoadStore.svelte'
 
     let { children } = $props()
 </script>

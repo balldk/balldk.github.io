@@ -1,6 +1,5 @@
 <script lang="ts">
     import Icon from '@iconify/svelte'
-    import Card from './Card.svelte'
     let {
         icon,
         label,

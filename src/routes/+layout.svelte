@@ -2,8 +2,8 @@
     import { onMount } from 'svelte'
     import '../app.css'
     import '../app.scss'
-    import { clickSoundStore } from '$lib/utils/clickSoundStore.svelte'
-    import { pageLoadStore } from '$lib/pageLoadStore.svelte'
+    import { clickSoundStore } from '$lib/common/stores/clickSoundStore.svelte'
+    import { pageLoadStore } from '$lib/common/stores/pageLoadStore.svelte'
     let { children } = $props()
 
     onMount(() => {

@@ -1,0 +1,11 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+You are assisting in a Svelte 5 project. You must exclusively use Svelte 5 features, such as
+- `$state(...)` for state declaration.
+- `let {...} = $props()` instead of `export let`
+- use `{@render children()}` instead of `<slot />`, where children has the type of `Snippet`.
+use bun instead of npm.
+Beware of sass breaking changes of using `@import`: https://sass-lang.com/documentation/breaking-changes/import/

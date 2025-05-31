@@ -1,19 +1,20 @@
 <script lang="ts">
     import { Motion, AnimatePresence } from 'svelte-motion'
     import { inview } from 'svelte-inview'
-    import { cn } from '$lib/utils/cn'
+    import { cn } from '$lib/common/utils/cn'
 
-    // Destructure props from $props()
     const {
         duration = 0.4,
         delay = 0,
         yOffset = 6,
         inViewMargin = '-50px',
         blur = '6px',
-        id = crypto.randomUUID().slice(0, 8),
         once = false,
         class: className = '',
+        children,
     } = $props()
+
+    const id = $props.id()
 
     let state = $state({
         isInView: 'hidden',
@@ -38,6 +39,7 @@
         }}
         let:motion
     >
+        <!-- svelte-ignore event_directive_deprecated -->
         <div
             use:inview={{ rootMargin: inViewMargin, unobserveOnEnter: once }}
             use:motion
@@ -46,7 +48,7 @@
             }}
             class={cn(className)}
         >
-            <slot>Default</slot>
+            {@render children()}
         </div>
     </Motion>
 </AnimatePresence>

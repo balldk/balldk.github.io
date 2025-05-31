@@ -1,9 +1,5 @@
 <script>
-    let teachingList = [
-        { uni: 'HCMUS-VNU', term: 'Fall 2024', title: 'Discrete Structure', description: 'Exercise instructor for APCS, following Rosen\'s book.' },
-        { uni: 'HCMUS-VNU', term: 'Fall 2024', title: 'Discrete Math', description: 'Exercise instructor for CS major' },
-        { uni: 'HCMUS-VNU', term: 'Fall 2024', title: 'Linear Algebra', description: 'Exercise instructor for Math major' },
-    ]
+    import TeachingList from '$lib/teaching/TeachingList.svelte';
 </script>
 
 <svelte:head>
@@ -12,15 +8,4 @@
 
 # Teaching Assistant
 
-{#each teachingList as item}
-    <div class="grid grid-cols-[12em_6em_10em_auto] text-[0.9em] border-dashed border-t-1 py-2">
-        <div class="">
-            <img src="/img/hcmus-logo.png" alt={item.title} class="inline h-6 mr-1 mt-[-3px]" />
-            <span>{item.uni}</span>
-        </div>
-        <div class="">{item.term}</div>
-        <div class="">{item.title}</div>
-        <div class="">{item.description}</div>
-    </div>
-{/each}
-<div class="w-full border-dashed border-t-1"></div>
+<TeachingList />
