@@ -1,5 +1,5 @@
 <script>
-    import PhotoCard from '$lib/index/components/PhotoCard.svelte'
+    import PhotoCard from '$lib/gallery/components/PhotoCard.svelte'
 
 </script>
 
