@@ -1,0 +1,1 @@
+import{g as t,b as e,d as l}from"./BUCqPcA6.js";import{p as r}from"./BdunolZ2.js";let o=e(null);const s={init(){l(o,r(new Audio("/sounds/click.mp3"))),t(o).volume=.5},play(){t(o)!=null&&(t(o).currentTime=0,t(o).play())}};export{s as c};
