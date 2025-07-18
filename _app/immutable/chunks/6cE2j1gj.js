@@ -1,0 +1,1 @@
+const o={theorem:{"Định lý bla":1},equation:{2:2,"eq-fds":1},proposition:{"Định nghĩa ble":1}},n={},e={"q-analog":{definition:{1:1},example:{1:1},equation:{"q-diff":1},proposition:{2:2,qsubspace:1}},test:o,vanvo:n};export{e as default,o as test,n as vanvo};

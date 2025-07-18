@@ -1,0 +1,1 @@
+import{t as p,a as s}from"../chunks/CWLmuGPu.js";import{p as r,a as e,$ as m}from"../chunks/CMP3rFGA.js";import{h as n}from"../chunks/r8h4jGPH.js";import"../chunks/g99GekFo.js";var h=p("<h1>Blog</h1>");function g(a,o){r(o,!0),console.log("posts",o.data.posts);var t=h();n(i=>{m.title="Blog"}),s(a,t),e()}export{g as component};
