@@ -27,7 +27,7 @@
         <enhanced:img
             src={hatImg}
             alt="wizard-hat"
-            class="absolute top-[-2.2em] left-[-1.8em] max-w-[10em] rotate-[-8deg]"
+            class="absolute top-[-2.3em] left-[-1.5em] max-w-[10em] rotate-[2deg]"
         />
     </TransitionWrapper>
 </div>
