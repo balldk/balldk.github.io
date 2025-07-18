@@ -48,13 +48,13 @@
             icon: 'bx:box',
             img: '/src/assets/img/fantasy/gold_chest.png',
         },
-        {
-            title: 'CV',
-            path: '/CV.pdf',
-            isExternal: true,
-            icon: 'tabler:quote-filled',
-            img: '/src/assets/img/fantasy/document.png',
-        },
+        // {
+        //     title: 'CV',
+        //     path: '/CV.pdf',
+        //     isExternal: true,
+        //     icon: 'tabler:quote-filled',
+        //     img: '/src/assets/img/fantasy/document.png',
+        // },
     ]
 </script>
 

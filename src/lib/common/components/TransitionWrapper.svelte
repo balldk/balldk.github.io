@@ -2,7 +2,7 @@
     import type { Snippet } from 'svelte'
     import { fade } from 'svelte/transition'
 
-    let { show = true, duration = 300, children } = $props()
+    let { show = true, duration = 100, children } = $props()
 </script>
 
 {#if show}

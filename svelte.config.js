@@ -6,15 +6,24 @@ import mdsvexConfig from './mdsvex/mdsvex.config.js'
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-    extensions: ['.svelte', ...mdsvexConfig.extensions],
-    preprocess: [mdsvex(mdsvexConfig), vitePreprocess()],
-    kit: {
-        adapter: adapter(),
-        alias: {
-            '$posts/*': './src/posts/*',
-            '$assets/*': './src/assets/*',
-        },
+  extensions: ['.svelte', ...mdsvexConfig.extensions],
+  preprocess: [
+    mdsvex(mdsvexConfig),
+    vitePreprocess(),
+    imagePreprocessor({
+      inputDir: 'static',
+      outputDir: 'static/g',
+      webp: true,
+      avif: true
+    }),
+  ],
+  kit: {
+    adapter: adapter(),
+    alias: {
+      '$posts/*': './src/posts/*',
+      '$assets/*': './src/assets/*',
     },
+  },
 }
 
 export default config

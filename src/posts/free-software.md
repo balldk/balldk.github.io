@@ -6,7 +6,7 @@ date: 04/01/2024
 <script>
 </script>
 
-Dây là một bài viết có thể gây tranh cãi vì ở một khía cạnh nào đó thì nó vi phạm đạo đức, nhưng Internet là một thế giới đắt đỏ. Với người lớn lên trong môi trường mà từng đồng lẻ cũng phải tiết kiệm như mình thì để "sống được" và phát triển được, một cách tự nhiên mình đã phát triển một hệ sinh thái miễn phí cho bản thân.
+Đây là một bài viết có thể gây tranh cãi vì ở một khía cạnh nào đó thì nó vi phạm đạo đức, nhưng Internet là một thế giới đắt đỏ. Với người lớn lên trong môi trường mà từng đồng lẻ cũng phải tiết kiệm như mình thì để "sống được" và phát triển được, một cách tự nhiên mình đã phát triển một hệ sinh thái miễn phí cho bản thân.
 
 ## Tài liệu
 
@@ -32,7 +32,7 @@ Tìm theo tiêu đề của Scihub khá kém nhé nên nếu bạn cần tìm th
 
 ![Scihub](https://i.imgur.com/i8YOgTn.png)
 
-> DOI là một mã số định danh tài liệu, trên các trang bán tài liệu thường luôn để kèm DOI. Nó có dạng ví dụ như sau: https://doi.org/10.1000/182
+> DOI là một mã số định danh tài liệu, trên các trang bán tài liệu thường luôn để kèm DOI. Nó có dạng ví dụ như sau: <https://doi.org/10.1000/182>
 
 ### Library Genesis ([libgen.is](https://libgen.is/))
 

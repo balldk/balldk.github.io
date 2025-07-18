@@ -1,13 +1,15 @@
 <script>
+    import Image from 'svimg/Image.svelte'
     import PhotoCard from '$lib/gallery/components/PhotoCard.svelte'
-
+    import StickerTitle from '$lib/common/components/StickerTitle.svelte'
 </script>
 
 <svelte:head>
     <title>Gallery</title>
 </svelte:head>
 
-# Gallery
+<!-- <StickerTitle content="Gallery" /> -->
+<h1>Gallery</h1>
 
 <br />
 <PhotoCard>

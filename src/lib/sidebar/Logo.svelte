@@ -20,14 +20,14 @@
     <enhanced:img
         src="$assets/img/portrait.png"
         alt="Logo"
-        class="logo glow-hover relative bg-[#d9ffb6] w-full h-full border-solid border-primary border-2 object-contain object-center"
+        class={`logo glow-hover relative bg-[#d9ffb6] w-full h-full border-solid border-primary border-2 object-contain object-center ${showHat ? 'scale-[1.02]' : ''}`}
     />
 
     <TransitionWrapper show={showHat}>
         <enhanced:img
             src={hatImg}
             alt="wizard-hat"
-            class="absolute top-[-2em] left-[-1.2em] max-w-[11em] rotate-[-8deg]"
+            class="absolute top-[-2.2em] left-[-1.8em] max-w-[10em] rotate-[-8deg]"
         />
     </TransitionWrapper>
 </div>
@@ -35,6 +35,7 @@
 <style lang="scss">
     .logo {
         animation: morph 6s ease-in-out infinite;
+        transition: 0.1s all;
 
         @keyframes morph {
             0% {
