@@ -9,7 +9,7 @@
 </script>
 
 <a
-    target="_blank"
+    target={link ? '_blank' : ''}
     href={link}
     class={`card !pl-3 font-semibold text-sm !text-white !border-none ${className}`}
 >

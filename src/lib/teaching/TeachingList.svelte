@@ -3,22 +3,32 @@
 
     let teachingList = [
         {
-            uni: 'HCMUS-VNU',
+            uni: 'UVA',
+            term: 'Fall 2025',
+            title: 'Basic Real Analysis',
+            description: 'Discussion session instructor and grader',
+            imgUrl: '/img/uva-logo.png',
+        },
+        {
+            uni: 'HCMUS',
             term: 'Fall 2024',
             title: 'Discrete Structure',
-            description: "Exercise instructor for APCS, following Rosen's book.",
+            description: "Problem session instructor for APCS, following Rosen's book.",
+            imgUrl: '/img/hcmus-logo.png',
         },
         {
-            uni: 'HCMUS-VNU',
+            uni: 'HCMUS',
             term: 'Fall 2024',
             title: 'Discrete Math',
-            description: 'Exercise instructor for CS major',
+            description: 'Problem session instructor for CS major',
+            imgUrl: '/img/hcmus-logo.png',
         },
         {
-            uni: 'HCMUS-VNU',
+            uni: 'HCMUS',
             term: 'Fall 2024',
             title: 'Linear Algebra',
-            description: 'Exercise instructor for Math major',
+            description: 'Problem session instructor for Math major',
+            imgUrl: '/img/hcmus-logo.png',
         },
     ]
 </script>

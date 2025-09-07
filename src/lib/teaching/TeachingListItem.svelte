@@ -1,10 +1,10 @@
 <script>
-    let { uni, term, title, description } = $props()
+    let { uni, term, title, description, imgUrl } = $props()
 </script>
 
-<div class="grid grid-cols-[12em_6em_10em_auto] text-[0.9em] border-dashed border-t-1 py-2">
+<div class="grid grid-cols-[3em_8em_6em_12em_auto] text-[0.9em] border-dashed border-t-1 py-2">
+    <img src={imgUrl} alt={title} class="inline h-6 mr-1 mt-[-3px]" />
     <div class="">
-        <img src="/img/hcmus-logo.png" alt={title} class="inline h-6 mr-1 mt-[-3px]" />
         <span>{uni}</span>
     </div>
     <div class="">{term}</div>

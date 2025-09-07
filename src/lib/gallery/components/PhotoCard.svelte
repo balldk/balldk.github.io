@@ -1,17 +1,20 @@
 <script>
     import Icon from '@iconify/svelte'
-    let { children } = $props()
+
+    let { children, desc, location } = $props()
 </script>
 
-<div class="photo-card inline-block w-fit h-fit bg-white p-3">
+<div class="photo-card inline-block w-fit h-fit bg-white p-3 mb-4">
     <figure class="table">
         {@render children()}
         <figcaption class="table-caption caption-bottom">
             <div class="flex mb-1">
                 <Icon icon="akar-icons:location" class="mr-1" />
-                <span class="text-sm font-semibold">Thu Duc district, HCMC</span>
+                <span class="text-sm font-semibold">{location}</span>
             </div>
-            <p class="text-sm text-wrap center !mb-1 ml-1">A view of the area where I grew up</p>
+            <div class="h-11">
+                <p class="text-sm text-wrap center !mb-1 ml-1">{desc}</p>
+            </div>
         </figcaption>
     </figure>
 </div>

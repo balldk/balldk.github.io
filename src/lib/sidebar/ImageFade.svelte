@@ -12,9 +12,8 @@
         once = false,
         class: className = '',
         children,
+        id,
     } = $props()
-
-    const id = $props.id()
 
     let state = $state({
         isInView: 'hidden',
