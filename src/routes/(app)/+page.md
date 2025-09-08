@@ -17,7 +17,7 @@ Call me **Khoa**. I am a first-year PhD student at the [University of Virginia](
 
 Before joining UVA, -->
 
-I am from Vietnam and got my bachelor degree in [University of Science - VNU](https://en.wikipedia.org/wiki/Ho_Chi_Minh_City_University_of_Science). During my undergraduate studies, I had several research experiences:
+I grew up in Ho Chi Minh city, Vietnam and got my bachelor degree in [University of Science - VNU](https://en.wikipedia.org/wiki/Ho_Chi_Minh_City_University_of_Science). During my undergraduate studies, I had several research experiences:
 
 - I wrote my thesis under the supervision of [Dr. Tuan Anh Bui](https://www.researchgate.net/profile/Tuan-Bui-8) on the cohomology of $S$-arithmetic groups.
 - I joined [Vietnam Polymath REU](https://www.vietnampolymathreu.com/) program with the topic "LOT groups and the Whitehead Conjecture", mentored by [Prof. Thomas Koberda](https://sites.google.com/view/koberdat).
@@ -25,6 +25,8 @@ I am from Vietnam and got my bachelor degree in [University of Science - VNU](ht
 - I worked with [Prof. Truong Le Hoang](http://math.ac.vn/vi/component/staff/?task=getProfile&staffID=67) on Okounkov body and its volume associated with a $\N^d$-graded linear series. This project is funded by VINIF within sponsorship and cooperation program in 2024 between Vietnam Institute of Mathematics and VINIF.
 
 I do [coding](/coding) for fun.
+
+> Don't hesitate to ask me out for a meal if you see me around, I need to get fat.
 
 <!-- $$
 \operatorname{Foods} \xhookrightarrow{\operatorname{eat}} \operatorname{Aut}(\text{Me}) \rightarrow 1

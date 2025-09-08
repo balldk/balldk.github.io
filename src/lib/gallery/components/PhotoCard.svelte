@@ -4,7 +4,9 @@
     let { children, desc, location } = $props()
 </script>
 
-<div class="photo-card inline-block w-fit h-fit bg-white p-3 mb-4">
+<div
+    class="photo-card hover:translate-y-[-0.2em] hover:shadow-lg transition-all duration-300 inline-block w-fit h-fit bg-white p-3 mb-4"
+>
     <figure class="table">
         {@render children()}
         <figcaption class="table-caption caption-bottom">

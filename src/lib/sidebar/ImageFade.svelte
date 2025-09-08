@@ -6,10 +6,10 @@
     const {
         duration = 0.4,
         delay = 0,
-        yOffset = 6,
+        yOffset = 40,
         inViewMargin = '-50px',
-        blur = '6px',
-        once = false,
+        blur = '5px',
+        once = true,
         class: className = '',
         children,
         id,

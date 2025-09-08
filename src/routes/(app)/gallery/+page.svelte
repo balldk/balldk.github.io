@@ -1,5 +1,5 @@
 <script>
-    import PhotoList from '$lib/gallery/components/PhotoList.svelte'
+    import Gallery from '$lib/gallery/components/Gallery.svelte'
 </script>
 
 <svelte:head>
@@ -9,4 +9,4 @@
 <!-- <StickerTitle content="Gallery" /> -->
 <h1>Gallery</h1>
 
-<PhotoList />
+<Gallery />

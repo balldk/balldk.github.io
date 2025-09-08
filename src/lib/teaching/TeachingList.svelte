@@ -6,7 +6,7 @@
             uni: 'UVA',
             term: 'Fall 2025',
             title: 'Basic Real Analysis',
-            description: 'Discussion session instructor and grader',
+            description: 'Discussion session leader and grader',
             imgUrl: '/img/uva-logo.png',
         },
         {

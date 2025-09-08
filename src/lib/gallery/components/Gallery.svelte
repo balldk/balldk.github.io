@@ -47,13 +47,13 @@
             class: '',
         },
         {
-            desc: 'Stopped by this beautiful sunset while riding home',
+            desc: 'Stopped by this beautiful sunset sky while riding home',
             location: 'Le Thi Hoa street, HCMC',
             imgUrl: '/img/gallery/sunset.jpg',
             class: '',
         },
         {
-            desc: 'A view of the area where I grew up',
+            desc: 'A view of the area where I grew up, the traffic here was crazyyy!!',
             location: 'Song Than bridge, Di An',
             imgUrl: '/img/gallery/img1.jpg',
             class: '',
