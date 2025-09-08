@@ -12,7 +12,7 @@
                 <Icon icon="akar-icons:location" class="mr-1" />
                 <span class="text-sm font-semibold">{location}</span>
             </div>
-            <div class="h-11">
+            <div class="">
                 <p class="text-sm text-wrap center !mb-1 ml-1">{desc}</p>
             </div>
         </figcaption>

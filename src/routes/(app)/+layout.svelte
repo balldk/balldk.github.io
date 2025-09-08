@@ -22,7 +22,7 @@
                 x: -50,
                 delay: pageLoadStore.isFirstEnter ? 700 : 0,
             }}
-            class={`flex-1 h-dvh overflow-auto md:px-14 px-6 py-8 ${pageLoadStore.loaded ? '' : 'opacity-0'}`}
+            class={`flex-1 h-dvh overflow-auto md:pl-14 px-6 py-8 ${pageLoadStore.loaded ? '' : 'opacity-0'}`}
         >
             {@render children()}
         </main>
