@@ -13,16 +13,16 @@
             icon: 'fa6-regular:address-card',
             img: '/src/assets/img/fantasy/elve.png',
         },
-        {
-            title: 'Research',
-            path: '/research',
-            icon: 'tabler:math',
-            img: '/src/assets/img/fantasy/potion.png',
-        },
+        // {
+        //     title: 'Research',
+        //     path: '/research',
+        //     icon: 'tabler:math',
+        //     img: '/src/assets/img/fantasy/potion.png',
+        // },
         {
             title: 'Teaching',
             path: '/teaching',
-            icon: 'tdesign:education-filled',
+            icon: 'fluent:hat-graduation-12-regular',
             img: '/src/assets/img/fantasy/book-2.png',
         },
         {
@@ -43,9 +43,15 @@
             img: '/src/assets/img/fantasy/card-elve-heart.png',
         },
         {
+            title: 'Archive',
+            path: '/archive',
+            icon: 'bx:box',
+            img: '/src/assets/img/fantasy/tablet-cracked.png',
+        },
+        {
             title: 'Miscellany',
             path: '/misc',
-            icon: 'bx:box',
+            icon: 'tabler:carambola',
             img: '/src/assets/img/fantasy/gold_chest.png',
         },
         // {

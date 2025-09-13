@@ -43,7 +43,8 @@
             use:inview={{ rootMargin: inViewMargin, unobserveOnEnter: once }}
             use:motion
             on:inview_change={({ detail }) => {
-                state.isInView = detail.inView ? 'visible' : 'hidden'
+                state.isInView = 'visible'
+                // state.isInView = detail.inView ? 'visible' : 'hidden'
             }}
             class={cn(className)}
         >

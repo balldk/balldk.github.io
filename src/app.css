@@ -23,6 +23,10 @@
     --font-danhda: Danh Da, Signika, Roboto, sans-serif;
 }
 
+@utility no-scrollbar {
+    @apply [scrollbar-width:none] [&::-webkit-scrollbar]:hidden;
+}
+
 .card {
     @apply flex py-2 px-4 rounded box-border border-1 border-dashed border-dark bg-white;
     box-shadow: 2px 2px 0 0.5px #e6d2c3;

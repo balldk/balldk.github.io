@@ -1,0 +1,17 @@
+<svelte:head>
+    <title>Archive</title>
+</svelte:head>
+
+# Archive
+
+<!-- My research interests broadly lies in algebraic topology, group cohomology and computational algebraic geometry. -->
+
+### PDFs
+
+- Bachelor thesis (Vietnamese): [On the cohomology of certain $S$-arithmetic groups](/bachelor-thesis.pdf).
+- A report for VINIF-AC program: [Okounkov body and its volume](/vinif-ac.pdf).
+
+### Wikipedia articles
+- [Các bài toán thiên niên kỉ](https://vi.wikipedia.org/wiki/C%C3%A1c_b%C3%A0i_to%C3%A1n_thi%C3%AAn_ni%C3%AAn_k%E1%BB%B7) (Millennium Prize Problems).
+- [Bổ đề chẻ](https://vi.wikipedia.org/wiki/B%E1%BB%95_%C4%91%E1%BB%81_ch%E1%BA%BB) (Split lemma).
+- [Dãy khớp](https://vi.wikipedia.org/wiki/D%C3%A3y_kh%E1%BB%9Bp) (Exact sequence).
