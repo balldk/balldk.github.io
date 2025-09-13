@@ -1,0 +1,1 @@
+import{d as t,g as o,b as i}from"./g0HKWCZd.js";import{p as a}from"./BOpPzQmY.js";let s=i(!1),r=i(!0);const n={get loaded(){return o(s)},set loaded(e){t(s,a(e))},get isFirstEnter(){return o(r)},set isFirstEnter(e){t(r,a(e))},init(){setTimeout(()=>t(r,!1),100),setTimeout(()=>t(s,!0))}};export{n as p};
